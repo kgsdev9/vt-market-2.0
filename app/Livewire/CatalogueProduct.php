@@ -5,26 +5,32 @@ namespace App\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
+use App\Models\Marque;
 
 class CatalogueProduct extends Component
 {
 
-    public $selectedCategories = [];
-
+    public $category = "" ;
+    public $products;
 
     public function render()
     {
 
+       $product = Product::query();
 
-        $products = Product::when(count($this->selectedCategories), function ($query) {
-            return $query->whereIn('cats', $this->selectedCategories);
-        })->get();
+
+        if($this->category != "") {
+
+            $product->where('category_id', '=', $this->category);
+        }
 
         $categories  = Category::all();
+        $marques = Marque::all();
 
         return view('livewire.catalogue-product',  [
-            'allProducts'=>  $products,
-            'allCategories'=> $categories
+            'allProducts'=> $product->get(),
+            'allCategories'=> $categories,
+            'allMarques'=>$marques
         ]);
     }
 }
