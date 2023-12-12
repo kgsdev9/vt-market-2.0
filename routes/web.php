@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VendeurRegisterController;
@@ -28,3 +29,6 @@ Route::get('/sellers-testing-products', [VendeurRegisterController::class, 'inde
 
 Route::get('/catalogue-product',[HomeController::class, 'catalogueProduct']);
 
+//authentification routes
+
+Route::get('/fr/auth', [RegisterController::class, 'register']);

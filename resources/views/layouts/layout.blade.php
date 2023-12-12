@@ -53,10 +53,16 @@
                 <div class="flex items-center z-20 relative">
 
                     <div class="flex items-center gap-4 relative pl-6 text-slate-600">
-
-                        <a class="bg-blue-500 dark:bg-pink-700/30 text-white shadow px-4 h-9 text-sm rounded-md flex items-center gap-2 font-semibold" target="_blank" href="https://themeforest.net/item/socialite-online-community-html-template/26345647">
-                            <ion-icon name="cart-outline" class="text-xl"></ion-icon> Rejoindre
+                        <a class="bg-blue-500 dark:bg-pink-700/30 text-white shadow px-4 h-9 text-sm rounded-md flex items-center gap-2 font-semibold" target="_blank" href="/kgs">
+                            <ion-icon name="cart-outline" class="text-xl"></ion-icon>
                         </a>
+
+                        <div hx-boost="true">
+                            <a class="flex items-center gap-3 rounded-lg px-5 py-2.5 bg-black text-white" href="/fr/auth">
+                                <svg width="20px" height="15px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>  Connexion
+                            </a>
+                        </div>
+
 
                         <div class="w-[1px] bg-slate-200 h-6 absolute left-0 hidden"></div>
                     </div>

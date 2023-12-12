@@ -1,141 +1,174 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <head>
+    <!-- Favicon -->
+    <link href="assets/images/favicon.png" rel="icon" type="image/png">
 
-        <meta charset="utf-8" />
-        <title>Espace de connexion </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesdesign" name="author" />
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="admin//images/favicon.ico">
+    <!-- title and description-->
+    <title>Inscrivez-vous</title>
 
-        <!-- Bootstrap Css -->
-        <link href="admin/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        <!-- Icons Css -->
-        <link href="admin/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <!-- App Css-->
-        <link href="admin/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
-    </head>
+    <!-- css files -->
+    <link rel="stylesheet" href="{{asset('assets/css/tailwind.css')}}">
+    <link rel="stylesheet" href="{{asset('css/styele.css')}}">
 
-    <body>
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- <body data-layout="horizontal"> -->
+</head>
+<body>
 
-    <div class="authentication-bg min-vh-100">
-        <div class="bg-overlay bg-light"></div>
-        <div class="container">
-            <div class="d-flex flex-column min-vh-100 px-3 pt-4">
-                <div class="row justify-content-center my-auto">
-                    <div class="col-md-8 col-lg-6 col-xl-5">
+  <div class="sm:flex">
 
-                        <div class="mb-4 pb-2">
-                            <a href="index.html" class="d-block auth-logo">
-                                <img src="assets/images/logo-dark.png" alt="" height="30" class="auth-logo-dark me-start">
-                                <img src="assets/images/logo-light.png" alt="" height="30" class="auth-logo-light me-start">
-                            </a>
-                        </div>
+    <div class="relative lg:w-[580px] md:w-96 w-full p-10 min-h-screen bg-white shadow-xl flex items-center pt-10 dark:bg-slate-900 z-10">
 
-                        <div class="card">
-                            <div class="card-body p-4">
-                                <div class="text-center mt-2">
-                                    <h5>Welcome Back !</h5>
-                                    <p class="text-muted">Sign in to continue to webadmin.</p>
-                                </div>
-                                <div class="p-2 mt-4">
-                                    <form action="https://themesdesign.in/webadmin/layouts/5.1.3/index.html">
+      <div class="w-full lg:max-w-sm mx-auto space-y-10" uk-scrollspy="target: > *; cls: uk-animation-scale-up; delay: 100 ;repeat: true">
 
-                                        <div class="mb-3">
-                                            <label class="form-label" for="username">Username</label>
-                                            <div class="position-relative input-custom-icon">
-                                                <input type="text" class="form-control" id="username" placeholder="Enter username">
-                                                 <span class="bx bx-user"></span>
-                                            </div>
-                                        </div>
+        <!-- logo image-->
+        <a href="#"> <img src="assets/images/logo.png" class="w-28 absolute top-10 left-10 dark:hidden" alt=""></a>
+        <a href="#"> <img src="assets/images/logo-light.png" class="w-28 absolute top-10 left-10 hidden dark:!block" alt=""></a>
 
-                                        <div class="mb-3">
-                                            <div class="float-end">
-                                                <a href="auth-recoverpw.html" class="text-muted text-decoration-underline">Forgot password?</a>
-                                            </div>
-                                            <label class="form-label" for="password-input">Password</label>
-                                            <div class="position-relative auth-pass-inputgroup input-custom-icon">
-                                                <span class="bx bx-lock-alt"></span>
-                                                <input type="password" class="form-control" id="password-input" placeholder="Enter password">
-                                                <button type="button" class="btn btn-link position-absolute h-100 end-0 top-0" id="password-addon">
-                                                    <i class="mdi mdi-eye-outline font-size-18 text-muted"></i>
-                                                </button>
-                                            </div>
-                                        </div>
+        <!-- logo icon optional -->
+        <div class="hidden">
+          <img class="w-12" src="assets/images/logo-icon.png" alt="Socialite html template">
+        </div>
 
-                                        <div class="form-check py-1">
-                                            <input type="checkbox" class="form-check-input" id="auth-remember-check">
-                                            <label class="form-check-label" for="auth-remember-check">Remember me</label>
-                                        </div>
+        <!-- title -->
+        <div>
+          <h2 class="text-2xl font-semibold mb-1.5"> Inscrivez vous  </h2>
+          <p class="text-sm text-gray-700 font-normal">Vous avez deja un compte , <a href="#" class="text-blue-700">Connectez-vous </a></p>
+        </div>
 
-                                        <div class="mt-3">
-                                            <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Log In</button>
-                                        </div>
 
-                                        <div class="mt-4 text-center">
-                                            <div class="signin-other-title">
-                                                <h5 class="font-size-14 mb-3 mt-2 title"> Sign in with </h5>
-                                            </div>
+        <!-- form -->
+        <form method="#" action="#" class="space-y-7 text-sm text-black font-medium dark:text-white"  uk-scrollspy="target: > *; cls: uk-animation-scale-up; delay: 100 ;repeat: true">
 
-                                            <ul class="list-inline mt-2">
-                                                <li class="list-inline-item">
-                                                    <a href="javascript:void()" class="social-list-item bg-primary text-white border-primary">
-                                                        <i class="bx bxl-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="javascript:void()" class="social-list-item bg-info text-white border-info">
-                                                        <i class="bx bxl-linkedin"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="javascript:void()" class="social-list-item bg-danger text-white border-danger">
-                                                        <i class="bx bxl-google"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
+          <div class="grid grid-cols-2 gap-4 gap-y-7">
 
-                                        <div class="mt-4 text-center">
-                                            <p class="mb-0">Don't have an account ? <a href="auth-register.html" class="fw-medium text-primary"> Signup now </a> </p>
-                                        </div>
-                                    </form>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div><!-- end col -->
-                </div><!-- end row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="text-center p-4">
-                            <p>© <script>document.write(new Date().getFullYear())</script> webadmin. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign</p>
-                        </div>
-                    </div>
+            <!-- email -->
+            <div class="col-span-2">
+                <label for="email" class="">Nom d'utilisateur</label>
+                <div class="mt-2.5">
+                    <input id="email" name="email" type="text" placeholder="VTP-99789" required="" class="!w-full !rounded-lg !bg-transparent !shadow-sm !border-slate-200 dark:!border-slate-800 dark:!bg-white/5">
                 </div>
+            </div>
+
+            <div class="col-span-2">
+                <label for="email" class="">Email address</label>
+                <div class="mt-2.5">
+                    <input id="email" name="email" type="email" placeholder="vtp-sas-france@gmail.com" required="" class="!w-full !rounded-lg !bg-transparent !shadow-sm !border-slate-200 dark:!border-slate-800 dark:!bg-white/5">
+                </div>
+            </div>
+
+            <!-- password -->
+            <div>
+              <label for="email" class="">Password</label>
+              <div class="mt-2.5">
+                  <input id="password" name="password" type="password" placeholder="***"  class="!w-full !rounded-lg !bg-transparent !shadow-sm !border-slate-200 dark:!border-slate-800 dark:!bg-white/5">
+              </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div>
+                <label for="email" class="">Confirm Password</label>
+                <div class="mt-2.5">
+                    <input id="password" name="password" type="password" placeholder="***"  class="!w-full !rounded-lg !bg-transparent !shadow-sm !border-slate-200 dark:!border-slate-800 dark:!bg-white/5">
+                </div>
+            </div>
+
+            <div class="col-span-2">
+
+              <label class="inline-flex items-center" id="rememberme">
+                <input type="checkbox" id="accept-terms" class="!rounded-md accent-red-800" />
+                <span class="ml-2">vous acceptez notre <a href="#" class="text-blue-700 hover:underline">conditions d'utilisation </a> </span>
+              </label>
 
             </div>
-        </div><!-- end container -->
+
+
+            <!-- submit button -->
+            <div class="col-span-2">
+              <button type="submit" class="button bg-primary text-white w-full">Commencer</button>
+            </div>
+
+          </div>
+
+          <div class="text-center flex items-center gap-6">
+            <hr class="flex-1 border-slate-200 dark:border-slate-800">
+            Ou continuez avec
+            <hr class="flex-1 border-slate-200 dark:border-slate-800">
+          </div>
+
+          <!-- social login -->
+          <div class="flex gap-2" uk-scrollspy="target: > *; cls: uk-animation-scale-up; delay: 400 ;repeat: true">
+            <a href="#" class="button flex-1 flex items-center gap-2 bg-primary text-white text-sm"> <ion-icon name="logo-facebook" class="text-lg"></ion-icon> facebook  </a>
+            <a href="#" class="button flex-1 flex items-center gap-2 bg-black text-white text-sm"> <ion-icon name="logo-google"></ion-icon> google  </a>
+          </div>
+
+        </form>
+
+
+      </div>
+
     </div>
-    <!-- end authentication section -->
 
-        <!-- JAVASCRIPT -->
-        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/libs/metismenujs/metismenujs.min.js"></script>
-        <script src="assets/libs/simplebar/simplebar.min.js"></script>
-        <script src="assets/libs/eva-icons/eva.min.js"></script>
+    <!-- image slider -->
+    <div class="flex-1 relative bg-primary max-md:hidden">
 
-        <script src="assets/js/pages/pass-addon.init.js"></script>
 
-    </body>
+      <div class="relative w-full h-full" tabindex="-1" uk-slideshow="animation: slide; autoplay: true">
 
+        <ul class="uk-slideshow-items w-full h-full">
+            <li class="w-full">
+                <img src="{{asset('shop.jpg')}}"  alt="" class="w-full h-full object-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+                <div class="absolute bottom-0 w-full uk-tr ansition-slide-bottom-small z-10">
+                    <div class="max-w-xl w-full mx-auto pb-32 px-5 z-30 relative"  uk-scrollspy="target: > *; cls: uk-animation-scale-up; delay: 100 ;repeat: true" >
+                        <img class="w-12" src="{{asset('assets/images/logo-icon.png')}}" alt="Socialite html template">
+                        <h4 class="!text-white text-2xl font-semibold mt-7"  uk-slideshow-parallax="y: 600,0,0"> Les boutiques branchées t'attentent sur VTP </h4>
+                        <p class="!text-white text-lg mt-7 leading-8"  uk-slideshow-parallax="y: 800,0,0;"> Profite au max toi et tes pots des derniers tendances en terme de vetements, accesoires et divers.</p>
+                    </div>
+                </div>
+                <div class="w-full h-96 bg-gradient-to-t from-black absolute bottom-0 left-0"></div>
+            </li>
+            <li class="w-full">
+              <img src="{{asset('hs.jpg')}}"  alt="" class="w-full h-full object-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+              <div class="absolute bottom-0 w-full uk-tr ansition-slide-bottom-small z-10">
+                  <div class="max-w-xl w-full mx-auto pb-32 px-5 z-30 relative"  uk-scrollspy="target: > *; cls: uk-animation-scale-up; delay: 100 ;repeat: true" >
+                      <img class="w-12" src="{{asset('assets/images/logo-icon.png')}}" alt="Socialite html template">
+                      <h4 class="!text-white text-2xl font-semibold mt-7"  uk-slideshow-parallax="y: 800,0,0">L'echhange devient facile avec VTP </h4>
+                      <p class="!text-white text-lg mt-7 leading-8"  uk-slideshow-parallax="y: 800,0,0;">Effectuer tous vos achats sans vous déplacer en toute securité depuis votre continent moyen de paiement soufle</p>
+                  </div>
+              </div>
+              <div class="w-full h-96 bg-gradient-to-t from-black absolute bottom-0 left-0"></div>
+          </li>
+        </ul>
+
+        <!-- slide nav -->
+        <div class="flex justify-center">
+            <ul class="inline-flex flex-wrap justify-center  absolute bottom-8 gap-1.5 uk-dotnav uk-slideshow-nav"> </ul>
+        </div>
+
+
+    </div>
+
+
+    </div>
+
+  </div>
+
+
+    <!-- Uikit js you can use cdn  https://getuikit.com/docs/installation  or fine the latest  https://getuikit.com/docs/installation -->
+    <script src="{{asset('assets/js/uikit.min.js')}}"></script>
+    <script src="{{asset('assets/js/script.js')}}"></script>
+
+    <!-- Ion icon -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
 </html>

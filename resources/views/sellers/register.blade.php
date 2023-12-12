@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Devenir vendeur</title>
     <link rel="stylesheet" href="{{asset('assets/css/tailwind.css')}}">
 </head>
 <body>
@@ -147,9 +147,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full text-center mb-5">
-                    <p class="text-gray-500 leading-6 text-base">Vous avez déja un compte? <a href="https://fintou.com/login" class="text-primary font-semibold ms-1">Se connecter</a></p>
-                </div>
+               
             </div>
         </div>
     </div>
