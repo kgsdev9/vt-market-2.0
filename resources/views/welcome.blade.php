@@ -22,10 +22,13 @@
                 </div>
 
                 <div class="md:flex justify-center items-center gap-4 mt-8 font-semibold text-sm hidden">
-                    <a href="#demos" uk-scroll class="flex items-center gap-2 bg-slate-100 rounded-lg px-5 py-3 text-black dark:bg-slate-900 dark:text-white">
-                        <ion-icon name="eye-outline" class="hidden"></ion-icon>
-                        Devenir vendeur
-                    </a>
+                    <div hx-boost="true">
+                        <a href="/become-seller" uk-scroll class="flex items-center gap-2 bg-slate-100 rounded-lg px-5 py-3 text-black dark:bg-slate-900 dark:text-white">
+                            <ion-icon name="eye-outline" class="hidden"></ion-icon>
+                            Devenir vendeur
+                        </a>
+                    </div>
+
                     <a class="flex items-center gap-3 rounded-lg px-5 py-2.5 bg-black text-white shadow dark:bg-white/90 dark:text-black" target="_blank" href="#">
                         Consulter les boutiques
                     </a>
@@ -167,7 +170,7 @@
             <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <div class="card-list-media md:w-[320px] md:h-[180px] sm:aspect-[3/1.2] aspect-[3/1.5]">
                     <img src="{{Storage::url($product->image)}}" alt="">
-                
+
                     <span class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs z-10"> 12:21</span>
                 </div>
                 <div class="p-5">

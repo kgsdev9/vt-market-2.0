@@ -27,3 +27,4 @@ Route::get('/become-seller', [VendeurRegisterController::class, 'registerSeller'
 Route::get('/sellers-testing-products', [VendeurRegisterController::class, 'index'])->name('gestion-testing');
 
 Route::get('/catalogue-product',[HomeController::class, 'catalogueProduct']);
+

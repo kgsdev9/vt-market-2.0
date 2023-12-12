@@ -11,7 +11,6 @@
 
     <title>@yield('title')</title>
     <meta name="description" content="Bienvenue sur vtp-market-place">
-
     <!-- css files kgs informatique -->
     <link rel="stylesheet" href="{{asset('assets/css/tailwind.css')}}">
     <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
@@ -72,25 +71,13 @@
 
     <footer>
         <div class="max-w-5xl mx-auto mb-6 mt-32 pt-6 border-t dark:border-slate-800">
-
             <div class="flex justify-center text-sm dark:to-white">
-
-               une conception de  <a class="ml-2 hover:underline hover:text-blue-500" href="https://foxthemes.net/">KGS INFORMATIQUE</a>
-
+               Une conception de  <a class="ml-2 hover:underline hover:text-blue-500" href="#">KGS INFORMATIQUE</a>
             </div>
-
         </div>
     </footer>
-
-
-    <!-- Uikit js you can use cdn  https://getuikit.com/docs/installation  or fine the latest  https://getuikit.com/docs/installation -->
-    <script src="assets/js/uikit.min.js"></script>
-    <script src="assets/js/script.js"></script>
-
-    <!-- Ion icon -->
+    <script src="{{asset('assets/js/uikit.min.js')}}"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-
-
     @livewireScripts
 </body>
 </html>
