@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\VendeurRegisterController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\VendeurRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,5 @@ Route::get('/catalogue-product',[HomeController::class, 'catalogueProduct']);
 //authentification routes
 
 Route::get('/fr/auth', [RegisterController::class, 'register']);
+
+Route::get('/annuaire-categories', CategoryController::class)->name('categorie.index');
