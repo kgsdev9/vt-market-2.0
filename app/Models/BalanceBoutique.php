@@ -5,18 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RelaisPoint extends Model
+class BalanceBoutique extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'country_at',
-        'country_end',
-        'city_at',
-        'city_end',
-        'price'
+        'balance',
+        'boutique_id'
     ];
 
-    
+    public function boutique() {
+        return $this->belongsTo(Boutique::class, 'boutique_id');
+    }
 
 }

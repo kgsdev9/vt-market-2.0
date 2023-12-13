@@ -11,18 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vendeurs', function (Blueprint $table) {
+        Schema::create('vendeur_registers', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
             $table->string('prenom');
-            $table->string('slug')->unique();
+            $table->string('email');
             $table->string('photo');
-            $table->string('telephone');
-            $table->string('whatsapp')->nullable();
-            $table->string('piece_identite');
-            $table->string('slug')->unique();
-            $table->unsignedBigInteger('city_id')->nullable();
-            $table->unsignedBigInteger('country_id')->nullable();
+            $table->string('city');
+            $table->string('country');
+            $table->string('adresse');
+            $table->string('image');
+            $table->string('piece');
+            $table->string('boutique_name');
+            $table->string('adresse_boutique');
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('vendeurs');
+        Schema::dropIfExists('vendeur_registers');
     }
 };

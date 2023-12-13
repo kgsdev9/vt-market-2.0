@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('marques', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug')->nullable();
+            $table->string('nom');
+            $table->string('slug')->unique();
             $table->string('image')->nullable();
-            $table->boolean('popular')->default('0');
-            $table->boolean('publish_at')->default('0');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('marques');
     }
 };

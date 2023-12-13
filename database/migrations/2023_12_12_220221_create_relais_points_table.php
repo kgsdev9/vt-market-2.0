@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('relais_points', function (Blueprint $table) {
             $table->id();
+            $table->string('country_at');
+            $table->string('country_end');
+            $table->string('city_at');
+            $table->string('city_end');
+            $table->integer('price');
             $table->timestamps();
         });
     }

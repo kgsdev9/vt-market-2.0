@@ -171,7 +171,7 @@
                 <div class="card-list-media md:w-[320px] md:h-[180px] sm:aspect-[3/1.2] aspect-[3/1.5]">
                     <img src="{{Storage::url($product->image)}}" alt="">
 
-                    <span class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs z-10"> 12:21</span>
+                    <span class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs z-10">{{$product->prix}} €</span>
                 </div>
                 <div class="p-5">
                     <a href="#">

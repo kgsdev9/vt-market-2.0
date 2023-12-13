@@ -14,11 +14,15 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug')->unique();
             $table->string('description');
             $table->string('prix');
-            $table->string('image');
+            $table->boolean('publish_at')->default('0');
+            $table->integer('view')->default('1');
             $table->unsignedBigInteger('category_id')->nullable();
+            $table->unsignedBigInteger('marque_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreign('marque_id')->references('id')->on('marques')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }

@@ -5,28 +5,30 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Vendeur extends Model
+class Boutique extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'nom',
-        'prenom',
-        'email',
-        'telephone',
-        'whatsapp',
+        'slug',
+        'description',
+        'image_couverture',
         'city_id',
-        'photo',
         'country_id',
-        'piece_identite '
+        'adresse',
+        'vendeur_id'
     ];
 
     public function city() {
         return $this->belongsTo(City::class, 'city_id');
     }
 
+    public function vendeur() {
+        return $this->belongsTo(Vendeur::class, 'vendeur_id');
+    }
+
     public function country() {
         return $this->belongsTo(Country::class, 'country_id');
     }
-
 }

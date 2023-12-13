@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('marques', function (Blueprint $table) {
+        Schema::create('balance_boutiques', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug')->nullable();
-            $table->string('image')->nullable();
+            $table->integer('balance');
+            $table->unsignedBigInteger('boutique_id')->nullable();
+            $table->foreign('boutique_id')->references('id')->on('boutiques')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('marques');
+        Schema::dropIfExists('balance_boutiques');
     }
 };

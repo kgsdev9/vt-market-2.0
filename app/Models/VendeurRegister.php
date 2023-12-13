@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class VendeurRegister extends Model
 {
     use HasFactory;
+
+    protected $fillable =  [
+        'nom',
+        'prenom',
+        'email',
+        'photo',
+        'city',
+        'country',
+        'piece',
+        'boutique_name',
+        'adresse_boutique',
+        'image',
+        'adresse'
+    ];
 }

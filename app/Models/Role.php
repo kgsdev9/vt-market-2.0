@@ -5,18 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RelaisPoint extends Model
+class Role extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'country_at',
-        'country_end',
-        'city_at',
-        'city_end',
-        'price'
+        'nom'
     ];
 
-    
-
+    public function users()  {
+        return $this->hasMany(User::class);
+    }
 }

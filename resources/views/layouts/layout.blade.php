@@ -35,7 +35,7 @@
                         <ion-icon name="menu" class="group-aria-expanded:inline hidden"></ion-icon>
                         <ion-icon name="close" class="group-aria-expanded:hidden"></ion-icon>
                     </button>
-                  <h1 class="lg:py-1.5 py-2.5 px-3 duration-500 hover:text-black">VTP MARKET </h1>
+                  <h1 class="lg:py-1.5 py-2.5 px-3 duration-500 hover:text-black">VTP </h1>
                 </div>
 
                 <div id="header-nav" class="max-md:hidden max-md:bg-white max-md:p-5 max-md:fixed max-md:top-0 max-md:shadow-md max-md:left-0 max-md:pt-14 max-md:w-full max-md:z-10">
@@ -43,10 +43,8 @@
                         <a class="lg:py-1.5 py-2.5 px-3 duration-500 hover:text-black" href="#home">Accueil</a>
                         <a class="lg:py-1.5 py-2.5 px-3 duration-500 hover:text-black" href="#features">Boutique</a>
                         <a class="lg:py-1.5 py-2.5 px-3 duration-500 hover:text-black" href="#demos">Catalogue Produit</a>
-                        <a class="lg:py-1.5 py-2.5 px-3 duration-500 hover:text-black" href="#faq"></a>
-                        <div hx-boost="true">
-                            <a href="/catalogue-product">Blog</a>
-                        </div>
+                        <a class="lg:py-1.5 py-2.5 px-3 duration-500 hover:text-black" href="#faq">Deals  Voyage</a>
+
                     </nav>
                 </div>
 

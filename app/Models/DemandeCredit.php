@@ -5,18 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RelaisPoint extends Model
+class DemandeCredit extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'country_at',
-        'country_end',
-        'city_at',
-        'city_end',
-        'price'
+        'vendeur_id',
+        'message',
     ];
 
-    
-
+    public function vendeur() {
+        return $this->belongsTo(Vendeur::class, 'vendeur_id');
+    }
 }

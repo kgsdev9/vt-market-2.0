@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('souscriptions', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('plan_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('code_transaction')->unique();
+            $table->foreign('plan_id')->references('id')->on('plans')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }
