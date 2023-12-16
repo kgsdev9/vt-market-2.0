@@ -22,7 +22,7 @@ class ProductManagement extends Component
 
     public $images = [];
 
-    
+
 
 
     public function render()
@@ -59,6 +59,7 @@ class ProductManagement extends Component
             'category_id' => 1,
             'prix' => rand(100, 340),
             'view' =>1,
+            'boutique_id'=> 1
         ]);
 
         foreach($this->images as $image) {
@@ -68,7 +69,7 @@ class ProductManagement extends Component
             ]);
         }
 
-      dd('eenreiss');
+        return redirect()->route('product.management');
 
     }
 

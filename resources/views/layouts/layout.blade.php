@@ -23,7 +23,7 @@
     </style>
     @livewireStyles
 </head>
-<body class="bg-white dark:bg-slate-950 overflow-x-hidden">
+<body  >
 
     <!-- header -->
     <header class="lg:py-4 lg:px-6 py-3 px-4 border-b border-slate-200/60 dark:border-slate-600/40 bg-white/95 backdrop-blur-xl z-40 dark:bg-slate-900/80 uk-animation-slide-top-small" uk-sticky>

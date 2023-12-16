@@ -38,7 +38,7 @@
             <div class="card">
                 <a href="timeline-event.html">
                     <div class="card-media h-32">
-                        <img src="assets/images/events/img-3.jpg" alt="">
+                        <img src="{{asset('boutique.jpg')}}" alt="">
                         <div class="card-overly"></div>
                     </div>
                 </a>
