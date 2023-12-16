@@ -90,15 +90,17 @@
                 <ul class="uk-slider-items grid-small" style="transform: translate3d(-183.391px, 0px, 0px);">
                     @foreach ($categoris as $category)
                     <li class="md:w-1/5 sm:w-1/3 w-1/2" tabindex="-1">
+                        <div hx-boost="true">
 
-                        <a href="#">
-                            <div class="relative rounded-lg overflow-hidden">
-                                <img src="{{asset('categories/2.jpg')}}" alt="" class="h-300 w-full object-cover">
-                                <div class="w-full bottom-0 absolute left-0 bg-gradient-to-t from-black/60 pt-10">
-                                    <div class="text-white p-5 text-lg leading-3"> {{$category->nom}} </div>
+                            <a href="category-product/{{$category->slug}}">
+                                <div class="relative rounded-lg overflow-hidden">
+                                    <img src="{{Storage::url($category->image)}}" alt="" class="h-300 w-full object-cover">
+                                    <div class="w-full bottom-0 absolute left-0 bg-gradient-to-t from-black/60 pt-10">
+                                        <div class="text-white p-5 text-lg leading-3"> {{$category->nom}} </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </li>
                     @endforeach
 
@@ -165,12 +167,12 @@
     <div class="max-w-5xl mx-auto md:space-y-32 max-md:p-8 relative lg:mt-36">
         <div class="grid sm:grid-cols-3 grid-cols-2 gap-3 uk-active" uk-scrollspy="target: > div; cls: uk-animation-scale-up; delay: 100 ;repeat: true">
             @foreach ($catalogueProduct as $product)
-
-
             <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <div class="card-list-media md:w-[320px] md:h-[180px] sm:aspect-[3/1.2] aspect-[3/1.5]">
-                    <img src="{{Storage::url($product->image)}}" alt="">
 
+                    @foreach ($product->images as  $image)
+                    <img src="{{Storage::url($image->image)}}" alt="">
+                    @endforeach
                     <span class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs z-10">{{$product->prix}} €</span>
                 </div>
                 <div class="p-5">

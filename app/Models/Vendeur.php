@@ -21,6 +21,10 @@ class Vendeur extends Model
         'piece_identite '
     ];
 
+    public function boutique() {
+        return $this->hasOne(Boutique::class);
+    }
+
     public function city() {
         return $this->belongsTo(City::class, 'city_id');
     }

@@ -1,1 +1,363 @@
-function getChartColorsArray(r){if(null!==document.getElementById(r)){var o=document.getElementById(r).getAttribute("data-colors");return(o=JSON.parse(o)).map(function(r){var o=r.replace(" ","");if(-1==o.indexOf("--"))return o;var a=getComputedStyle(document.documentElement).getPropertyValue(o);return a||void 0})}}var islinechart=document.getElementById("lineChart");lineChartColor=getChartColorsArray("lineChart"),islinechart.setAttribute("width",islinechart.parentElement.offsetWidth);var lineChart=new Chart(islinechart,{type:"line",data:{labels:["January","February","March","April","May","June","July","August","September","October"],datasets:[{label:"Sales Analytics",fill:!0,lineTension:.5,backgroundColor:lineChartColor[0],borderColor:lineChartColor[1],borderCapStyle:"butt",borderDash:[],borderDashOffset:0,borderJoinStyle:"miter",pointBorderColor:lineChartColor[1],pointBackgroundColor:"#fff",pointBorderWidth:1,pointHoverRadius:5,pointHoverBackgroundColor:lineChartColor[1],pointHoverBorderColor:"#fff",pointHoverBorderWidth:2,pointRadius:1,pointHitRadius:10,data:[65,59,80,81,56,55,40,55,30,80]},{label:"Monthly Earnings",fill:!0,lineTension:.5,backgroundColor:lineChartColor[2],borderColor:lineChartColor[3],borderCapStyle:"butt",borderDash:[],borderDashOffset:0,borderJoinStyle:"miter",pointBorderColor:lineChartColor[3],pointBackgroundColor:"#fff",pointBorderWidth:1,pointHoverRadius:5,pointHoverBackgroundColor:lineChartColor[3],pointHoverBorderColor:"#eef0f2",pointHoverBorderWidth:2,pointRadius:1,pointHitRadius:10,data:[80,23,56,65,23,35,85,25,92,36]}]}}),isbarchart=document.getElementById("bar");barChartColor=getChartColorsArray("bar"),isbarchart.setAttribute("width",isbarchart.parentElement.offsetWidth);var barChart=new Chart(isbarchart,{type:"bar",data:{labels:["January","February","March","April","May","June","July"],datasets:[{label:"Sales Analytics",backgroundColor:barChartColor[0],borderColor:barChartColor[0],borderWidth:1,hoverBackgroundColor:barChartColor[1],hoverBorderColor:barChartColor[1],data:[65,59,81,45,56,80,50,20]}]}}),ispiechart=document.getElementById("pieChart");pieChartColors=getChartColorsArray("pieChart");var pieChart=new Chart(ispiechart,{type:"pie",data:{labels:["Desktops","Tablets"],datasets:[{data:[300,180],backgroundColor:pieChartColors,hoverBackgroundColor:pieChartColors,hoverBorderColor:"#fff"}]}}),isdoughnutchart=document.getElementById("doughnut");doughnutChartColors=getChartColorsArray("doughnut");var lineChart=new Chart(isdoughnutchart,{type:"doughnut",data:{labels:["Desktops","Tablets"],datasets:[{data:[300,210],backgroundColor:doughnutChartColors,hoverBackgroundColor:doughnutChartColors,hoverBorderColor:"#fff"}]}}),ispolarAreachart=document.getElementById("polarArea");polarAreaChartColors=getChartColorsArray("polarArea");var lineChart=new Chart(ispolarAreachart,{type:"polarArea",data:{labels:["Series 1","Series 2","Series 3","Series 4"],datasets:[{data:[11,16,7,18],backgroundColor:polarAreaChartColors,label:"My dataset",hoverBorderColor:"#fff"}]}}),isradarchart=document.getElementById("radar");radarChartColors=getChartColorsArray("radar");lineChart=new Chart(isradarchart,{type:"radar",data:{labels:["Eating","Drinking","Sleeping","Designing","Coding","Cycling","Running"],datasets:[{label:"Desktops",backgroundColor:radarChartColors[0],borderColor:radarChartColors[1],pointBackgroundColor:radarChartColors[1],pointBorderColor:"#fff",pointHoverBackgroundColor:"#fff",pointHoverBorderColor:radarChartColors[1],data:[65,59,90,81,56,55,40]},{label:"Tablets",backgroundColor:radarChartColors[2],borderColor:radarChartColors[3],pointBackgroundColor:radarChartColors[3],pointBorderColor:"#fff",pointHoverBackgroundColor:"#fff",pointHoverBorderColor:radarChartColors[3],data:[28,48,40,19,96,27,100]}]}});
+/**
+ * Theme: Robotech - Tailwind Admin Dashboard Template
+ * Author: Mannatthemes
+ * File: Chartjs Js
+ */
+
+
+ var ctx1 = document.getElementById('lineChart').getContext('2d');
+ var myChart = new Chart(ctx1, {
+     type: 'line',
+     data: {
+        labels: ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+         datasets: [{
+             label: 'Monthly Report',
+             data: [12, 19, 13, 9, 12, 11, 12, 19, 13, 9, 12, 11],
+             backgroundColor: [
+                'rgba(11, 81, 183, 0.1)',
+             ],
+             borderColor: [
+                 'rgba(11, 81, 183, 1)',
+             ],
+             borderWidth: 2,
+             borderDash	:[3],
+             borderJoinStyle: "round",
+             borderCapStyle: "round",
+             pointBorderColor: 'rgba(11, 81, 183, 1)',
+             pointRadius: 3,
+             pointBorderWidth: 1,
+             tension: 0.3,
+         },
+         {
+            label: 'Monthly Report',
+            data: [8, 12, 15, 11, 8, 14, 16, 13, 10, 7, 19, 16],
+            backgroundColor: [
+               'rgba(28, 202, 184, 0.1)',
+            ],
+            borderColor: [
+                'rgba(28, 202, 184, 1)',
+            ],
+            borderWidth: 2,
+            borderDash	:[0],
+            borderJoinStyle: "round",
+            borderCapStyle: "round",
+            pointBorderColor: 'rgba(28, 202, 184, 1)',
+            pointRadius: 3,
+            pointBorderWidth: 1,
+            tension: 0.3,
+        }]
+     },
+     options: {
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                labels: {                   
+                    color: '#7c8ea7',
+                }
+            }
+        }  ,
+        scales: {            
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    // Include a dollar sign in the ticks
+                    callback: function(value, index, values) {
+                        return '$' + value;
+                    },
+                    color: '#7c8ea7',
+                },               
+                grid: {
+                    drawBorder: 'border',
+                    color: 'rgba(132, 145, 183, 0.15)',
+                    borderDash: [3],
+                    borderColor: 'rgba(132, 145, 183, 0.15)',
+                } ,
+                beginAtZero: true,
+            },
+            x: {   
+              ticks: {
+                color: '#7c8ea7',
+              },            
+                grid: {
+                    display: false,
+                    color: 'rgba(132, 145, 183, 0.09)',
+                    borderDash: [3],
+                    borderColor: 'rgba(132, 145, 183, 0.09)',
+                }    
+            }            
+         },
+         
+     }
+ });
+
+ var ctx2 = document.getElementById('bar').getContext('2d');
+ var myChart = new Chart(ctx2, {
+     type: 'bar',
+     data: {
+         labels: ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+         datasets: [{
+             label: 'Monthly Report',
+             data: [12, 19, 13, 9, 12, 11, 12, 19, 13, 9, 12, 11],
+             borderRadius: 100,
+             borderSkipped: false,
+             backgroundColor: '#367de4',
+             borderColor: '#367de4',
+             borderWidth: 1,
+             indexAxis: 'x',
+             barThickness: 15,
+             grouped: true,
+             maxBarThickness: 9,  
+             barPercentage: 50
+         },
+         {
+            label: 'Monthly Report',
+            data: [8, 12, 15, 11, 8, 14, 16, 13, 10, 7, 19, 16],
+            borderRadius: 100,
+            borderSkipped: false,
+            backgroundColor: '#1ccab8',
+            borderColor: '#1ccab8',
+            borderWidth: 1,
+            indexAxis: 'x',
+            barThickness: 15,
+            grouped: true,
+            maxBarThickness: 9,            
+        }]
+     },
+    
+     options: {
+        maintainAspectRatio: false,
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+            labels: {                   
+                color: '#7c8ea7',
+            }
+          },
+          title: {
+            display: false,
+            text: 'Chart.js Bar Chart'
+          }
+        },
+        scales: {            
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    // Include a dollar sign in the ticks
+                    callback: function(value, index, values) {
+                        return '$' + value;
+                    },
+                    color: '#7c8ea7',
+                },               
+                grid: {
+                    drawBorder: 'border',
+                    color: 'rgba(132, 145, 183, 0.15)',
+                    borderDash: [3],
+                    borderColor: 'rgba(132, 145, 183, 0.15)',
+                } ,
+                beginAtZero: true,
+            },
+            x: {   
+              ticks: {
+                color: '#7c8ea7',
+              },            
+                grid: {
+                    display: false,
+                    color: 'rgba(132, 145, 183, 0.09)',
+                    borderDash: [3],
+                    borderColor: 'rgba(132, 145, 183, 0.09)',
+                }    
+            }            
+         },
+    },
+ });
+
+
+ 
+ var ctx3 = document.getElementById('doughnut').getContext('2d');
+ var myChart = new Chart(ctx3, {
+     type: 'doughnut',
+     data: {
+        labels: [            
+            "Desktops",
+            "Laptop",
+            "Tablets",        
+            "Mobiles",],
+         datasets: [{
+             data: [80, 50, 100, 121],
+             backgroundColor: [
+                "#4d79f6",
+                "#ff5da0",
+                "#e0e7fd",
+                "#4ac7ec",
+            ],
+            cutout: 100,
+            radius: 100,
+            borderColor: "transparent",
+            borderRadius: 0,
+            hoverBackgroundColor: [
+                "#4d79f6",
+                "#ff5da0",
+                "#e0e7fd",
+                "#4ac7ec",
+            ],             
+         },]
+     },
+     options: {
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                labels: {                   
+                    color: '#7c8ea7',
+                }
+            }
+        }         
+     }
+ });
+
+ 
+ var ctx4 = document.getElementById('polarArea').getContext('2d');
+ var myChart = new Chart(ctx4, {
+     type: 'polarArea',
+     data: {
+        labels: [            
+        "Desktops",
+        "Laptop",
+        "Tablets",        
+        "Mobiles",],
+         datasets: [{
+             data: [80, 50, 100, 121],
+             backgroundColor: [
+                "#4d79f6",
+                "#ff5da0",
+                "#e0e7fd",
+                "#4ac7ec",
+            ],
+            borderColor: "transparent",
+            hoverBackgroundColor: [
+                "#4d79f6",
+                "#ff5da0",
+                "#e0e7fd",
+                "#4ac7ec",
+            ],             
+         },]
+     },
+     options: {
+        maintainAspectRatio: false,  
+        plugins: {
+            legend: {
+                labels: {                   
+                    color: '#7c8ea7',
+                }
+            }
+        }       
+     }
+ });
+
+
+ var ctx5 = document.getElementById('pie').getContext('2d');
+ var myChart = new Chart(ctx5, {
+     type: 'pie',
+     data: {
+        labels: [            
+            "Desktops",
+            "Laptop",
+            "Tablets",        
+            "Mobiles",],
+         datasets: [{
+             data: [80, 50, 100, 121],
+             backgroundColor: [
+                "#4d79f6",
+                "#ff5da0",
+                "#e0e7fd",
+                "#4ac7ec",
+            ],
+            cutout: 0,
+            radius: 100,
+            borderColor: "transparent",
+            borderRadius: 0,
+            hoverBackgroundColor: [
+                "#4d79f6",
+                "#ff5da0",
+                "#e0e7fd",
+                "#4ac7ec",
+            ],             
+         },]
+     },
+     options: {
+        maintainAspectRatio: false,         
+        plugins: {
+            legend: {
+                labels: {                   
+                    color: '#7c8ea7',
+                }
+            }
+        }
+     }
+ });
+
+ var ctx6 = document.getElementById('radar').getContext('2d');
+ var myChart = new Chart(ctx6, {
+     type: 'radar',
+     data: {
+        labels: ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+         datasets: [{
+             label: 'Monthly Report',
+             data: [12, 19, 13, 9, 12, 11, 12, 19, 13, 9, 12, 11],
+             backgroundColor: [
+                'rgba(11, 81, 183, 0.1)',
+             ],
+             borderColor: [
+                 'rgba(11, 81, 183, 1)',
+             ],
+             borderWidth: 2,
+             borderDash	:[3],
+             borderJoinStyle: "round",
+             borderCapStyle: "round",
+             pointBorderColor: 'rgba(11, 81, 183, 1)',
+             pointRadius: 3,
+             pointBorderWidth: 1,
+             tension: 0.3,
+             fill: true,
+             hitRadius: 5,
+         },
+         {
+            label: 'Monthly Report',
+            data: [8, 12, 15, 11, 8, 14, 16, 13, 10, 7, 19, 16],
+            backgroundColor: [
+               'rgba(28, 202, 184, 0.1)',
+            ],
+            borderColor: [
+                'rgba(28, 202, 184, 1)',
+            ],
+            borderWidth: 2,
+            borderDash	:[0],
+            borderJoinStyle: "round",
+            borderCapStyle: "round",
+            pointBorderColor: 'rgba(28, 202, 184, 1)',
+            pointRadius: 3,
+            pointBorderWidth: 1,
+            tension: 0.3,
+        }]
+     },
+     options: {
+        maintainAspectRatio: false, 
+        scales: { 
+            r: {
+                angleLines: {
+                    display: true,
+                    color: 'rgba(132, 145, 183, 0.15)',
+                    borderDash: [2]
+                },
+            } ,     
+         }, 
+        plugins: {
+            legend: {
+                labels: {                   
+                    color: '#7c8ea7',
+                }
+            }
+        }
+     }
+ });
+

@@ -7,11 +7,13 @@ use Illuminate\Support\Str;
 use Livewire\WithPagination;
 use App\Models\Category as ModelCategory;
 use Illuminate\Support\Facades\Storage;
+use Livewire\WithFileUploads;
 
 class Category extends Component
 {
 
     use WithPagination;
+    use WithFileUploads;
     protected $paginationTheme = 'bootstrap';
 
     public $dynamique_paginate =10 ;
@@ -19,7 +21,6 @@ class Category extends Component
     public $image;
     public $new_image ;
     public $slug;
-    public $total_produit;
     public $nom ;
     public $mode = false ;
     public $marqueId;
@@ -35,7 +36,6 @@ class Category extends Component
         return [
             'nom' => 'required|min:6|max:255|unique:marques,nom,' . $this->marqueId,
             'image' => 'required',
-            'total_produit' => 'required|integer',
             'new_image' => 'nullable'
         ];
     }
@@ -55,25 +55,21 @@ class Category extends Component
     public function create()
 
     {
-       $data = $this->validate() ;
-       $image=$this->image->store('public/marques');
-       $data=ModelCategory::create([
-            'nom' => $data['nom'],
+       $this->validate() ;
+       $image=$this->image->store('public/categories');
+        ModelCategory::create([
+            'nom' => $this->nom,
             'slug' => $this->prepareBeforeValidation($this->nom),
             'image' => $image,
-            'total_produit' => $data['total_produit'],
-            'total_restant_produit' => $data['total_produit'],
         ]);
 
         $this->reset();
         $this->mode = false;
-
     }
 
 
     public function edit($id) {
         $ressourceMarque = ModelCategory::find($id);
-        dd($ressourceMarque);
         $this->nom = $ressourceMarque->nom;
         $this->image = $ressourceMarque->image;
         $this->marqueId = $ressourceMarque->id;
@@ -89,18 +85,15 @@ class Category extends Component
         if($this->new_image) {
             $photo = $marque->image;
             Storage::delete($marque->image);
-            $photo = $this->new_image->store('public/marques');
+            $photo = $this->new_image->store('public/categories');
         } else {
 
             $photo = $marque->image;
 
         }
-
             $marque->update([
                 'nom' => $this->nom,
                 'image' => $photo,
-                'total_produit' => $this->total_produit,
-                'total_restant_produit' => $this->total_produit,
             ]);
             $this->marqueId='';
 
@@ -130,7 +123,7 @@ class Category extends Component
     public function render()
     {
         return view('livewire.category', [
-            'allCategories'=> ModelCategory::paginate(10)
+            'allCategories'=> ModelCategory::where('nom', 'LIKE', '%'.$this->search. '%')->paginate(10)
         ]);
     }
 }

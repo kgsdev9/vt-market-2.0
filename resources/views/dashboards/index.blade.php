@@ -1,1009 +1,110 @@
 @extends('dashboards.master')
+
 @section('master')
-   <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
-            <div class="main-content">
-                <div class="page-content">
-                    <div class="container-fluid">
 
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <div class="card">
-                                    <div class="card-body pb-0">
-                                        <div class="d-flex align-items-start">
-                                            <div class="flex-grow-1">
-                                                <h5 class="card-title mb-4">Overview</h5>
-                                            </div>
-                                            <div class="flex-shrink-0">
-                                                <div class="dropdown">
-                                                    <a class="dropdown-toggle text-reset" href="#" data-bs-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        <span class="fw-semibold">Sort By:</span>
-                                                        <span class="text-muted">Yearly<i class="mdi mdi-chevron-down ms-1"></i></span>
-                                                    </a>
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#">Yearly</a>
-                                                        <a class="dropdown-item" href="#">Monthly</a>
-                                                        <a class="dropdown-item" href="#">Weekly</a>
-                                                        <a class="dropdown-item" href="#">Today</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div id="overview" data-colors='["#e6ecf9", "#e6ecf9", "#e6ecf9","#e6ecf9", "#e6ecf9", "#e6ecf9","#e6ecf9","#e6ecf9","#e6ecf9","#1f58c7","#1f58c7", "#1f58c7"]' class="apex-chart"></div>
-                                        </div>
-                                    </div>
+<div class="ltr:flex flex-1 rtl:flex-row-reverse">
+    <div class="page-wrapper relative ltr:ml-auto rtl:mr-auto rtl:ml-0 w-[calc(100%-260px)] px-4 pt-[64px] duration-300">
+        <div class="xl:w-full">
+            <div class="flex flex-wrap">
+                <div class="flex items-center py-4 w-full">
+                    <div class="w-full">
+                        <div class="">
+                            <div class="flex flex-wrap justify-between">
+                                <div class="items-center ">
+                                    <h1 class="font-medium text-3xl block dark:text-slate-100">Bienvenue </h1>
+                                    <ol class="list-reset flex text-sm">
+                                        <li><a href="#" class="text-gray-500 dark:text-slate-400">Accueil</a></li>
+                                        <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
+                                        <li class="text-gray-500 dark:text-slate-400">Dashboard</li>
+                                        <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
+                                        <li class="text-primary-500 hover:text-primary-600 dark:text-primary-400">Vendeur</li>
+                                    </ol>
                                 </div>
-                            </div>
-
-                            <div class="col-xl-6">
-                                <div class="row">
-                                    <div class="col-xl-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="avatar">
-                                                            <div class="avatar-title rounded bg-soft-primary">
-                                                                <i class="bx bx-check-shield font-size-24 mb-0 text-primary"></i>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h6 class="mb-0 font-size-15">Total Sales</h6>
-                                                        </div>
-
-                                                        <div class="flex-shrink-0">
-                                                            <div class="dropdown">
-                                                                <a class="dropdown-toggle" href="#"
-                                                                    data-bs-toggle="dropdown" aria-haspopup="true"
-                                                                    aria-expanded="false">
-                                                                    <i class="bx bx-dots-horizontal text-muted font-size-22"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-end">
-                                                                    <a class="dropdown-item" href="#">Yearly</a>
-                                                                    <a class="dropdown-item" href="#">Monthly</a>
-                                                                    <a class="dropdown-item" href="#">Weekly</a>
-                                                                    <a class="dropdown-item" href="#">Today</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div>
-                                                        <h4 class="mt-4 pt-1 mb-0 font-size-22">$34,123.20 <span class="text-success fw-medium font-size-13 align-middle"> <i class="mdi mdi-arrow-up"></i> 8.34% </span> </h4>
-                                                        <div class="d-flex mt-1 align-items-end overflow-hidden">
-                                                            <div class="flex-grow-1">
-                                                                <p class="text-muted mb-0 text-truncate">Total Sales World Wide</p>
-                                                            </div>
-                                                            <div class="flex-shrink-0">
-                                                                <div id="mini-1" data-colors='["#1f58c7"]' class="apex-charts"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="avatar">
-                                                            <div class="avatar-title rounded bg-soft-primary">
-                                                                <i class="bx bx-cart-alt font-size-24 mb-0 text-primary"></i>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h6 class="mb-0 font-size-15">Total Orders</h6>
-                                                        </div>
-
-                                                        <div class="flex-shrink-0">
-                                                            <div class="dropdown">
-                                                                <a class="dropdown-toggle" href="#"
-                                                                    data-bs-toggle="dropdown" aria-haspopup="true"
-                                                                    aria-expanded="false">
-                                                                    <i class="bx bx-dots-horizontal text-muted font-size-22"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-end">
-                                                                    <a class="dropdown-item" href="#">Yearly</a>
-                                                                    <a class="dropdown-item" href="#">Monthly</a>
-                                                                    <a class="dropdown-item" href="#">Weekly</a>
-                                                                    <a class="dropdown-item" href="#">Today</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div>
-                                                        <h4 class="mt-4 pt-1 mb-0 font-size-22">63,234.20 <span class="text-danger fw-medium font-size-13 align-middle"> <i class="mdi mdi-arrow-down"></i> 3.68% </span> </h4>
-                                                        <div class="d-flex mt-1 align-items-end overflow-hidden">
-                                                            <div class="flex-grow-1">
-                                                                <p class="text-muted mb-0 text-truncate">Total Orders World Wide</p>
-                                                            </div>
-                                                            <div class="flex-shrink-0">
-                                                                <div id="mini-2" data-colors='["#1f58c7"]' class="apex-charts"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xl-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="avatar">
-                                                            <div class="avatar-title rounded bg-soft-primary">
-                                                                <i class="bx bx-package font-size-24 mb-0 text-primary"></i>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h6 class="mb-0 font-size-15">Today Visitor</h6>
-                                                        </div>
-
-                                                        <div class="flex-shrink-0">
-                                                            <div class="dropdown">
-                                                                <a class="dropdown-toggle" href="#"
-                                                                    data-bs-toggle="dropdown" aria-haspopup="true"
-                                                                    aria-expanded="false">
-                                                                    <i class="bx bx-dots-horizontal text-muted font-size-22"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-end">
-                                                                    <a class="dropdown-item" href="#">Yearly</a>
-                                                                    <a class="dropdown-item" href="#">Monthly</a>
-                                                                    <a class="dropdown-item" href="#">Weekly</a>
-                                                                    <a class="dropdown-item" href="#">Today</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div>
-                                                        <h4 class="mt-4 pt-1 mb-0 font-size-22">425,34.45 <span class="text-danger fw-medium font-size-13 align-middle"> <i class="mdi mdi-arrow-down"></i> 2.64% </span> </h4>
-                                                        <div class="d-flex mt-1 align-items-end overflow-hidden">
-                                                            <div class="flex-grow-1">
-                                                                <p class="text-muted mb-0 text-truncate">Total Visitor World Wide</p>
-                                                            </div>
-                                                            <div class="flex-shrink-0">
-                                                                <div id="mini-3" data-colors='["#1f58c7"]' class="apex-charts"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="avatar">
-                                                            <div class="avatar-title rounded bg-soft-primary">
-                                                                <i class="bx bx-rocket font-size-24 mb-0 text-primary"></i>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="flex-grow-1 ms-3">
-                                                            <h6 class="mb-0 font-size-15">Total Expense</h6>
-                                                        </div>
-
-                                                        <div class="flex-shrink-0">
-                                                            <div class="dropdown">
-                                                                <a class="dropdown-toggle" href="#"
-                                                                    data-bs-toggle="dropdown" aria-haspopup="true"
-                                                                    aria-expanded="false">
-                                                                    <i class="bx bx-dots-horizontal text-muted font-size-22"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-end">
-                                                                    <a class="dropdown-item" href="#">Yearly</a>
-                                                                    <a class="dropdown-item" href="#">Monthly</a>
-                                                                    <a class="dropdown-item" href="#">Weekly</a>
-                                                                    <a class="dropdown-item" href="#">Today</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div>
-                                                        <h4 class="mt-4 pt-1 mb-0 font-size-22">6,482.46 <span class="text-success fw-medium font-size-13 align-middle"> <i class="mdi mdi-arrow-down"></i> 5.79% </span> </h4>
-                                                        <div class="d-flex mt-1 align-items-end overflow-hidden">
-                                                            <div class="flex-grow-1">
-                                                                <p class="text-muted mb-0 text-truncate">Total Expense World Wide</p>
-                                                            </div>
-                                                            <div class="flex-shrink-0">
-                                                                <div id="mini-4" data-colors='["#1f58c7"]' class="apex-charts"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="flex items-center">
+                                    <div class="today-date leading-5 mt-2 lg:mt-0 form-input w-auto rounded-md border inline-block border-primary-500/60 dark:border-primary-500/60 text-primary-500 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-primary-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700">
+                                        <input type="text" class="dash_date border-0 focus:border-0 focus:outline-none" readonly  required="">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                         <!-- end row -->
-
-                        <div class="row">
-                            <div class="col-xxl-8">
-                                <div class="row">
-                                    <div class="col-xl-7">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="d-flex align-items-start mb-2">
-                                                    <div class="flex-grow-1">
-                                                        <h5 class="card-title">Popular Products</h5>
-                                                    </div>
-                                                    <div class="flex-shrink-0">
-                                                        <div class="dropdown">
-                                                            <a class="dropdown-toggle text-muted" href="#"
-                                                                data-bs-toggle="dropdown" aria-haspopup="true"
-                                                                aria-expanded="false">
-                                                                Today<i class="mdi mdi-chevron-down ms-1"></i>
-                                                            </a>
-
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <a class="dropdown-item" href="#">Yearly</a>
-                                                                <a class="dropdown-item" href="#">Monthly</a>
-                                                                <a class="dropdown-item" href="#">Weekly</a>
-                                                                <a class="dropdown-item" href="#">Today</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row align-items-center">
-                                                    <div class="col-md-5">
-                                                    <div class="popular-product-img p-2">
-                                                        <img src="admin/images/product/img.png" alt="">
-                                                    </div>
-                                                    </div>
-                                                    <div class="col-md-7">
-                                                        <span class="badge badge-soft-primary font-size-10 text-uppercase ls-05"> Popular Item</span>
-                                                        <h5 class="mt-2 font-size-16"><a href="#" class="text-dark">Home & Office Chair Blue</a></h5>
-                                                        <p class="text-muted">But who has any right to find chooses enjoy.</p>
-
-                                                        <div class="row g-0 mt-3 pt-1 align-items-end">
-                                                            <div class="col-4">
-                                                                <div class="mt-1">
-                                                                    <h4 class="font-size-16">800</h4>
-                                                                    <p class="text-muted mb-1">Total Selling</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <div class="mt-1">
-                                                                    <h4 class="font-size-16">250</h4>
-                                                                    <p class="text-muted mb-1">Total Stock</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <div class="mt-1">
-                                                                    <a href="#" class="btn btn-primary btn-sm mb-1">Buy
-                                                                        Now</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="mx-n4 px-4" data-simplebar style="max-height: 205px;">
-                                                    <div class="popular-product-box rounded my-2">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0">
-                                                                <div class="avatar-md">
-                                                                    <div class="product-img avatar-title img-thumbnail bg-soft-primary border-0">
-                                                                        <img src="admin/images/product/img-1.png" class="img-fluid" alt="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="flex-grow-1 ms-3 overflow-hidden">
-                                                                <h5 class="mb-1 text-truncate"><a href="#" class="font-size-15 text-dark">Wood Chair dark Brown</a></h5>
-                                                                <p class="text-muted fw-semibold mb-0 text-truncate">$230.00</p>
-                                                            </div>
-                                                            <div class="flex-shrink-0 text-end ms-3">
-                                                                <h5 class="mb-1"><a href="#" class="font-size-15 text-dark">$62300.00</a></h5>
-                                                                <p class="text-muted fw-semibold mb-0">562 Sales</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="popular-product-box rounded my-2">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0">
-                                                                <div class="avatar-md">
-                                                                        <div class="product-img avatar-title img-thumbnail bg-soft-success border-0">
-                                                                            <img src="admin/images/product/img-8.png" class="img-fluid" alt="">
-                                                                        </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="flex-grow-1 ms-3 overflow-hidden">
-                                                                <h5 class="mb-1 text-truncate"><a href="#" class="font-size-15 text-dark">Home & Office Chair Crime</a></h5>
-                                                                <p class="text-muted fw-semibold mb-0 text-truncate">$190.00</p>
-                                                            </div>
-                                                            <div class="flex-shrink-0 text-end ms-3">
-                                                                <h5 class="mb-1"><a href="#" class="font-size-15 text-dark">$25698.00</a></h5>
-                                                                <p class="text-muted fw-semibold mb-0">856 Sales</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="popular-product-box rounded my-2">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0">
-                                                                <div class="avatar-md">
-                                                                    <div class="product-img avatar-title img-thumbnail bg-soft-danger border-0">
-                                                                        <img src="admin/images/product/img-3.png" class="img-fluid" alt="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="flex-grow-1 ms-3 overflow-hidden">
-                                                                <h5 class="mb-1 text-truncate"><a href="#" class="font-size-15 text-dark">Office Chair Blue</a></h5>
-                                                                <p class="text-muted fw-semibold mb-0 text-truncate">$420.00</p>
-                                                            </div>
-                                                            <div class="flex-shrink-0 text-end ms-3">
-                                                                <h5 class="mb-1"><a href="#" class="font-size-15 text-dark">$64351.00</a></h5>
-                                                                <p class="text-muted fw-semibold mb-0">524 Sales</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="popular-product-box rounded my-2">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0">
-                                                                <div class="avatar-md">
-                                                                    <div class="product-img avatar-title img-thumbnail bg-soft-success border-0">
-                                                                        <img src="admin/images/product/img-4.png" class="img-fluid" alt="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="flex-grow-1 ms-3 overflow-hidden">
-                                                                <h5 class="mb-1 text-truncate"><a href="#" class="font-size-15 text-dark">Home & Office Chair Green</a></h5>
-                                                                <p class="text-muted fw-semibold mb-0 text-truncate">$230.00</p>
-                                                            </div>
-                                                            <div class="flex-shrink-0 text-end ms-3">
-                                                                <h5 class="mb-1"><a href="#" class="font-size-15 text-dark">$96485.00</a></h5>
-                                                                <p class="text-muted fw-semibold mb-0">634 Sales</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="popular-product-box rounded my-2">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0">
-                                                                <div class="avatar-md">
-                                                                    <div class="product-img avatar-title img-thumbnail bg-soft-danger border-0" >
-                                                                        <img src="admin/images/product/img-5.png" class="img-fluid" alt="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="flex-grow-1 ms-3 overflow-hidden">
-                                                                <h5 class="mb-1 text-truncate"><a href="#" class="font-size-15 text-dark">Wood Chair dark Brown</a></h5>
-                                                                <p class="text-muted fw-semibold mb-0 text-truncate">$230.00</p>
-                                                            </div>
-                                                            <div class="flex-shrink-0 text-end ms-3">
-                                                                <h5 class="mb-1"><a href="#" class="font-size-15 text-dark">$56230.00</a></h5>
-                                                                <p class="text-muted fw-semibold mb-0">964 Sales</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-5">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="d-flex align-items-start mb-2">
-                                                    <div class="flex-grow-1">
-                                                        <h5 class="card-title">Loyal Customers</h5>
-                                                    </div>
-                                                    <div class="flex-shrink-0">
-                                                        <div class="dropdown">
-                                                            <a class="dropdown-toggle text-muted" href="#"
-                                                                data-bs-toggle="dropdown" aria-haspopup="true"
-                                                                aria-expanded="false">
-                                                                <i class="bx bx-dots-horizontal font-size-22"></i>
-                                                            </a>
-
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <a class="dropdown-item" href="#">Yearly</a>
-                                                                <a class="dropdown-item" href="#">Monthly</a>
-                                                                <a class="dropdown-item" href="#">Weekly</a>
-                                                                <a class="dropdown-item" href="#">Today</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="mx-n4 px-4" data-simplebar style="max-height: 421px;">
-                                                    <div class="border-bottom loyal-customers-box pt-2">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="admin/images/users/avatar-4.jpg" class="rounded-circle avatar img-thumbnail" alt="">
-                                                            <div class="flex-grow-1 ms-3 overflow-hidden">
-                                                                <h5 class="font-size-15 mb-1 text-truncate">Michelle Bernard</h5>
-                                                                <p class="text-muted text-truncate mb-0">Michelle@gmail.com</p>
-                                                            </div>
-                                                            <div class="flex-shrink-0">
-                                                                <h5 class="font-size-14 mb-0 text-truncate w-xs bg-light p-2 rounded text-center">
-                                                                    4.7 <i class="bx bxs-star font-size-14 text-primary ms-1"></i></h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="border-bottom loyal-customers-box">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="admin/images/users/avatar-5.jpg" class="rounded-circle avatar img-thumbnail" alt="">
-                                                            <div class="flex-grow-1 ms-3 overflow-hidden">
-                                                                <h5 class="font-size-15 mb-1 text-truncate">David Grajeda</h5>
-                                                                <p class="text-muted text-truncate mb-0">David@gmail.com</p>
-                                                            </div>
-                                                            <div class="flex-shrink-0">
-                                                                <h5 class="font-size-14 mb-0 text-truncate w-xs bg-light p-2 rounded text-center">
-                                                                    3.4 <i class="bx bxs-star font-size-14 text-primary ms-1"></i></h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="border-bottom loyal-customers-box">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="admin/images/users/avatar-6.jpg" class="rounded-circle avatar img-thumbnail" alt="">
-                                                            <div class="flex-grow-1 ms-3 overflow-hidden">
-                                                                <h5 class="font-size-15 mb-1 text-truncate">Charles Roman</h5>
-                                                                <p class="text-muted text-truncate mb-0">Charles@gmail.com</p>
-                                                            </div>
-                                                            <div class="flex-shrink-0 text-end">
-                                                                <h5 class="font-size-14 mb-0 text-truncate w-xs bg-light p-2 rounded text-center">
-                                                                    4.9 <i class="bx bxs-star font-size-14 text-primary ms-1"></i></h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="border-bottom loyal-customers-box">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="admin/images/users/avatar-7.jpg" class="rounded-circle avatar img-thumbnail" alt="">
-                                                            <div class="flex-grow-1 ms-3 overflow-hidden">
-                                                                <h5 class="font-size-15 mb-1 text-truncate">David Reynolds</h5>
-                                                                <p class="text-muted text-truncate mb-0">David@gmail.com</p>
-                                                            </div>
-                                                            <div class="flex-shrink-0 text-end">
-                                                                <h5 class="font-size-14 mb-0 text-truncate w-xs bg-light p-2 rounded text-center">
-                                                                    3.5 <i class="bx bxs-star font-size-14 text-primary ms-1"></i></h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="border-bottom loyal-customers-box">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="admin/images/users/avatar-8.jpg" class="rounded-circle avatar img-thumbnail" alt="">
-                                                            <div class="flex-grow-1 ms-3 overflow-hidden">
-                                                                <h5 class="font-size-15 mb-1 text-truncate">Marion Munroe</h5>
-                                                                <p class="text-muted text-truncate mb-0">Marion@gmail.com</p>
-                                                            </div>
-                                                            <div class="flex-shrink-0 text-end">
-                                                                <h5 class="font-size-14 mb-0 text-truncate w-xs bg-light p-2 rounded text-center">
-                                                                    2.3 <i class="bx bxs-star font-size-14 text-primary ms-1"></i></h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="py-3 loyal-customers-box">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="admin/images/users/avatar-5.jpg" class="rounded-circle avatar img-thumbnail" alt="">
-                                                            <div class="flex-grow-1 ms-3 overflow-hidden">
-                                                                <h5 class="font-size-15 mb-1 text-truncate">Christina Emerson</h5>
-                                                                <p class="text-muted text-truncate mb-0">Christina@gmail.com</p>
-                                                            </div>
-                                                            <div class="flex-shrink-0 text-end">
-                                                                <h5 class="font-size-14 mb-0 text-truncate w-xs bg-light p-2 rounded text-center">
-                                                                    4.1 <i class="bx bxs-star font-size-14 text-primary ms-1"></i></h5>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xxl-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-start">
-                                            <div class="flex-grow-1 overflow-hidden">
-                                                <h5 class="card-title mb-4 text-truncate">Top Selling Categories</h5>
-                                            </div>
-                                            <div class="flex-shrink-0 ms-2">
-                                                <div class="dropdown">
-                                                    <a class="dropdown-toggle text-reset" href="#" data-bs-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        <span class="fw-semibold">Sort By:</span> <span
-                                                            class="text-muted">Weekly<i
-                                                                class="mdi mdi-chevron-down ms-1"></i></span>
-                                                    </a>
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#">Yearly</a>
-                                                        <a class="dropdown-item" href="#">Monthly</a>
-                                                        <a class="dropdown-item" href="#">Weekly</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div id="saleing-categories" data-colors='["#1f58c7", "#4976cf","#6a92e1", "#e6ecf9"]' class="apex-charts" dir="ltr"></div>
-
-                                        <div class="row mt-3 pt-1">
-                                            <div class="col-md-6">
-                                                <div class="px-2 mt-2">
-                                                    <div class="d-flex align-items-center mt-sm-0 mt-2">
-                                                        <i class="mdi mdi-circle font-size-10 text-primary"></i>
-                                                        <div class="flex-grow-1 ms-2 overflow-hidden">
-                                                            <p class="font-size-15 mb-1 text-truncate">Men Fashion</p>
-                                                        </div>
-                                                        <div class="flex-shrink-0 ms-2">
-                                                            <span class="fw-bold">34.3%</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="d-flex align-items-center mt-2">
-                                                        <i class="mdi mdi-circle font-size-10 text-success"></i>
-                                                        <div class="flex-grow-1 ms-2 overflow-hidden">
-                                                            <p class="font-size-15 mb-0 text-truncate">Women Clothing</p>
-                                                        </div>
-                                                        <div class="flex-shrink-0 ms-2">
-                                                            <span class="fw-bold">25.7%</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <div class="px-2 mt-2">
-                                                    <div class="d-flex align-items-center mt-sm-0 mt-2">
-                                                        <i class="mdi mdi-circle font-size-10 text-info"></i>
-                                                        <div class="flex-grow-1 ms-2 overflow-hidden">
-                                                            <p class="font-size-15 mb-1 text-truncate">Beauty Products</p>
-                                                        </div>
-                                                        <div class="flex-shrink-0 ms-2">
-                                                            <span class="fw-bold">18.6%</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="d-flex align-items-center mt-2">
-                                                        <i class="mdi mdi-circle font-size-10 text-secondary"></i>
-                                                        <div class="flex-grow-1 ms-2 overflow-hidden">
-                                                            <p class="font-size-15 mb-0 text-truncate">Others Products</p>
-                                                        </div>
-                                                        <div class="flex-shrink-0 ms-2">
-                                                            <span class="fw-bold">21.4%</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end row -->
-
-                        <div class="row">
-                                <div class="col-xl-7">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="d-flex align-items-start mb-3">
-                                                <div class="flex-grow-1">
-                                                    <h5 class="card-title">Sales Revenue</h5>
-                                                </div>
-                                                <div class="flex-shrink-0">
-                                                    <div class="dropdown">
-                                                        <a class="dropdown-toggle text-reset" href="#" data-bs-toggle="dropdown"
-                                                            aria-haspopup="true" aria-expanded="false">
-                                                            <span class="fw-semibold">Year:</span> <span
-                                                                class="text-muted">2021<i
-                                                                    class="mdi mdi-chevron-down ms-1"></i></span>
-                                                        </a>
-                                                        <div class="dropdown-menu dropdown-menu-end">
-                                                            <a class="dropdown-item" href="#">2019</a>
-                                                            <a class="dropdown-item" href="#">2020</a>
-                                                            <a class="dropdown-item" href="#">2021</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row align-items-center">
-                                                <div class="col-xxl-7">
-                                                    <div class="py-3">
-                                                        <div id="world-map-markers" style="height: 300px"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-xl-5">
-                                                    <div class="table-responsive">
-                                                            <table class="table table-centered align-middle table-nowrap mb-0">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th style="width: 500px;">Countries</th>
-                                                                        <th>Orders</th>
-                                                                        <th>Earnings</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="d-flex align-items-center">
-                                                                                <img src="admin/images/flags/us.jpg" class="rounded" alt="user-image" height="18">
-                                                                                <div class="flex-grow-1 ms-3">
-                                                                                    <p class="mb-0 text-truncate">United States</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>46k</td>
-                                                                        <td>$6,524.30</td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="d-flex align-items-center">
-                                                                                <img src="admin/images/flags/italy.jpg" class="rounded" alt="user-image" height="18">
-                                                                                <div class="flex-grow-1 ms-3">
-                                                                                    <p class="mb-0 text-truncate">Italy</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>86k</td>
-                                                                        <td>$6,985.94</td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="d-flex align-items-center">
-                                                                                <img src="admin/images/flags/spain.jpg" class="rounded" alt="user-image" height="18">
-                                                                                <div class="flex-grow-1 ms-3">
-                                                                                    <p class="mb-0 text-truncate">Spain</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>86k</td>
-                                                                        <td>$5,685.47</td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="d-flex align-items-center">
-                                                                                <img src="admin/images/flags/french.jpg" class="rounded" alt="user-image" height="18">
-                                                                                <div class="flex-grow-1 ms-3">
-                                                                                    <p class="mb-0 text-truncate">French</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>56k</td>
-                                                                        <td>$5,645.45</td>
-                                                                    </tr>
-
-                                                                </tbody>
-                                                            </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-xxl-5">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="d-flex flex-wrap align-items-center mb-3">
-                                                <h5 class="card-title me-2">Invoice List</h5>
-                                                <div class="ms-auto">
-                                                    <div class="dropdown">
-                                                        <a class="dropdown-toggle text-reset" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="text-muted font-size-12">Sort By: </span> <span class="fw-medium"> Weekly<i class="mdi mdi-chevron-down ms-1"></i></span>
-                                                        </a>
-                                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                                                            <a class="dropdown-item" href="#">Monthly</a>
-                                                            <a class="dropdown-item" href="#">Yearly</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="mx-n4 px-4" data-simplebar style="max-height: 332px;">
-                                                <div class="table-responsive">
-                                                    <table class="table table-striped table-centered align-middle table-nowrap mb-0 table-check">
-                                                        <thead>
-                                                            <tr>
-                                                                <th style="width: 30px;">
-                                                                    <div class="form-check font-size-16">
-                                                                        <input type="checkbox" name="check" class="form-check-input" id="checkAll">
-                                                                        <label class="form-check-label" for="checkAll"></label>
-                                                                    </div>
-                                                                </th>
-                                                                <th>#Invoice</th>
-                                                                <th style="width: 190px;">User Name</th>
-                                                                <th>Date</th>
-                                                                <th>Status</th>
-                                                                <th>Action</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-check font-size-16">
-                                                                        <input type="checkbox" class="form-check-input">
-                                                                        <label class="form-check-label"></label>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="fw-semibold">#562354</td>
-                                                                <td style="width: 190px;">
-                                                                    <div class="d-flex align-items-center">
-                                                                        <img class="rounded-circle avatar-sm" src="admin/images/users/avatar-1.jpg" alt="">
-                                                                        <div class="flex-grow-1 ms-3">
-                                                                            Neal Matthews
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                10 Dec
-                                                                </td>
-                                                                <td>
-                                                                    <div class="badge badge-soft-success font-size-12">Paid</div>
-                                                                </td>
-
-                                                                <td>
-                                                                    <div class="dropdown">
-                                                                        <a class="text-muted dropdown-toggle font-size-18" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                                            <i class="mdi mdi-dots-horizontal"></i>
-                                                                        </a>
-
-                                                                        <div class="dropdown-menu dropdown-menu-end">
-                                                                            <a class="dropdown-item" href="#">Edit</a>
-                                                                            <a class="dropdown-item" href="#">Print</a>
-                                                                            <a class="dropdown-item" href="#">Delete</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-check font-size-16">
-                                                                        <input type="checkbox" class="form-check-input">
-                                                                        <label class="form-check-label"></label>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="fw-semibold">#485625</td>
-                                                                <td style="width: 190px;">
-                                                                    <div class="d-flex align-items-center">
-                                                                        <img class="rounded-circle avatar-sm" src="admin/images/users/avatar-2.jpg" alt="">
-                                                                        <div class="flex-grow-1 ms-3">
-                                                                            Connie Franco
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                10 Dec
-                                                                </td>
-                                                                <td>
-                                                                    <div class="badge badge-soft-success font-size-12">Paid</div>
-                                                                </td>
-
-                                                                <td>
-                                                                    <div class="dropdown">
-                                                                        <a class="text-muted dropdown-toggle font-size-18" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                                            <i class="mdi mdi-dots-horizontal"></i>
-                                                                        </a>
-
-                                                                        <div class="dropdown-menu dropdown-menu-end">
-                                                                            <a class="dropdown-item" href="#">Edit</a>
-                                                                            <a class="dropdown-item" href="#">Print</a>
-                                                                            <a class="dropdown-item" href="#">Delete</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-check font-size-16">
-                                                                        <input type="checkbox" class="form-check-input">
-                                                                        <label class="form-check-label"></label>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="fw-semibold">#321458</td>
-                                                                <td style="width: 190px;">
-                                                                    <div class="d-flex align-items-center">
-                                                                        <img class="rounded-circle avatar-sm" src="admin/images/users/avatar-3.jpg" alt="">
-                                                                        <div class="flex-grow-1 ms-3">
-                                                                            Adella Perez
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                12 Dec
-                                                                </td>
-                                                                <td>
-                                                                    <div class="badge badge-soft-danger font-size-12">Unpaid</div>
-                                                                </td>
-
-                                                                <td>
-                                                                    <div class="dropdown">
-                                                                        <a class="text-muted dropdown-toggle font-size-18" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                                            <i class="mdi mdi-dots-horizontal"></i>
-                                                                        </a>
-
-                                                                        <div class="dropdown-menu dropdown-menu-end">
-                                                                            <a class="dropdown-item" href="#">Edit</a>
-                                                                            <a class="dropdown-item" href="#">Print</a>
-                                                                            <a class="dropdown-item" href="#">Delete</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-check font-size-16">
-                                                                        <input type="checkbox" class="form-check-input">
-                                                                        <label class="form-check-label"></label>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="fw-semibold">#214569</td>
-                                                                <td style="width: 190px;">
-                                                                    <div class="d-flex align-items-center">
-                                                                        <img class="rounded-circle avatar-sm" src="admin/images/users/avatar-4.jpg" alt="">
-                                                                        <div class="flex-grow-1 ms-3">
-                                                                            Theresa Mayers
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                21 Dec
-                                                                </td>
-                                                                <td>
-                                                                    <div class="badge badge-soft-success font-size-12">Paid</div>
-                                                                </td>
-
-                                                                <td>
-                                                                    <div class="dropdown">
-                                                                        <a class="text-muted dropdown-toggle font-size-18" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                                            <i class="mdi mdi-dots-horizontal"></i>
-                                                                        </a>
-
-                                                                        <div class="dropdown-menu dropdown-menu-end">
-                                                                            <a class="dropdown-item" href="#">Edit</a>
-                                                                            <a class="dropdown-item" href="#">Print</a>
-                                                                            <a class="dropdown-item" href="#">Delete</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-check font-size-16">
-                                                                        <input type="checkbox" class="form-check-input">
-                                                                        <label class="form-check-label"></label>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="fw-semibold">#565423</td>
-                                                                <td style="width: 190px;">
-                                                                    <div class="d-flex align-items-center">
-                                                                        <img class="rounded-circle avatar-sm" src="admin/images/users/avatar-5.jpg" alt="">
-                                                                        <div class="flex-grow-1 ms-3">
-                                                                            Oliver Gonzales
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                25 Dec
-                                                                </td>
-                                                                <td>
-                                                                    <div class="badge badge-soft-danger font-size-12">Unpaid</div>
-                                                                </td>
-
-                                                                <td>
-                                                                    <div class="dropdown">
-                                                                        <a class="text-muted dropdown-toggle font-size-18" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                                            <i class="mdi mdi-dots-horizontal"></i>
-                                                                        </a>
-
-                                                                        <div class="dropdown-menu dropdown-menu-end">
-                                                                            <a class="dropdown-item" href="#">Edit</a>
-                                                                            <a class="dropdown-item" href="#">Print</a>
-                                                                            <a class="dropdown-item" href="#">Delete</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-check font-size-16">
-                                                                        <input type="checkbox" class="form-check-input">
-                                                                        <label class="form-check-label"></label>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="fw-semibold">#565423</td>
-                                                                <td style="width: 190px;">
-                                                                    <div class="d-flex align-items-center">
-                                                                        <img class="rounded-circle avatar-sm" src="admin/images/users/avatar-6.jpg" alt="">
-                                                                        <div class="flex-grow-1 ms-3">
-                                                                            Willie Verner
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                30 Dec
-                                                                </td>
-                                                                <td>
-                                                                    <div class="badge badge-soft-success font-size-12">Paid</div>
-                                                                </td>
-
-                                                                <td>
-                                                                    <div class="dropdown">
-                                                                        <a class="text-muted dropdown-toggle font-size-18" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                                            <i class="mdi mdi-dots-horizontal"></i>
-                                                                        </a>
-
-                                                                        <div class="dropdown-menu dropdown-menu-end">
-                                                                            <a class="dropdown-item" href="#">Edit</a>
-                                                                            <a class="dropdown-item" href="#">Print</a>
-                                                                            <a class="dropdown-item" href="#">Delete</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
-                        <!-- end row -->
-
                     </div>
-                    <!-- container-fluid -->
                 </div>
-                <!-- End Page-content -->
+            </div>
+        </div><!--end container-->
 
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <script>document.write(new Date().getFullYear())</script> © VTP MARKET .
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="text-sm-end d-none d-sm-block">
-                                    Propolsé par  <i class="mdi mdi-heart text-danger"></i> by <a href="#" target="_blank" class="text-reset">KGS INFORMATIQUE </a>
+        <div class="xl:w-full  min-h-[calc(100vh-138px)] relative pb-14">
+            <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
+                <div class="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-3 xl:col-span-3">
+                    <div class="bg-white shadow-sm dark:shadow-slate-700/10 dark:bg-gray-900  rounded-md w-full relative mb-4">
+                        <div class="flex-auto p-4">
+                            <div class="flex justify-between xl:gap-x-2 items-cente">
+                                <div class="self-center">
+                                    <p class="text-gray-800 font-semibold dark:text-slate-400 text-lg uppercase">Total Produit</p>
+                                    <h3 class="my-4 font-semibold text-[30px] dark:text-slate-200">14253</h3>
+                                </div>
+                                <div class="self-center">
+                                    <i data-lucide="shopping-cart" class=" h-16 w-16 stroke-primary-500/30"></i>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-            <!-- end main content-->
 
+                        </div><!--end card-body-->
+
+                    </div> <!--end inner-grid-->
+                </div><!--end col-->
+                <div class="col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-3 xl:col-span-3">
+                    <div class="bg-white shadow-sm dark:shadow-slate-700/10 dark:bg-gray-900  rounded-md w-full relative mb-4">
+                        <div class="flex-auto p-4">
+                            <div class="flex justify-between xl:gap-x-2 items-cente">
+                                <div class="self-center">
+                                    <p class="text-gray-800 font-semibold dark:text-slate-400 uppercase">Credit de ma boutique</p>
+                                    <h3 class="my-4 font-semibold text-[30px] dark:text-slate-200">532</h3>
+                                </div>
+                                <div class="self-center">
+                                    <i data-lucide="users" class=" h-16 w-16 stroke-green/30"></i>
+                                </div>
+                            </div>
+                            <p class="truncate text-slate-400"><span class="text-red-500"><i class="mdi mdi-trending-down"></i></span>Vos fonds de votre boutique</p>
+                        </div><!--end card-body-->
+
+                    </div> <!--end inner-grid-->
+                </div><!--end col-->
+                <div class="col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-3 xl:col-span-3">
+                    <div class="bg-white shadow-sm dark:shadow-slate-700/10 dark:bg-gray-900  rounded-md w-full relative mb-4">
+                        <div class="flex-auto p-4">
+                            <div class="flex justify-between xl:gap-x-2 items-cente">
+                                <div class="self-center">
+                                    <p class="text-gray-800 font-semibold dark:text-slate-400 uppercase">Top coupons</p>
+                                    <h3 class="my-4 font-semibold text-[30px] dark:text-slate-200">78%</h3>
+                                </div>
+                                <div class="self-center">
+                                    <i data-lucide="gem" class=" h-16 w-16 stroke-yellow-500/30"></i>
+                                </div>
+                            </div>
+                            <p class="truncate text-slate-400"><span class="text-green-500"><i class="mdi mdi-trending-up"></i>1.5%</span> Weekly Avg.Sessions</p>
+                        </div><!--end card-body-->
+
+                    </div> <!--end inner-grid-->
+                </div>
+                <div class="col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-3 xl:col-span-3">
+                    <div class="bg-white shadow-sm dark:shadow-slate-700/10 dark:bg-gray-900  rounded-md w-full relative mb-4">
+                        <div class="flex-auto p-4">
+                            <div class="flex justify-between xl:gap-x-2 items-cente">
+                                <div class="self-center">
+                                    <p class="text-gray-300 font-semibold dark:text-slate-400 uppercase">Mes revenus</p>
+                                    <h3 class="my-4 font-semibold text-[30px] text-slate-200">$85000</h3>
+                                </div>
+                                <div class="self-center">
+                                    <i data-lucide="dollar-sign" class=" h-16 w-16 stroke-[#2ecee1]/30"></i>
+                                </div>
+                            </div>
+                            <p class="truncate text-slate-400"><span class="text-green-500"><i class="mdi mdi-trending-up"></i>10.5%</span> Completions Weekly</p>
+                        </div><!--end card-body-->
+
+                    </div> <!--end inner-grid-->
+                </div><!--end col-->
+            </div> <!--end grid-->
+
+        </div><!--end container-->
+    </div>
+</div>
 @endsection

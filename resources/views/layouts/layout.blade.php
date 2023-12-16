@@ -40,10 +40,10 @@
 
                 <div id="header-nav" class="max-md:hidden max-md:bg-white max-md:p-5 max-md:fixed max-md:top-0 max-md:shadow-md max-md:left-0 max-md:pt-14 max-md:w-full max-md:z-10">
                     <nav class="flex lg:items-center font-medium text-slate-500 dark:text-white/70 lg:gap-1 max-md:border-t max-md:pt-2 max-md:flex max-md:flex-col" uk-scrollspy-nav="closest: a ; scroll: true">
-                        <a class="lg:py-1.5 py-2.5 px-3 duration-500 hover:text-black" href="#home">Accueil</a>
-                        <a class="lg:py-1.5 py-2.5 px-3 duration-500 hover:text-black" href="#features">Boutique</a>
-                        <a class="lg:py-1.5 py-2.5 px-3 duration-500 hover:text-black" href="#demos">Catalogue Produit</a>
-                        <a class="lg:py-1.5 py-2.5 px-3 duration-500 hover:text-black" href="#faq">Deals  Voyage</a>
+                        <a class="lg:py-1.5 py-2.5 px-3 duration-500 hover:text-black" href="/" hx-boost="true">Accueil</a>
+                        <a class="lg:py-1.5 py-2.5 px-3 duration-500 hover:text-black" href="/all/stores/vtp" hx-boost="true">Boutique</a>
+                        <a class="lg:py-1.5 py-2.5 px-3 duration-500 hover:text-black" href="#">Catalogue Produit</a>
+                        <a class="lg:py-1.5 py-2.5 px-3 duration-500 hover:text-black" href="#">Deals  Voyage</a>
 
                     </nav>
                 </div>
@@ -81,6 +81,8 @@
         </div>
     </footer>
     <script src="{{asset('assets/js/uikit.min.js')}}"></script>
+    <script src="{{asset('assets/js/script.js')}}"> </script>
+    <script src="{{asset('assets/js/simplebar.js')}}"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     @livewireScripts
 </body>

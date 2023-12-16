@@ -16,11 +16,17 @@ class Product extends Model
         'category_id',
         'marque_id',
         'publish_at',
-        'view'
+        'view',
+        'slug',
+        'boutique_id'
     ];
 
     public function category() {
         return $this-> belongsTo(Category::class, 'category_id');
+    }
+
+    public function boutique() {
+        return $this-> belongsTo(Boutique::class, 'boutique_id');
     }
 
     public function images() {
@@ -34,5 +40,6 @@ class Product extends Model
     public function commandes() {
         return $this->belongsToMany(Commande::class, 'order_product', 'product_id','commande_id');
     }
+
 
 }

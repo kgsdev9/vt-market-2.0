@@ -18,8 +18,14 @@ class VendeurFactory extends Factory
     {
         return [
             'nom' => fake()->name(),
-            'prenom' => fake()->name(),
-            'email_verified_at' => now(),
+            'slug' => fake()->name(),
+            'prenom' => fake()->firstName(),
+            'telephone' => fake()->phoneNumber(),
+            'whatsapp' => fake()->phoneNumber(),
+            'city_id' => rand(1, 10),
+            'country_id' => rand(1, 10),
+            'photo' => fake()->image(),
+            'piece_identite' => fake()->image(),
         ];
     }
 }

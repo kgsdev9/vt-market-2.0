@@ -1,1 +1,137 @@
-document.addEventListener("DOMContentLoaded",function(){var l=new bootstrap.Modal(document.getElementById("event-modal"),{keyboard:!1});document.getElementById("event-modal");var t=document.getElementById("modal-title"),n=document.getElementById("form-event"),d=null,i=null,s=document.getElementsByClassName("needs-validation"),d=null,i=null,e=new Date,a=e.getDate(),o=e.getMonth(),r=e.getFullYear();new FullCalendar.Draggable(document.getElementById("external-events"),{itemSelector:".external-event",eventData:function(e){return{title:e.innerText,start:new Date,className:e.getAttribute("data-class")}}});var c=[{title:"All Day Event",start:new Date(r,o,1),className:"bg-primary"},{title:"Long Event",start:new Date(r,o,a-5),end:new Date(r,o,a-2),className:"bg-warning"},{id:999,title:"Repeating Event",start:new Date(r,o,a-3,16,0),allDay:!1,className:"bg-info"},{id:999,title:"Repeating Event",start:new Date(r,o,a+4,16,0),allDay:!1,className:"bg-primary"},{title:"Meeting",start:new Date(r,o,a,10,30),allDay:!1,className:"bg-success"},{title:"Lunch",start:new Date(r,o,a,12,0),end:new Date(r,o,a,14,0),allDay:!1,className:"bg-danger"},{title:"Birthday Party",start:new Date(r,o,a+1,19,0),end:new Date(r,o,a+1,22,30),allDay:!1,className:"bg-success"},{title:"Click for Google",start:new Date(r,o,28),end:new Date(r,o,29),url:"http://google.com/",className:"bg-dark"}],m=(document.getElementById("external-events"),document.getElementById("calendar"));function u(e){l.show(),n.classList.remove("was-validated"),n.reset(),d=null,t.innerText="Add Event",i=e}function v(){return 768<=window.innerWidth&&window.innerWidth<1200?"timeGridWeek":window.innerWidth<=768?"listMonth":"dayGridMonth"}var y=new FullCalendar.Calendar(m,{timeZone:"local",editable:!0,droppable:!0,selectable:!0,initialView:v(),themeSystem:"bootstrap",headerToolbar:{left:"prev,next today",center:"title",right:"dayGridMonth,timeGridWeek,timeGridDay,listMonth"},windowResize:function(e){var t=v();y.changeView(t)},eventDidMount:function(e){var t;"done"===e.event.extendedProps.status&&(e.el.style.backgroundColor="red",(t=e.el.getElementsByClassName("fc-event-dot")[0])&&(t.style.backgroundColor="white"))},eventClick:function(e){document.getElementById("btn-delete-event").style.display="block",l.show(),n.reset(),document.getElementById("event-title").value[0]="",d=e.event,document.getElementById("event-title").value=d.title,document.getElementById("event-category").value=d.classNames[0],i=null,t.innerText="Edit Event",i=null},dateClick:function(e){document.getElementById("btn-delete-event").style.display="none",u(e)},events:c});y.render(),n.addEventListener("submit",function(e){e.preventDefault();var t,n=document.getElementById("event-title").value,a=document.getElementById("event-category").value;!1===s[0].checkValidity()?s[0].classList.add("was-validated"):(d?(d.setProp("title",n),d.setProp("classNames",[a])):(t={title:n,start:i.date,allDay:i.allDay,className:a},y.addEvent(t)),l.hide())}),document.getElementById("btn-delete-event").addEventListener("click",function(e){d&&(d.remove(),(d=null).hide())}),document.getElementById("btn-new-event").addEventListener("click",function(e){document.getElementById("btn-delete-event").style.display="none",u({date:new Date,allDay:!0})})});
+/**
+ * Theme: Robotech - Tailwind Admin Dashboard Template
+ * Author: Mannatthemes
+ * Calendar Js
+ */
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendar');
+
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay'
+    },
+    initialDate: '2023-01-12',
+    navLinks: true, // can click day/week names to navigate views
+    selectable: true,
+    selectMirror: true,
+    select: function(arg) {
+      var title = prompt('Event Title:');
+      if (title) {
+        calendar.addEvent({
+          title: title,
+          start: arg.start,
+          end: arg.end,
+          allDay: arg.allDay
+        })
+      }
+      calendar.unselect()
+    },
+    eventClick: function(arg) {
+      if (confirm('Are you sure you want to delete this event?')) {
+        arg.event.remove()
+      }
+    },
+    editable: true,
+    dayMaxEvents: true, // allow "more" link when too many events
+    events: [
+      {
+        title: 'All Day Event',
+        start: '2023-01-01',
+        textColor: 'rgb(0,0,255)',
+        backgroundColor:'rgba(0,0,255,0.15)',
+        borderColor: 'transparent',
+      },
+      {
+        title: 'Long Event',
+        start: '2023-01-07',
+        end: '2023-01-10',
+        textColor: 'rgb(255,165,0)',
+        backgroundColor:'rgba(255,165,0,0.15)',
+        borderColor: 'transparent',
+      },
+      {
+        groupId: 999,
+        title: 'Repeating Event',
+        start: '2023-01-09T16:00:00',
+        textColor: 'rgb(0,0,255)',
+        backgroundColor:'rgba(0,0,255,0.15)',
+        borderColor: 'transparent',
+      },
+      {
+        groupId: 999,
+        title: 'Repeating Event',
+        start: '2023-01-16T16:00:00',
+        textColor: 'rgb(0,0,255)',
+        backgroundColor:'rgba(0,0,255,0.15)',
+        borderColor: 'transparent',
+      },
+      {
+        title: 'Conference',
+        start: '2023-01-11',
+        end: '2023-01-13',
+        textColor: 'rgb(60,179,113)',
+        backgroundColor:'rgba(60,179,113,0.15)',
+        borderColor: 'transparent',
+      },
+      {
+        title: 'Meeting',
+        start: '2023-01-12T10:30:00',
+        end: '2023-01-12T12:30:00',
+        textColor: 'rgb(255,165,0)',
+        backgroundColor:'rgba(255,165,0,0.15)',
+        borderColor: 'transparent',
+      },
+      {
+        title: 'Lunch',
+        start: '2023-01-12T12:00:00',
+        textColor: 'rgb(0,0,255)',
+        backgroundColor:'rgba(0,0,255,0.15)',
+        borderColor: 'transparent',
+      },
+      {
+        title: 'Meeting',
+        start: '2023-01-12T14:30:00',
+        textColor: 'rgb(60,179,113)',
+        backgroundColor:'rgba(60,179,113,0.15)',
+        borderColor: 'transparent',
+      },
+      {
+        title: 'Happy Hour',
+        start: '2023-01-12T17:30:00',
+        textColor: 'rgb(0,0,255)',
+        backgroundColor:'rgba(0,0,255,0.15)',
+        borderColor: 'transparent',
+      },
+      {
+        title: 'Dinner',
+        start: '2023-01-12T20:00:00',
+        textColor: 'rgb(0,0,255)',
+        backgroundColor:'rgba(0,0,255,0.15)',
+        borderColor: 'transparent',
+      },
+      {
+        title: 'Birthday Party',
+        start: '2023-01-13T07:00:00',
+        textColor: 'rgb(60,179,113)',
+        backgroundColor:'rgba(60,179,113,0.15)',
+        borderColor: 'transparent',
+      },
+      {
+        title: 'Click for Google',
+        url: 'http://google.com/',
+        start: '2023-01-28',
+        textColor: 'rgb(60,179,113)',
+        backgroundColor:'rgba(60,179,113,0.15)',
+        borderColor: 'transparent',
+      }
+    ]
+  });
+
+  calendar.render();
+});
+
+

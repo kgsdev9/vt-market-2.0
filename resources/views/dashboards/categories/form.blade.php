@@ -16,15 +16,10 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="formrow-email-input">Total produit  @error('total_produit') <span class="text-danger">{{ $message }}</span> @enderror </label>
-                                            <input type="number" wire:model="total_produit" class="form-control" placeholder="342" >
-                                        </div>
-                                    </div>
+
 
                                     @if(!$image)
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label" >Image   @error('image') <span class="text-danger">{{ $message }}</span> @enderror</label>
 
@@ -32,7 +27,7 @@
                                         </div>
                                     </div>
                                     @else
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label" > Uploader une nouvelle image  @error('new_image') <span class="text-danger">{{ $message }}</span> @enderror</label>
                                             <input type="file" class="form-control" wire:model="new_image">
