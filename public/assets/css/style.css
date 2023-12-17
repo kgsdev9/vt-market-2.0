@@ -1,18 +1,19 @@
 /* ========================================================================
     Table Contents
-  ========================================================================== 
+  ==========================================================================
 
   -on/Off switch
-  -ripple effect 
+  -ripple effect
   -Slider
   -Slideshow
   -Transform Origin
   -Animation
   -Transitions
   -Simplebar
+    background-image: url("/boutiques.jpg");
 
 */
- 
+
 
 [hidden] {
   display: none !important;
@@ -22,7 +23,7 @@
  /* ========================================================================
   On/Off Switch
  ========================================================================== */
- 
+
 .switch-button {
   position: relative;
   display: inline-block;
@@ -38,7 +39,7 @@
   top: 2px;
   left: 0;
 }
-   
+
 .switch input {
   display: none;
 }
@@ -121,7 +122,7 @@ input:checked + .switch-button:before {
 /* ========================================================================
    Ripple Effect
  ========================================================================== */
- 
+
 .ripple-effect-dark {
   overflow: hidden;
   position: relative;
@@ -184,7 +185,7 @@ input:checked + .switch-button:before {
     -webkit-transform: scale(40);
     transform: scale(40);
   }
-} 
+}
 
 
 /* ========================================================================
@@ -192,36 +193,36 @@ input:checked + .switch-button:before {
 ========================================================================== */
 .uk-modal {
   -webkit-overflow-scrolling: touch;
-  transition: opacity 0.15s linear; 
-} 
+  transition: opacity 0.15s linear;
+}
 .uk-modal-dialog {
   transition: 0.3s linear;
   transition-property: opacity, transform;
-  box-sizing: border-box; 
-} 
+  box-sizing: border-box;
+}
 
 /* ========================================================================
     Component: Slider and Slideshow
  ========================================================================== */
 /*  Prevent tab highlighting on iOS. */
-.uk-slider , .uk-slideshow { 
+.uk-slider , .uk-slideshow {
   -webkit-tap-highlight-color: transparent;
-} 
-.uk-slider-items , .uk-slideshow-items{ 
+}
+.uk-slider-items , .uk-slideshow-items{
   touch-action: pan-y;
 }
 /*  Prevent displaying the callout information on iOS.*/
-.uk-slider-items , .uk-slideshow-items { 
+.uk-slider-items , .uk-slideshow-items {
   -webkit-touch-callout: none;
-} 
+}
 
 /* ========================================================================
     Component: Slideshow
 ========================================================================== */
 /* Optimize animation */
-.uk-slideshow-items > * { 
+.uk-slideshow-items > * {
   will-change: transform, opacity;
-} 
+}
 
 
 /* Transform Origin

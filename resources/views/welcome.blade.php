@@ -8,7 +8,7 @@
         <div class="max-w-5xl mx-auto space-y-32 max-md:p-8">
 
             <!-- hero -->
-            <section>
+            <section class="bg-section-one">
 
 
                 <div class="flex flex-col justify-center mt-6 text-center gap-6">
@@ -182,6 +182,14 @@
                 </div>
 
                 <div class="card-body">
+                    <button hx-get="{{route('cart.push', $product->id)}}" hx-target="#search-results">
+                        Ajouter au panier!
+
+                    </button>
+
+                        <div id="search-results">
+
+                        </div>
 
                     <button type="button" class="button bg-blue-500 dark:bg-pink-700/30 text-white text-white">Acheter</button>
                 </div>
@@ -191,8 +199,6 @@
         </div>
 
     </div>
-
-
 
 
 

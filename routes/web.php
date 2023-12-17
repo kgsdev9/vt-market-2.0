@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\PointRelaisController;
 use App\Http\Controllers\ProductManagementController;
 use App\Http\Controllers\SocialiteConnecteControlller;
@@ -56,3 +57,9 @@ Route::get("redirect/{provider}", [SocialiteConnecteControlller::class, 'redirec
 
 
 Route::get('/product-management', ProductManagementController::class)->name('product.management');
+
+
+//gestions du paniers
+
+Route::get('/add-to-cart/{id}', [CartController::class ,'addToCart'])->name('cart.push');
+Route::get('/cart', [CartController::class ,'cart'])->name('cart');

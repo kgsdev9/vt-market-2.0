@@ -51,7 +51,7 @@
                 <div class="flex items-center z-20 relative">
 
                     <div class="flex items-center gap-4 relative pl-6 text-slate-600">
-                        <a class="bg-blue-500 dark:bg-pink-700/30 text-white shadow px-4 h-9 text-sm rounded-md flex items-center gap-2 font-semibold" target="_blank" href="/kgs">
+                        <a class="bg-blue-500 dark:bg-pink-700/30 text-white shadow px-4 h-9 text-sm rounded-md flex items-center gap-2 font-semibold" href="{{route('cart')}}" hx-boost="true">
                             <ion-icon name="cart-outline" class="text-xl"></ion-icon>
                         </a>
 
@@ -85,5 +85,6 @@
     <script src="{{asset('assets/js/simplebar.js')}}"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     @livewireScripts
+    @include('sweetalert::alert')
 </body>
 </html>
