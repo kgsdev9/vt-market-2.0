@@ -10,22 +10,24 @@ class Boutique extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nom',
+        'libelle_boutique',
         'slug',
+        'adresse',
+        'logo_boutique',
+        'nom_vendeur',
+        'prenom_vendeur',
         'description',
-        'image_couverture',
+        'telephone',
+        'contact',
+        'piece',
+        'status',
         'city_id',
         'country_id',
-        'adresse',
-        'vendeur_id'
+        'user_id'
     ];
 
     public function city() {
         return $this->belongsTo(City::class, 'city_id');
-    }
-
-    public function vendeur() {
-        return $this->belongsTo(Vendeur::class, 'vendeur_id');
     }
 
     public function country() {

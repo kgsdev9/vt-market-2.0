@@ -1,5 +1,6 @@
 <?php
 
+
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -14,17 +15,17 @@ class MarqueSeeder extends Seeder
     public function run(): void
     {
         DB::table('marques')->insert([
-            ['name'=> 'Apple'] ,
-            ['name'=> 'Samsumg'] ,
-            ['name'=> 'Huwaei'] ,
-            ['name'=> 'Infinix'] ,
-            ['name'=> 'Nasco'] ,
-            ['name'=> 'LG'] ,
-            ['name'=> 'Louis Vuitton'] ,
-            ['name'=> 'Gucci'] ,
-            ['name'=> 'Dior'],
-            ['name'=> 'Equipement Cisco'],
-            ['name'=> 'Boisson africaine'],
+            ['nom'=> 'Apple'] ,
+            ['nom'=> 'Samsumg'] ,
+            ['nom'=> 'Huwaei'] ,
+            ['nom'=> 'Infinix'] ,
+            ['nom'=> 'Nasco'] ,
+            ['nom'=> 'LG'] ,
+            ['nom'=> 'Louis Vuitton'] ,
+            ['nom'=> 'Gucci'] ,
+            ['nom'=> 'Dior'],
+            ['nom'=> 'Equipement Cisco'],
+            ['nom'=> 'Boisson africaine'],
         ]);
     }
 }

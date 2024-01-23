@@ -13,17 +13,23 @@ return new class extends Migration
     {
         Schema::create('boutiques', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
+            $table->string('libelle_boutique');
             $table->string('slug')->unique();
             $table->string('adresse');
-            $table->string('description');
-            $table->string('image_couverture')->nullable();
+            $table->string('logo_boutique');
+            $table->string('nom_vendeur');
+            $table->string('prenom_vendeur');
+            $table->text('description');
+            $table->string('telephone');
+            $table->string('contact')->nullable();
+            $table->string('piece');
+            $table->boolean('status')->default('0');
             $table->unsignedBigInteger('city_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('country_id')->nullable();
-            $table->unsignedBigInteger('vendeur_id')->nullable();
-            $table->foreign('vendeur_id')->references('id')->on('vendeurs')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->foreign('city_id')->references('id')->on('cities')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->foreign('country_id')->references('id')->on('countries')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }

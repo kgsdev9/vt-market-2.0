@@ -3,80 +3,61 @@
 namespace App\Livewire;
 
 use App\Models\City;
-use App\Models\Image;
 use App\Models\Country;
-use App\Models\Product;
-use App\Models\Vendeur;
 use Livewire\Component;
 use App\Models\Boutique;
-use Illuminate\Support\Str;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Auth;
 
 class ProductManagement extends Component
 {
     use WithFileUploads;
-    //boutiques
-    public $nom , $logo, $image_couverture, $city_id, $country_id, $adresse, $vendeur_id;
+    public $libelle_boutique, $nom_vendeur, $prenom_vendeur, $description, $telephone, $contact, $piece,  $logo_boutique, $city_id, $country_id, $adresse;
+   
+    protected $rules = [
+        'libelle_boutique'=> 'required',
+        'nom_vendeur'=> 'required',
+        'prenom_vendeur'=> 'required',
+        'description'=> 'required',
+        'telephone'=> 'required',
+        'contact'=> 'required',
+        'piece'=> 'required',
+        'logo_boutique'=> 'required',
+        'city_id'=> 'required',
+        'country_id'=> 'required',
+        'adresse'=> 'required',
+    ];
 
-    //product//
-
-    public $images = [];
-
-
-
-
+    public function registerStore() {
+        // $this->validate(); 
+        $logo=$this->logo_boutique->store('public/vendeur/logo');
+        $piece=$this->piece->store('public/vendeur/piece');
+       $boutique =  Boutique::create([
+            'libelle_boutique'=> $this->libelle_boutique,
+            'slug'=> $this->libelle_boutique,
+            'nom_vendeur'=> $this->nom_vendeur,
+            'prenom_vendeur'=> $this->prenom_vendeur,
+            'description'=> $this->description,
+            'telephone'=> $this->telephone,
+            'contact'=> $this->contact,
+            'contact'=> $this->contact,
+            'logo_boutique'=> $logo,
+            'piece'=> $piece,
+            'city_id' => $this->city_id,
+            'country_id' => $this->country_id,
+            'adresse' => $this->adresse,
+            'user_id' => Auth::user()->id,
+        ]);
+        dd($boutique);
+        return redirect()->route('product.management');
+    }
+    
     public function render()
     {
         return view('livewire.product-management',[
             'allCities'=> City::all(),
             'countryAll'=> Country::all(),
-            'allSellers'=> Vendeur::all()
         ]);
     }
-
-    public function registerStore() {
-
-        $image=$this->logo->store('public/vendeur/logo');
-        Boutique::create([
-            'nom'=> $this->nom,
-            'slug'=> $this->nom,
-            'description'=> 'cette boutique est de vtp',
-            'country_id'=> $this->country_id,
-            'city_id' => $this->city_id,
-            'adresse' => $this->adresse,
-            'vendeur_id'=> $this->vendeur_id,
-            'image_couverture' => $image,
-        ]);
-        return redirect()->route('product.management');
-    }
-
-
-    public function storeProduct() {
-       $product =  Product::create([
-            'title'=>"Samsung galaxy S3",
-            'slug'=> Str::random(10),
-            'description'=> "ce produit est cerrifié vtp",
-            'category_id' => 1,
-            'prix' => rand(100, 340),
-            'view' =>1,
-            'boutique_id'=> 1
-        ]);
-
-        foreach($this->images as $image) {
-            Image::create([
-                'image' =>$image->store('public/product/images'),
-                'product_id' => $product->id
-            ]);
-        }
-
-        return redirect()->route('product.management');
-
-    }
-
-
-
-
-
-
 
 }

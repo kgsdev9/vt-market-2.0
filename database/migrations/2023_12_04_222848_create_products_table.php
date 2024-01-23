@@ -25,7 +25,7 @@ return new class extends Migration
             $table->foreign('marque_id')->references('id')->on('marques')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
-    }
+    }  
 
     /**
      * Reverse the migrations.

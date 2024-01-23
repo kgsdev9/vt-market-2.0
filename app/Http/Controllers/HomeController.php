@@ -2,53 +2,55 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Boutique;
 use App\Models\Category;
-use App\Models\Product;
-use App\Models\Vendeur;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
-      
         return view('welcome', [
-            'categoris'=> Category::all(),
-            'catalogueProduct'=> Product::all()
+            'allProducts'=> Product::all(),
+            'allCategories'=> Category::all()
         ]);
-    }
-
-
-    public function boutiqueSeller($id, Request $request) {
-
-
-        return view('home.singleBoutique', [
-            'sellerStore'=> Boutique::where('vendeur_id', $id)->first()
-        ]);
-    }
-     /**
-     * catalogue de tous les produits de la plateforme.
-     */
-
-    public function catalogueProduct() {
-        return view('catalogue.products.index');
     }
 
     public function allBoutique() {
         return view('home.boutique', [
-            'allSellers'=> Vendeur::all()
+            'allSellers'=> Boutique::all()
         ]);
     }
 
-
-    public function categoryProduct($slug) {
-
-       $category =  Category::where('slug', $slug)->first();
-        return view('home.categoryproduct', $category);
+    public function boutiqueSeller($id) {
+        $boutique = Boutique::where('id', $id)->first();
+     $product  =  Product::where('boutique_id',$boutique->id)->get();
+        return view('home.singleBoutique', [
+            'boutique'=>  $boutique,
+            'productStore'=>  $product 
+        ]);
+       
     }
 
+    public function singleProduct($slug) {
+            return  view('home.products.detail', [
+                'singleProduct'=> Product::where('slug', $slug)->first()
+            ]);
+    }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\BoutiqueController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PointRelaisController;
 use App\Http\Controllers\ProductManagementController;
@@ -37,7 +38,6 @@ Route::get('/catalogue-product',[HomeController::class, 'catalogueProduct']);
 
 //authentification routes
 
-Route::get('/fr/auth', [RegisterController::class, 'register']);
 
 Route::get('/store/seller/vtp/{id}', [HomeController::class, 'boutiqueSeller'])->name('boutique.seller');
 Route::get('/annuaire-categories', CategoryController::class)->name('categorie.index');
@@ -48,7 +48,7 @@ Route::get('/points-relais', PointRelaisController::class)->name('point.relais.i
 //product-category-controllers
 
 Route::get('/category-product/{slug}', [HomeController::class ,'categoryProduct'])->name('product.categories');
-
+Route::get('/product/detail/{slug}', [HomeController::class, 'singleProduct'])->name('single.product');
 
 //mes routes  pour la connexion des des services de connexions par socialies
 
@@ -58,8 +58,11 @@ Route::get("redirect/{provider}", [SocialiteConnecteControlller::class, 'redirec
 
 Route::get('/product-management', ProductManagementController::class)->name('product.management');
 
-
+Route::get('/gestion-boutique', BoutiqueController::class)->name('gestion.boutique');
 //gestions du paniers
 
 Route::get('/add-to-cart/{id}', [CartController::class ,'addToCart'])->name('cart.push');
 Route::get('/cart', [CartController::class ,'cart'])->name('cart');
+
+Auth::routes();
+
