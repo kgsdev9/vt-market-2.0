@@ -5,24 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Vendeur extends Model
+class PaymentAdresse extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nom',
-        'prenom',
-        'email',
-        'telephone',
-        'whatsapp',
-        'city_id',
-        'photo',
+        'fullname',
         'country_id',
-        'piece_identite '
+        'city_id',
+        'adresse',
+        'user_id',
     ];
-
-    public function boutique() {
-        return $this->hasOne(Boutique::class);
-    }
 
     public function city() {
         return $this->belongsTo(City::class, 'city_id');
@@ -30,6 +22,7 @@ class Vendeur extends Model
 
     public function country() {
         return $this->belongsTo(Country::class, 'country_id');
+    
     }
-
+    
 }

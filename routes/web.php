@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdresseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BoutiqueController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\PointRelaisController;
 use App\Http\Controllers\ProductManagementController;
 use App\Http\Controllers\SocialiteConnecteControlller;
@@ -44,7 +46,11 @@ Route::get('/annuaire-categories', CategoryController::class)->name('categorie.i
 Route::get('/all/stores/vtp', [HomeController::class, 'allBoutique'])->name('boutique.index');
 Route::get('/points-relais', PointRelaisController::class)->name('point.relais.index');
 
-
+//user profile
+Route::get('/espace-client', [DashboardUserController::class, 'customerDashboard'])->name('espace.client');
+Route::get('/mes-commandes', [DashboardUserController::class, 'orderCustomer'])->name('espace.orders');
+Route::get('/adresses-delivry', [DashboardUserController::class, 'adresseCustomer'])->name('adresse.client');
+Route::post('/registerAdresse', [AdresseController::class, 'store'])->name('register.adresse');
 //product-category-controllers
 
 Route::get('/category-product/{slug}', [HomeController::class ,'categoryProduct'])->name('product.categories');
@@ -59,10 +65,12 @@ Route::get("redirect/{provider}", [SocialiteConnecteControlller::class, 'redirec
 Route::get('/product-management', ProductManagementController::class)->name('product.management');
 
 Route::get('/gestion-boutique', BoutiqueController::class)->name('gestion.boutique');
-//gestions du paniers
+//gestions du paniers et paiement
 
 Route::get('/add-to-cart/{id}', [CartController::class ,'addToCart'])->name('cart.push');
 Route::get('/cart', [CartController::class ,'cart'])->name('cart');
+Route::get('/single-product/ordering/{slug}', [HomeController::class, 'orderCommande'])->name('product.commande');
+
 
 Auth::routes();
 

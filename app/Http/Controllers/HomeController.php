@@ -6,6 +6,8 @@ use App\Models\Product;
 use App\Models\Boutique;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\PaymentAdresse;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -43,14 +45,22 @@ class HomeController extends Controller
      $product  =  Product::where('boutique_id',$boutique->id)->get();
         return view('home.singleBoutique', [
             'boutique'=>  $boutique,
-            'productStore'=>  $product 
+            'productStore'=>  $product
         ]);
-       
+
     }
 
     public function singleProduct($slug) {
             return  view('home.products.detail', [
                 'singleProduct'=> Product::where('slug', $slug)->first()
             ]);
+    }
+
+    public function orderCommande($slug) {
+
+        return view('home.payment.index', [
+            'allAdresseUser' => PaymentAdresse::where('user_id', Auth::user()->id)->get(),
+            'singleProduct'  =>Product::where('slug', $slug)->first()
+        ]);
     }
 }

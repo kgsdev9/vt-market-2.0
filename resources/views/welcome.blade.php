@@ -47,15 +47,15 @@
                 <div class="offset-lg-1 col-lg-5 col-12 text-center">
                     <div class="position-relative d-none d-lg-block">
                         <img src="{{asset('panier.png')}}" class="img-fluid" alt="img" >
-                       
-                     
-                       
+
+
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
-   
+
 
       <section class="bg-white py-4 shadow-sm">
         <div class="container">
@@ -112,7 +112,7 @@
                             <div class="card card-hover">
                                 <a href="{{route('single.product', $product->slug)}}">
                                  <img src="{{asset('pommade.jpg')}}" alt="course" class="card-img-top"></a>
-                                              
+
                                 <div class="card-body">
                                     <h4 class="mb-2 text-truncate-line-2"><a href="{{route('single.product', $product->slug)}}" class="text-inherit">{{$product->title}}</a></h4>
                                     <small>Boutique: {{$product->boutique->libelle_boutique}}</small>
@@ -126,7 +126,7 @@
                                         </div>
 
                                         <div class="col-auto">
-                                            <a href="#" class="text-inherit">
+                                            <a href="{{route('product.commande', $product->slug)}}" class="text-inherit">
                                                 <i class="fe fe-shopping-cart text-primary align-middle me-2"></i>
                                                 Acheter
                                             </a>
@@ -136,17 +136,17 @@
                             </div>
                         </div>
                         @endforeach
-                  
-                   
-              
+
+
+
                     </div>
-                  
+
                 </div>
             </div>
         </div>
     </section>
 
-       
+
             <section class="py-8 bg-light card">
                 <div class="container my-lg-8">
                     <div class="row">
@@ -165,7 +165,7 @@
             <section class="container">
                 <section class="py-6">
                     <div class="container">
-                       
+
                         <div class="row mt-6">
                             <div class="col-md-12">
                                 <!-- title -->
@@ -177,12 +177,12 @@
                                     <a href="#!">
                                         <img src="{{Storage::url($category->image)}}" alt="writing" class="img-fluid w-100 h-100 rounded-top-3">
                                     </a>
-                                   
+
                                 </div>
                             </div>
-                            
+
                             @endforeach
-                        
+
                         </div>
                     </div>
                 </section>
@@ -196,8 +196,8 @@
                                 <div class="col-lg-5 col-md-12 col-12">
                                     <div class="mb-5 mb-lg-0">
                                         <h2 class="display-4 fw-bold mb-3">
-                                            Une Experience unique avec nous 
-                                           
+                                            Une Experience unique avec nous
+
                                         </h2>
                                         <p class="mb-5 lead">Afin de garantir une expérience d'achat réussie a nos propects, sur VTP-MARKET se sont les vendeurs qui supportent la charge des frais d'envoi de colis..</p>
                                         <a href="#!" class="btn btn-outline-secondary">Contactez nous </a>
@@ -215,5 +215,5 @@
                     </div>
                 </div>
             </section>
-       
+
 @endsection
