@@ -14,20 +14,21 @@ class Commande extends Model
         'delivry_status',
         'price_delivry',
         'user_id',
-        'product_id',
+        'paymentadresse_id'
     ];
+
 
     public function owner() {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function product() {
-        return $this->belongsTo(Product::class, 'product_id');
-    }
+ 
 
-    // public function product() {
-    //     return $this->belongsTo(Product::class, 'product_id');
-    // }
+    public function products() {
+        return $this->belongsToMany(Product::class, 'order_product', 'commande_id','product_id')
+        ->withPivot('quantity','total')
+        ->withTimestamps();
+    }
 
 
 }

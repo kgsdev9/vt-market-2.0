@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BoutiqueController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\DashboardUserController;
+use App\Http\Controllers\PanierController;
 use App\Http\Controllers\PointRelaisController;
 use App\Http\Controllers\ProductManagementController;
 use App\Http\Controllers\SocialiteConnecteControlller;
@@ -66,11 +67,8 @@ Route::get('/product-management', ProductManagementController::class)->name('pro
 
 Route::get('/gestion-boutique', BoutiqueController::class)->name('gestion.boutique');
 //gestions du paniers et paiement
-
-Route::get('/add-to-cart/{id}', [CartController::class ,'addToCart'])->name('cart.push');
-Route::get('/cart', [CartController::class ,'cart'])->name('cart');
-Route::get('/single-product/ordering/{slug}', [HomeController::class, 'orderCommande'])->name('product.commande');
-
+Route::get('/cart', PanierController::class)->name('cart');
+Route::get('/sommary-oders', [HomeController::class, 'sommaryOrders'])->name('sommary.orders')->middleware('auth');
 
 Auth::routes();
 

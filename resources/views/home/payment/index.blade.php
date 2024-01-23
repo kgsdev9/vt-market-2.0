@@ -72,9 +72,7 @@
 									</div>
 								</div>
 								<!-- text -->
-								<div>
-									<h3 class="mb-0">{{$singleProduct->prix + 50}} €</h3>
-								</div>
+
 							</div>
 						</div>
 					</div>
@@ -99,9 +97,7 @@
 									</div>
 								</div>
 								<!-- text -->
-								<div>
-									<h3 class="mb-0">{{$singleProduct->prix + 50}} €</h3>
-								</div>
+
 							</div>
 
 						</div>
@@ -127,9 +123,7 @@
 									</div>
 								</div>
 								<!-- text -->
-								<div>
-									<h3 class="mb-0">{{$singleProduct->prix + 50}} €</h3>
-								</div>
+
 							</div>
 
 						</div>
@@ -156,9 +150,7 @@
 									</div>
 								</div>
 								<!-- text -->
-								<div>
-									<h3 class="mb-0">{{$singleProduct->prix + 50}} €</h3>
-								</div>
+
 							</div>
 
 						</div>
@@ -184,9 +176,7 @@
 									</div>
 								</div>
 								<!-- text -->
-								<div>
-									<h3 class="mb-0">{{$singleProduct->prix + 50}} €</h3>
-								</div>
+
 							</div>
 
 						</div>
@@ -208,27 +198,38 @@
 						<h4 class="mb-1">Sommaire de la commande </h4>
 
 					</div>
-
-					<div class="d-md-flex">
+                    @php
+                        $total = 0;
+                    @endphp
+                    @foreach( (array)session('cart') as $id => $details)
+                    @php
+                        $total +=  $details['prix'] * $details['quantity']
+                    @endphp
+                    <div class="d-md-flex my-3">
 						<div>
-							<img src="{{Storage::url($singleProduct->image)}}" alt="" class="img-4by3-xl rounded">
+							<img src="{{asset('product-1 (1).jpg')}}" alt="" class="img-4by3-xl rounded">
 						</div>
 						<div class="ms-md-4 mt-2">
-							<h4 class="mb-1 text-primary-hover">{{$singleProduct->title}}</h4>
+							<h4 class="mb-1 text-primary-hover">{{ $details['title']}}</h4>
 							<h5>
-								{{$singleProduct->prix}} €
+                                {{ $details['prix']}} €
 							</h5>
-							<span>Qty:1</span>
+							<span>Qty:    {{ $details['quantity']}}</span>
+                            <h5>
+                                {{ $details['prix'] * $details['quantity']}}€
+							</h5>
 						</div>
 					</div>
-					<hr class="my-3">
+
+                     @endforeach
+
 
 				</div>
 				<div class="card-body border-top pt-2">
 					<ul class="list-group list-group-flush mb-0">
 						<li class="d-flex justify-content-between list-group-item px-0">
 							<span>Sous-total </span>
-							<span class="text-dark fw-semibold">{{$singleProduct->prix}} €</span>
+							<span class="text-dark fw-semibold">{{$total}}</span>
 						</li>
 						<li class="d-flex justify-content-between list-group-item px-0">
 							<span>Prix de livraison</span>
@@ -238,7 +239,7 @@
 
 						<li class="d-flex justify-content-between list-group-item px-0 pb-0">
 							<span class="fs-4 fw-semibold text-dark">Total</span>
-							<span class="fw-semibold text-dark">{{$singleProduct->prix + 50}} €</span>
+							<span class="fw-semibold text-dark">{{$total + 50}}</span>
 						</li>
 					</ul>
 				</div>

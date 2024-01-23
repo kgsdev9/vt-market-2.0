@@ -37,8 +37,10 @@ class Product extends Model
         return $this-> belongsTo(Marque::class, 'marque_id');
     }
 
-    public function commandes() {
-        return $this->belongsToMany(Commande::class, 'order_product', 'product_id','commande_id');
+    public function products() {
+        return $this->belongsToMany(Product::class, 'order_product', 'commande_id','product_id')
+                    ->withPivot('quantity','total')
+                    ->withTimestamps();
     }
 
 

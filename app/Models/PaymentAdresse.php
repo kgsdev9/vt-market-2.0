@@ -13,6 +13,7 @@ class PaymentAdresse extends Model
         'country_id',
         'city_id',
         'adresse',
+        'contact',
         'user_id',
     ];
 
@@ -22,7 +23,7 @@ class PaymentAdresse extends Model
 
     public function country() {
         return $this->belongsTo(Country::class, 'country_id');
-    
+
     }
-    
+
 }

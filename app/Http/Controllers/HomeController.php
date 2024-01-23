@@ -56,11 +56,10 @@ class HomeController extends Controller
             ]);
     }
 
-    public function orderCommande($slug) {
+    public function sommaryOrders() {
 
         return view('home.payment.index', [
             'allAdresseUser' => PaymentAdresse::where('user_id', Auth::user()->id)->get(),
-            'singleProduct'  =>Product::where('slug', $slug)->first()
         ]);
     }
 }

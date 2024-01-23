@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('product_id')->nullable();
             $table->unsignedBigInteger('commande_id')->nullable();
+            $table->integer('quantity');
+            $table->integer('total');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->foreign('commande_id')->references('id')->on('commandes')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
