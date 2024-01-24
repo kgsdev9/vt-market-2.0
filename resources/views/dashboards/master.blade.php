@@ -51,6 +51,7 @@
                 </a>
 
             </li>
+            @can('is_administrateur')
             <li class="nav-item">
                 <a
                     class="nav-link"
@@ -59,8 +60,8 @@
                     <i class="nav-icon fe fe-book me-2"></i>
                     Gestion vendeurs
                 </a>
-
             </li>
+
             <!-- Nav item -->
             <li class="nav-item">
                 <a class="nav-link" href="{{route('categorie.index')}}" >
@@ -70,6 +71,7 @@
 
             </li>
 
+            @endcan
             <!-- Nav item -->
             <li class="nav-item">
                 <a class="nav-link  collapsed " href="{{route('product.management')}}">
@@ -87,20 +89,7 @@
 
             </li>
 
-            <!-- Nav item -->
-            <li class="nav-item">
-                <a
-                    class="nav-link"
-                    href="#"
-                    >
-                    <i class="nav-icon fe fe-file me-2"></i>
-                    Livraison & Point rélais
-                </a>
-
-            </li>
-
-
-
+            @can('is_administrateur')
             <li class="nav-item">
                 <div class="nav-divider"></div>
             </li>
@@ -115,6 +104,7 @@
                    Gestion commannde
                 </a>
             </li>
+            @endcan
         </ul>
 
     </div>
@@ -146,70 +136,19 @@
                                     <img alt="avatar" src="../../assets/images/avatar/avatar-1.jpg" class="rounded-circle" />
                                 </div>
                                 <div class="ms-3 lh-1">
-                                    <h5 class="mb-1">Annette Black</h5>
-                                    <p class="mb-0">annette@geeksui.com</p>
+                                    <h5 class="mb-1">{{Auth::user()->name}}</h5>
+                                    <p class="mb-0">{{Auth::user()->email}}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="dropdown-divider"></div>
-                        <ul class="list-unstyled">
-                            <li class="dropdown-submenu dropstart-lg">
-                                <a class="dropdown-item dropdown-list-group-item dropdown-toggle" href="#">
-                                    <i class="fe fe-circle me-2"></i>
-                                    Status
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <span class="badge-dot bg-success me-2"></span>
-                                            Online
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <span class="badge-dot bg-secondary me-2"></span>
-                                            Offline
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <span class="badge-dot bg-warning me-2"></span>
-                                            Away
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <span class="badge-dot bg-danger me-2"></span>
-                                            Busy
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="../profile-edit.html">
-                                    <i class="fe fe-user me-2"></i>
-                                    Profile
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="../student-subscriptions.html">
-                                    <i class="fe fe-star me-2"></i>
-                                    Subscription
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fe fe-settings me-2"></i>
-                                    Settings
-                                </a>
-                            </li>
-                        </ul>
+
                         <div class="dropdown-divider"></div>
                         <ul class="list-unstyled">
                             <li>
                                 <a class="dropdown-item" href="../../index.html">
                                     <i class="fe fe-power me-2"></i>
-                                    Sign Out
+                                    Déconnexion
                                 </a>
                             </li>
                         </ul>

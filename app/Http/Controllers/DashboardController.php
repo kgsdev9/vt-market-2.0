@@ -2,11 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Commande;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     public function index() {
-        return view('dashboards.index');
+        if(Auth::user()->role->nom == "user")  {
+            return view('clients.dashboards.index', [
+                'countOrders'=> Commande::where('user_id', Auth::user()->id)->count()
+            ]);
+         } elseif(Auth::user()->role->nom == "vendeur" && Auth::user()->role->nom=="admin") {
+             return view('dashboards.index');
+         }
     }
 }

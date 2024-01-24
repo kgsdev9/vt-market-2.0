@@ -19,20 +19,20 @@ class BoutiqueComponent extends Component
     public $images = [], $title, $description, $marque_id, $prix, $boutique_id, $mode = true, $boutique;
 
 
+
+
+
     public function displayForm() {
         return $this->mode = false;
     }
 
     public function store() {
-
-
-        // Image::make($data['image'])->resize(320, 240)->save(public_path($image_path));
         $product =  Product::create([
              'title'=> $this->title,
              'slug'=> Str::slug($this->title),
              'description'=> $this->title,
              'marque_id' => $this->marque_id,
-             'prix' =>  $this->title,
+             'prix' =>  $this->prix,
              'view' =>1,
              'boutique_id'=> $this->boutique->id
          ]);
@@ -44,6 +44,11 @@ class BoutiqueComponent extends Component
          }
          return redirect()->route('gestion.boutique');
      }
+
+        public function remove()  {
+            $this->images = [];
+
+        }
 
     public function render()
     {
