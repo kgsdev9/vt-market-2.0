@@ -24,16 +24,17 @@
                                         <div class="col-md-6">
                                             <div class="d-grid mb-2 mb-md-0">
                                                 <!-- btn -->
-                                                <a href="shopping-cart.html" class="btn btn-danger">
-                                                    <i class="fe fe-shopping-cart me-2"></i>
+                                                <a href="#" class="btn btn-danger">
+                                                    <i class="fe fe-heart me-2"></i>
                                                     Commencer à vendre
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="d-grid">
-                                                <a href="#" class="btn btn-outline-secondary">
-                                                    <i class="fe fe-heart me-2"></i>
+                                                <a href="{{route('boutique.index')}}" class="btn btn-outline-secondary">
+                                                    <i class="fe fe-shopping-cart me-2"></i>
+
                                                     Consulter les boutiques
                                                 </a>
                                             </div>

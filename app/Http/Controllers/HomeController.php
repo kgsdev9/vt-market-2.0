@@ -8,9 +8,26 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\PaymentAdresse;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\ImageManager;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class HomeController extends Controller
 {
+
+    public function renitialiseImage(Request $request) {
+
+        if($request->paypalMethod == "paypal") {
+            dd('paypal');
+        } elseif($request->paypalMethod == "card") {
+            dd('card');
+        }
+
+
+        // notify()->success('Laravel Notify is awesome!');
+        // return redirect()->route('home');
+;
+    }
+
     /**
      * Create a new controller instance.
      *
@@ -51,8 +68,21 @@ class HomeController extends Controller
     }
 
     public function singleProduct($slug) {
+
+        $currentUrl = url()->current();
+        $lienPartage = \Share::page(
+           $currentUrl
+        )
+        ->facebook()
+        ->twitter()
+        ->linkedin()
+        ->telegram()
+        ->whatsapp()
+        ->reddit();
+
             return  view('home.products.detail', [
-                'singleProduct'=> Product::where('slug', $slug)->first()
+                'singleProduct'=> Product::where('slug', $slug)->first(),
+                'partage' => $lienPartage
             ]);
     }
 

@@ -1,5 +1,24 @@
 @extends('layouts.layout')
 @section('content')
+
+ <style>
+            div#social-links {
+                margin: 0 auto;
+                max-width: 500px;
+            }
+            div#social-links ul li {
+                display: inline-block;
+            }
+            div#social-links ul li a {
+                padding: 20px;
+                border: 1px solid #ccc;
+                margin: 1px;
+                font-size: 30px;
+                color: #222;
+                background-color: #ccc;
+            }
+        </style>
+
 <section class="container p-4">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-12">
@@ -47,7 +66,7 @@
                             <h1>{{$singleProduct->title}}</h1>
                             <div>
                                 <span>
-                                   Boutique officielle de  
+                                   Boutique officielle de
                                 </span>
                             </div>
                         </div>
@@ -56,11 +75,11 @@
                             <!-- text -->
                             <h4 class="mb-1">
                                 {{$singleProduct->prix}} €
-                               
+
                             </h4>
                         </div>
-                      
-                      
+
+
                         <div class="row">
                             <!-- col -->
                             <div class="col-md-6">
@@ -68,7 +87,7 @@
                                     <!-- btn -->
                                     <a href="#" class="btn btn-danger">
                                         <i class="fe fe-shopping-cart me-2"></i>
-                                       Acheter le produit 
+                                       Acheter le produit
                                     </a>
                                 </div>
                             </div>
@@ -107,11 +126,11 @@
                                         </div>
                                     </div>
                                 </li>
-                              
-                            
+
+                                {!! $partage !!}
                             </ul>
                         </div>
-                     
+
                     </div>
                 </div>
             </div>

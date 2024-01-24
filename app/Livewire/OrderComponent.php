@@ -15,10 +15,29 @@ class OrderComponent extends Component
 
     public $adresseSelected, $reference, $delivry_status, $price_delivry, $user_id, $amount = 0  ;
 
+    //payementfiled
+
+   public $paypalMethod = "paypal";
+
+
+    protected $rules = [
+        'adresseSelected'=> 'required',
+    ];
+
+
+
+
+
 
     public function  store() {
-        $this->getSommeCart();
-        return redirect()->back();
+        $this->validate();
+
+        if($this->paypalMethod == "paypal") {
+            dd('paypal_method');
+        }
+
+        // $this->getSommeCart();
+        // return redirect()->back();
     }
 
     public function getSommeCart()  {

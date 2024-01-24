@@ -5,16 +5,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BoutiqueController;
-use App\Http\Controllers\CartController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\PanierController;
+use App\Http\Controllers\PaymentNotificationController;
 use App\Http\Controllers\PointRelaisController;
 use App\Http\Controllers\ProductManagementController;
 use App\Http\Controllers\SocialiteConnecteControlller;
 use App\Http\Controllers\VendeurRegisterController;
-use App\Livewire\ProductManagement;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,17 +28,12 @@ use App\Livewire\ProductManagement;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
 Route::get('/become-seller', [VendeurRegisterController::class, 'registerSeller'])->name('register.seller');
-
 Route::get('/sellers-testing-products', [VendeurRegisterController::class, 'index'])->name('gestion-testing');
-
 Route::get('/catalogue-product',[HomeController::class, 'catalogueProduct']);
 
 //authentification routes
-
 
 Route::get('/store/seller/vtp/{id}', [HomeController::class, 'boutiqueSeller'])->name('boutique.seller');
 Route::get('/annuaire-categories', CategoryController::class)->name('categorie.index');
@@ -60,16 +53,18 @@ Route::get('/product/detail/{slug}', [HomeController::class, 'singleProduct'])->
 
 //mes routes  pour la connexion des des services de connexions par socialies
 
-
 Route::get("redirect/{provider}", [SocialiteConnecteControlller::class, 'redirect'])->name('socialite.redirect');
-
-
 Route::get('/product-management', ProductManagementController::class)->name('product.management');
-
 Route::get('/gestion-boutique', BoutiqueController::class)->name('gestion.boutique');
 //gestions du paniers et paiement
 Route::get('/cart', PanierController::class)->name('cart');
 Route::get('/sommary-oders', [HomeController::class, 'sommaryOrders'])->name('sommary.orders')->middleware('auth');
-
 Auth::routes();
+//
+Route::post('/resise', [HomeController::class, 'renitialiseImage'])->name('image.resize');
+
+
+//mes routes de notifications de paiement
+Route::get('/succes-payment', [PaymentNotificationController::class, 'successPayment']);
+Route::get('/echec-payment', [PaymentNotificationController::class, 'echecPayment']);
 

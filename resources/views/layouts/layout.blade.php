@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/theme.min.css')}}">
     <link rel="canonical" href="vtp-market.com" />
     <title>Commercialiser vos produits avec nous  </title>
+
   </head>
 
   <body >
@@ -253,8 +254,13 @@
 
 
     <!--Script du site -->
+
     <script src="{{asset('assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/libs/simplebar/dist/simplebar.min.js')}}"></script>
     <script src="{{asset('assets/js/theme.min.js')}}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    @livewireScripts
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <x-livewire-alert::scripts />
   </body>
 </html>

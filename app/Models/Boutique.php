@@ -26,6 +26,10 @@ class Boutique extends Model
         'user_id'
     ];
 
+    public function products() {
+        return $this->hasMany(Product::class);
+    }
+
     public function city() {
         return $this->belongsTo(City::class, 'city_id');
     }

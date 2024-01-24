@@ -31,15 +31,15 @@ class ProductManagement extends Component
 
     public function mount() {
         $boutique =  Boutique::where('user_id', Auth::user()->id)->first();
-        $this->nom_vendeur = $boutique->nom_vendeur;
-        $this->prenom_vendeur = $boutique->prenom_vendeur;
-        $this->adresse = $boutique->adresse;
-        $this->contact = $boutique->contact;
-        $this->telephone = $boutique->telephone;
-        $this->city_id = $boutique->city_id;
-        $this->country_id = $boutique->country_id;
-        $this->libelle_boutique = $boutique->libelle_boutique;
-        $this->description = $boutique->description;
+        $this->nom_vendeur = $boutique?->nom_vendeur;
+        $this->prenom_vendeur = $boutique?->prenom_vendeur;
+        $this->adresse = $boutique?->adresse;
+        $this->contact = $boutique?->contact;
+        $this->telephone = $boutique?->telephone;
+        $this->city_id = $boutique?->city_id;
+        $this->country_id = $boutique?->country_id;
+        $this->libelle_boutique = $boutique?->libelle_boutique;
+        $this->description = $boutique?->description;
         $this->countryAll = Country::all();
         $this->allCities = City::all();
     }

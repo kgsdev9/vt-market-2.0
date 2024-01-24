@@ -159,7 +159,7 @@ return [
         /*
          * Package Service Providers...
          */
-     
+
         /*
          * Application Service Providers...
          *
@@ -170,7 +170,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
-
+        Jorenvh\Share\Providers\ShareServiceProvider::class,
+        Mckenziearts\Notify\LaravelNotifyServiceProvider::class
 
 
 
@@ -189,6 +190,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+        'Share' => Jorenvh\Share\ShareFacade::class,
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 

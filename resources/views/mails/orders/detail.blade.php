@@ -9,12 +9,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="#" />
 
     <!-- Libs CSS -->
-    <link href="{{public_path('public_paths/fonts/feather/feather.css')}}" rel="stylesheet" />
-    <link href="{{public_path('public_paths/libs/bootstrap-icons/font/bootstrap-icons.min.css')}}" rel="stylesheet" />
-    <link rel="stylesheet" href="{{public_path('public_paths/libs/simplebar/dist/simplebar.min.css')}}">
+    <link href="{{asset('assets/fonts/feather/feather.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/libs/bootstrap-icons/font/bootstrap-icons.min.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('assets/libs/simplebar/dist/simplebar.min.css')}}">
     <!-- Theme CSS -->
 
-    <link rel="stylesheet" href="{{public_path('public_paths/css/theme.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/theme.min.css')}}">
     <link rel="canonical" href="vtp-market.com" />
     <title>Facture  </title>
 </head>

@@ -1,18 +1,14 @@
 <?php
 
 namespace App\Traits  ;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 use App\Models\Image;
 use App\Models\Product;
 
 trait   WithProduct  {
 
-//     @foreach ($product->images  as $article)
-//     @if($article->id > 1)
-//     <img src="{{Storage::url($article->image)}}" alt="Article" class="card-img-top"></a>
-//        @break
-//     @endif
-//    @endforeach
+    use LivewireAlert;
 
     public function productAddCart($id) {
       $product = Product::findOrFail($id);
@@ -36,10 +32,10 @@ trait   WithProduct  {
             ];
         }
         session()->put('cart', $cart);
-        // $this->dispatch('alert',[
-        //     'type'=>'success',
-        //     'message'=>"Produit Ajouté à votre commande"
-        // ]);
+
+        $this->alert('success', 'Produit ajouté au panier');
+
+
         // $this->emit('updateCartCount');
     }
 
@@ -48,17 +44,16 @@ trait   WithProduct  {
         if(isset($cart[$id])) {
             $cart[$id]['quantity']++;
         }
-        // $this->dispatchBrowserEvent('alert',[
-        //     'type'=>'success',
-        //     'message'=>"Quantitté mise à jour"
-        // ]);
+        $this->alert('success', 'Quantité mise à jour');
         session()->put('cart', $cart);
+
     }
 
     public function delete($id) {
         $cart = session()->get('cart');
         unset($cart[$id]);
         session()->put('cart', $cart);
+        $this->alert('warning', 'produit supprimé');
         // $this->emit('updateCartCount');
     }
 
@@ -69,10 +64,7 @@ trait   WithProduct  {
             if($cart[$id]['quantity'] >1 ) {
                 $cart[$id]['quantity']--;
                 session()->put('cart', $cart);
-                $this->dispatch('alert',[
-                    'type'=>'success',
-                    'message'=>"Quantité mise à jour"
-                ]);
+                $this->alert('success', 'Quantité mise à jour');
             } else {
                 //messsage
             }

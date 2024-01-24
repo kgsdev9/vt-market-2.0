@@ -19,9 +19,6 @@ class BoutiqueComponent extends Component
     public $images = [], $title, $description, $marque_id, $prix, $boutique_id, $mode = true, $boutique;
 
 
-
-
-
     public function displayForm() {
         return $this->mode = false;
     }
