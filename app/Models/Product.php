@@ -37,7 +37,7 @@ class Product extends Model
         return $this-> belongsTo(Marque::class, 'marque_id');
     }
 
-    public function products() {
+    public function orders() {
         return $this->belongsToMany(Product::class, 'order_product', 'commande_id','product_id')
                     ->withPivot('quantity','total')
                     ->withTimestamps();

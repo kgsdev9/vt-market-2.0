@@ -2,19 +2,20 @@
 
 namespace App\Livewire;
 
-use App\Models\Image;
 use App\Models\Marque;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Boutique;
+use App\Models\Image;
 use Illuminate\Support\Str;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
+;
 
 class BoutiqueComponent extends Component
 {
     use WithFileUploads;
-    
+
     public $images = [], $title, $description, $marque_id, $prix, $boutique_id, $mode = true, $boutique;
 
 
@@ -23,7 +24,9 @@ class BoutiqueComponent extends Component
     }
 
     public function store() {
-       
+
+
+        // Image::make($data['image'])->resize(320, 240)->save(public_path($image_path));
         $product =  Product::create([
              'title'=> $this->title,
              'slug'=> Str::slug($this->title),
@@ -43,10 +46,12 @@ class BoutiqueComponent extends Component
      }
 
     public function render()
-    {   
+    {
         $this->boutique =  Boutique::where('user_id', Auth::user()->id)->first();
+
         return view('livewire.boutique-component', [
         'boutique'=> $this->boutique,
+        'allProducts' => Product::where('boutique_id',  $this->boutique?->id)->get(),
         'allMarques'=>  Marque::all()
         ]);
     }

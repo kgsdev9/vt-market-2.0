@@ -3,9 +3,7 @@
 <section class="pt-5 pb-5">
     <div class="container">
         <div class="row align-items-center">
-            <!-- User info -->
             <div class="col-xl-12 col-lg-12 col-md-12 col-12">
-                <!-- Bg -->
                 <div class="rounded-top" style="background: url(../assets/images/background/profile-bg.jpg) no-repeat; background-size: cover; height: 100px"></div>
                 <div class="card px-4 pt-2 pb-4 shadow-sm rounded-top-0 rounded-bottom-0 rounded-bottom-md-2">
                     <div class="d-flex align-items-end justify-content-between">
@@ -16,18 +14,14 @@
                             <div class="lh-1">
                                 <h2 class="mb-0">
                                     Bienvenue {{Auth::user()->name}}
-
                                 </h2>
-
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Content -->
 
         <div class="row mt-0 mt-md-4">
             <div class="col-lg-3 col-md-4 col-12">
@@ -90,6 +84,11 @@
                                                     <input type="text"  name="fullname" class="form-control" placeholder="Enter first name" id="firstNameForAddress">
                                                 </div>
 
+                                                <div class="mb-3 col-md-12">
+                                                    <label class="form-label" for="firstNameForAddress">Contact</label>
+                                                    <input type="text"  name="contact" class="form-control" placeholder="+22449998" id="firstNameForAddress">
+                                                </div>
+
                                                 <div class="mb-3 col-12">
                                                     <label class="form-label" for="contryForAddress">Pays</label>
                                                     <select  name="country_id" class="form-select">
@@ -112,7 +111,7 @@
 
                                                 <div class="mb-3 col-12">
                                                     <label class="form-label" for="addressForAddress">Addresse</label>
-                                                  <textarea name="description" class="form-control" id="" cols="30" rows="3"></textarea>
+                                                  <textarea name="adresse" class="form-control" id="" cols="30" rows="3"></textarea>
                                                 </div>
 
                                                 <div class="modal-footer">

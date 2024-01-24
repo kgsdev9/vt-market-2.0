@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Models\Role;
 use App\Models\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use App\Models\Administrateur;
+use Illuminate\Http\JsonResponse;
+use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Notifications\Notification;
+use App\Notifications\WelcomeUserNotification;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 
 class RegisterController extends Controller
 {
@@ -40,6 +49,13 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    protected function showRegistrationForm() {
+
+        return view('auth.register', [
+            'roles'=> Role::all()
+        ]);
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -56,6 +72,7 @@ class RegisterController extends Controller
         ]);
     }
 
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -64,11 +81,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user =  User::create([
             'name' => $data['name'],
             'role_id' => $data['role_id'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $delay = now()->addMinutes(10);
+        $user->notify((new WelcomeUserNotification())->delay($delay));
+        return $user;
     }
 }

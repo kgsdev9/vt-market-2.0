@@ -47,27 +47,31 @@
                         <table class="table mb-0 text-nowrap table-hover table-centered">
                             <thead class="table-light">
                                 <tr>
-                                    <th>Produit</th>
-                                    <th>Total</th>
                                     <th>Réference</th>
-                                    <th>Status</th>
+                                    <th>Client</th>
+                                    <th>Pays</th>
+                                    <th>Ville</th>
+                                    <th>Télephone</th>
                                     <th>Action</th>
 
                                 </tr>
                             </thead>
                             <tbody>
-
+                                @foreach ($allCommandeUser as $commande)
                                 <tr>
                                     <td>
                                         <h5 class="mb-0">
-                                            <a href="#" class="text-inherit">HTML5 Web Front End Development</a>
+                                            <a href="#" class="text-inherit">{{$commande->reference}}</a>
                                         </h5>
                                     </td>
-                                    <td>$129</td>
-                                    <td>#10020</td>
-                                    <td>June 9, 2020</td>
-                                    <td>Consulter</td>
+                                    <td>{{$commande->owneradresse->fullname}}</td>
+                                    <td>{{$commande->owneradresse->country->nom}}</td>
+                                    <td>{{$commande->owneradresse->city->nom}}</td>
+                                    <td>{{$commande->owneradresse->contact}}</td>
+                                    <td><a href="{{route('show.orders', $commande->id)}}">Voir</a></td>
                                 </tr>
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>

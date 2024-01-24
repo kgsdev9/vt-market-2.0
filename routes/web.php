@@ -50,6 +50,7 @@ Route::get('/points-relais', PointRelaisController::class)->name('point.relais.i
 //user profile
 Route::get('/espace-client', [DashboardUserController::class, 'customerDashboard'])->name('espace.client');
 Route::get('/mes-commandes', [DashboardUserController::class, 'orderCustomer'])->name('espace.orders');
+Route::get('/commande/{id}', [DashboardUserController::class, 'showOrder'])->name('show.orders');
 Route::get('/adresses-delivry', [DashboardUserController::class, 'adresseCustomer'])->name('adresse.client');
 Route::post('/registerAdresse', [AdresseController::class, 'store'])->name('register.adresse');
 //product-category-controllers

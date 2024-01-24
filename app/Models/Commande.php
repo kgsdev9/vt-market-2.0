@@ -22,7 +22,11 @@ class Commande extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
- 
+    public function owneradresse() {
+        return $this->belongsTo(PaymentAdresse::class, 'paymentadresse_id');
+    }
+
+
 
     public function products() {
         return $this->belongsToMany(Product::class, 'order_product', 'commande_id','product_id')

@@ -8,22 +8,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<meta name="author" content="Codescandy" />
+<meta name="author" content="VTP MARKET" />
 
 <!-- Favicon icon-->
 <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico" />
 
 <!-- darkmode js -->
-<script src="../../assets/js/vendors/darkMode.js"></script>
+<script src="/assets/js/vendors/darkMode.js"></script>
 
 <!-- Libs CSS -->
-<link href="../../assets/fonts/feather/feather.css" rel="stylesheet" />
-<link href="../../assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
-<link href="../../assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+<link href="assets/fonts/feather/feather.css" rel="stylesheet" />
+<link href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+<link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
 
 <!-- Theme CSS -->
-<link rel="stylesheet" href="../../assets/css/theme.min.css">
-<link rel="canonical" href="admin-dashboard.html">
+<link rel="stylesheet" href="assets/css/theme.min.css">
  <title>Panel d'administration vtp market</title>
  @livewireStyles
     </head>
@@ -36,8 +35,8 @@
 <nav class="navbar-vertical navbar">
     <div class="vh-100" data-simplebar>
         <!-- Brand logo -->
-        <a class="navbar-brand" href="#">
-            <img src="#" alt="VTP MARKET" />
+        <a class="navbar-brand text-dark" href="#">
+          VTP MARKET
         </a>
         <!-- Navbar nav -->
         <ul class="navbar-nav flex-column" id="sideNavbar">
@@ -117,7 +116,7 @@
                 </a>
             </li>
         </ul>
-        
+
     </div>
 </nav>
 
@@ -129,11 +128,11 @@
             <a id="nav-toggle" href="#">
             <i class="fe fe-menu"></i>
             </a>
-            
+
             <div class="ms-auto d-flex">
-            
+
             <ul class="navbar-nav navbar-right-wrap ms-2 d-flex nav-top-wrap">
-               
+
                 <li class="dropdown ms-2">
                     <a class="rounded-circle" href="#" role="button" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
                         <div class="avatar avatar-md avatar-indicators avatar-online">
@@ -220,7 +219,7 @@
             </div>
             </nav>
             </div>
-            
+
                 <!-- Page Header -->
                 <!-- Container fluid -->
                 @yield('master')
