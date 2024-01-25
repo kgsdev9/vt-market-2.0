@@ -171,7 +171,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
         Jorenvh\Share\Providers\ShareServiceProvider::class,
-        Mckenziearts\Notify\LaravelNotifyServiceProvider::class
+        Mckenziearts\Notify\LaravelNotifyServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
 
 
@@ -190,6 +191,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+        'Image' => Intervention\Image\Facades\Image::class,
         'Share' => Jorenvh\Share\ShareFacade::class,
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),

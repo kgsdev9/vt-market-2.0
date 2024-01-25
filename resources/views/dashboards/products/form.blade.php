@@ -81,12 +81,12 @@
 
                                 <div class="mb-3 col-md-4">
                                     <label for="selectDate" class="form-label">Catégorie du produit </label>
-                                    <select wire:model="marque_id" class="form-control">
+                                    {{-- <select wire:model="marque_id" class="form-control">
                                         <option value="">Choisir</option>
                                         @foreach ($allMarques as $marque)
                                             <option value="{{$marque->id}}">{{$marque->nom}}</option>
                                         @endforeach
-                                    </select>
+                                    </select> --}}
 
                                 </div>
 
