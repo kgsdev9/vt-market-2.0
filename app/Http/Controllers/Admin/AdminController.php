@@ -16,7 +16,6 @@ class AdminController extends Controller
         ]);
     }
 
-
     public function singleViewInvoice($id) {
             return view('dashboards.commandes.detail', [
                 'singleOrder' =>  Commande::where('id', $id)->first()

@@ -13,7 +13,7 @@ class CountryManagement extends Component
 
     protected $theme = "bootstrap";
 
-    public $CountryId, $nom = true, $search ="", $mode= true;
+    public $countryId, $nom , $search ="", $mode= true;
 
     protected $rules = [
         'nom' => 'required',
@@ -45,6 +45,7 @@ class CountryManagement extends Component
                 session()->flash('error','Country not found');
             } else {
                 $this->nom = $Country->nom;
+                $this->countryId = $Country->id;
                 $this->mode = false;
             }
         } catch (\Exception $ex) {
@@ -62,8 +63,8 @@ class CountryManagement extends Component
     {
         $this->validate();
         try {
-            Country::whereId($this->CountryId)->update([
-                'nom' => $this->name,
+            Country::whereId($this->countryId)->update([
+                'nom' => $this->nom,
             ]);
             session()->flash('success','Ville supprimé avec sucess');
             $this->resetFields();
@@ -89,15 +90,10 @@ class CountryManagement extends Component
     }
 
 
-
-
-
-
-
-
-
     public function render()
     {
-        return view('livewire.country-management');
+        return view('livewire.country-management', [
+            'allCountries'=> Country::orderBY('nom')->where('nom', 'like','%'. $this->search. '%')->paginate(10)
+        ]);
     }
 }
