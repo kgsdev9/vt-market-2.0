@@ -24,117 +24,79 @@
 
   <body >
     <main class="bg-white">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid px-0">
-          <a class="navbar-brand text-dark" href="/">VTP MARKET </a>
-          <div class="ms-auto d-flex align-items-center order-lg-3">
-            <ul class="navbar-nav navbar-right-wrap ms-2 flex-row d-none d-md-block">
-              <li class="dropdown ms-2 d-inline-block position-static">
-                <a href="{{route('cart')}}" class="btn btn-icon btn-light rounded-circle d-none d-md-inline-flex ms-2"><i class="fe fe-shopping-cart align-middle"></i></a>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid px-0">
+                <div class="d-flex">
+                    <a class="navbar-brand text-dark" href="/">
+                     <strong> VTP MARKET</strong>
+                    </a>
 
-                <a class="rounded-circle" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                  <div class="avatar avatar-md avatar-indicators avatar-online">
-                    <img alt="avatar" src="{{asset('assets/images/avatar/avatar-1.jpg')}}" class="rounded-circle" />
-                  </div>
-                </a>
-                <div class="dropdown-menu dropdown-menu-end position-absolute mx-3 my-5">
-                  <div class="dropdown-item">
-                    <div class="d-flex">
-                      <div class="avatar avatar-md avatar-indicators avatar-online">
-                        <img alt="avatar" src="{{asset('assets/images/avatar/avatar-1.jpg')}}" class="rounded-circle" />
-                      </div>
-                      <div class="ms-3 lh-1">
-                        <h5 class="mb-1">Annette Black</h5>
-                        <p class="mb-0">annette@geeksui.com</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="dropdown-divider"></div>
-                  <ul class="list-unstyled">
-                    @guest
-                    <li>
-                        <a class="dropdown-item" href="{{route('login')}}">
-                          <i class="fe fe-star me-2"></i>
-                          Se Connecter
-                        </a>
-                      </li>
-                    @else
-                    <li>
-                        <a class="dropdown-item" href="/dashboard">
-                          <i class="fe fe-user me-2"></i>
-                         Mon compte
-                        </a>
-                    @endguest
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="pages/student-subscriptions.html">
-                        <i class="fe fe-star me-2"></i>
-                        Mes commandes
-                      </a>
-                    </li>
-                    <li>
-
-                    </li>
-                  </ul>
-                  <div class="dropdown-divider"></div>
-                  <ul class="list-unstyled">
-                    <li>
-                      <a class="dropdown-item" href="index.html">
-                        <i class="fe fe-power me-2"></i>
-                        Deconnexion
-                      </a>
-                    </li>
-                  </ul>
                 </div>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <button
-              class="navbar-toggler collapsed ms-2"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbar-default"
-              aria-controls="navbar-default"
-              aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="icon-bar top-bar mt-0"></span>
-              <span class="icon-bar middle-bar"></span>
-              <span class="icon-bar bottom-bar"></span>
-            </button>
-          </div>
-          <!-- Collapse -->
-          <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mt-3 mt-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('home')}}">Accueil</a>
+                <div class="order-lg-3">
+                    <div class="d-flex align-items-center">
 
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">Les Catalogues </a>
+                        @guest
+                        <a href="{{route('login')}}" class="btn btn-outline-secondary ms-2">Se Connecter</a>
+                            @else
+                            <a href="{{route('dashboard')}}" class="btn btn-outline-secondary ms-2">Mon Espace</a>
+                        @endguest
 
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('boutique.index')}}">Les professionelles</a>
 
-              </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="#">Deals du jour</a>
+                        <a  href="{{route('cart')}}" class="btn btn-icon btn-light rounded-circle d-none d-md-inline-flex ms-2">
 
-              </li>
+                            <i class="fe fe-shopping-cart align-middle"></i> </a>
+                        <!-- Button -->
+                        <button class="navbar-toggler collapsed ms-2 ms-lg-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="icon-bar top-bar mt-0"></span>
+                            <span class="icon-bar middle-bar"></span>
+                            <span class="icon-bar bottom-bar"></span>
+                        </button>
+                    </div>
+                </div>
 
-            </ul>
-            <form class="mt-3 mt-lg-0 ms-lg-3 d-flex align-items-center">
-              <span class="position-absolute ps-3 search-icon">
-                <i class="fe fe-search"></i>
-              </span>
-              <label for="search" class="visually-hidden"></label>
-              <input type="search" id="search" class="form-control ps-6" placeholder="Rechercher un produit" />
-            </form>
-          </div>
-        </div>
-      </nav>
+
+                <!-- Collapse -->
+                <div class="collapse navbar-collapse" id="navbar-default">
+                    <ul class="navbar-nav mx-auto">
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarLanding" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Les Professionelles</a>
+
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarPages" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalogue produit </a>
+
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarPages" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rubriques formations</a>
+
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarPages" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comment ca marche</a>
+
+                        </li>
+
+                        <form class="m d-flex align-items-center">
+                            <span class="position-absolute ps-3 search-icon">
+                                <i class="fe fe-search"></i>
+                            </span>
+                            <label for="search" class="visually-hidden"></label>
+                            <input type="search" id="search" class="form-control ps-6" placeholder="Rechercher....">
+                        </form>
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+
+
 
       @yield('content')
 
