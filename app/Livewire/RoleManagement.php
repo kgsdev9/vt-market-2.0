@@ -13,7 +13,7 @@ class RoleManagement extends Component
 
     protected $theme = "bootstrap";
 
-    public $RoleId, $nom = true, $search ="", $mode= true;
+    public $roleId, $nom , $search ="", $mode= true;
 
     protected $rules = [
         'nom' => 'required',
@@ -45,6 +45,7 @@ class RoleManagement extends Component
                 session()->flash('error','Role not found');
             } else {
                 $this->nom = $Role->nom;
+                $this->roleId = $Role->id;
                 $this->mode = false;
             }
         } catch (\Exception $ex) {
@@ -62,8 +63,8 @@ class RoleManagement extends Component
     {
         $this->validate();
         try {
-            Role::whereId($this->RoleId)->update([
-                'nom' => $this->name,
+            Role::whereId($this->roleId)->update([
+                'nom' => $this->nom,
             ]);
             session()->flash('success','Ville supprimé avec sucess');
             $this->resetFields();
@@ -72,11 +73,6 @@ class RoleManagement extends Component
             session()->flash('success','Something goes wrong!!');
         }
     }
-
-    public function resetFields(){
-        $this->nom = '';
-    }
-
 
     public function delete($id)
     {
@@ -88,10 +84,15 @@ class RoleManagement extends Component
         }
     }
 
+    public function resetFields(){
+        $this->nom = '';
+    }
 
 
     public function render()
     {
-        return view('livewire.role-management');
+        return view('livewire.role-management', [
+            'allRoles'=> Role::orderBY('nom')->where('nom', 'like','%'. $this->search. '%')->paginate(10)
+        ]);
     }
 }
