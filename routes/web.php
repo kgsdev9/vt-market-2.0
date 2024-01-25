@@ -8,8 +8,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BoutiqueController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\PanierController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PaymentNotificationController;
-use App\Http\Controllers\PointRelaisController;
 use App\Http\Controllers\ProductManagementController;
 use App\Http\Controllers\SocialiteConnecteControlller;
 use App\Http\Controllers\VendeurRegisterController;
@@ -38,7 +38,6 @@ Route::get('/catalogue-product',[HomeController::class, 'catalogueProduct']);
 Route::get('/store/seller/vtp/{id}', [HomeController::class, 'boutiqueSeller'])->name('boutique.seller');
 Route::get('/annuaire-categories', CategoryController::class)->name('categorie.index');
 Route::get('/all/stores/vtp', [HomeController::class, 'allBoutique'])->name('boutique.index');
-Route::get('/points-relais', PointRelaisController::class)->name('point.relais.index');
 
 //user profile
 Route::get('/espace-client', [DashboardUserController::class, 'customerDashboard'])->name('espace.client');
@@ -68,3 +67,6 @@ Route::post('/resise', [HomeController::class, 'renitialiseImage'])->name('image
 Route::get('/succes-payment', [PaymentNotificationController::class, 'successPayment']);
 Route::get('/echec-payment', [PaymentNotificationController::class, 'echecPayment']);
 
+
+//PaymentControllers
+Route::post('/initialise-payment-gateway', [PaymentController::class, 'initialisePayment'])->name('initialise.payment');

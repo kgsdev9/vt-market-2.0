@@ -5,28 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Boutique;
 use App\Models\Category;
-use Illuminate\Http\Request;
 use App\Models\PaymentAdresse;
 use Illuminate\Support\Facades\Auth;
-use Intervention\Image\ImageManager;
-use Intervention\Image\ImageManagerStatic as Image;
+use App\Http\Requests\PaymentRequest;
+use App\Http\Controllers\PaymentNotificationController;
 
 class HomeController extends Controller
 {
 
-    public function renitialiseImage(Request $request) {
 
-        if($request->paypalMethod == "paypal") {
-            dd('paypal');
-        } elseif($request->paypalMethod == "card") {
-            dd('card');
-        }
-
-
-        // notify()->success('Laravel Notify is awesome!');
-        // return redirect()->route('home');
-;
-    }
 
     /**
      * Create a new controller instance.

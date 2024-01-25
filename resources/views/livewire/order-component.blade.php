@@ -1,6 +1,8 @@
 <div>
     <div class="container mt-4">
-        <div class="row">
+        <form action="{{route('initialise.payment')}}" method="POST">
+            @csrf
+            <div class="row">
             <div class="col-md-8">
 
                 <div class="row">
@@ -18,7 +20,7 @@
                         @enderror
                         <div class="border p-4 rounded-3">
                             <div class="form-check mb-2">
-                                <input class="form-check-input" type="radio" wire:model="adresseSelected" value="{{$adresse->id}}">
+                                <input class="form-check-input" type="radio" name="adresse_id" value="{{$adresse->id}}">
                                 <label class="form-check-label text-dark fw-semibold" for="homeRadio">Adresse {{$nombre}}</label>
                             </div>
                             <!-- address -->
@@ -40,7 +42,7 @@
 
                 </div>
 
-                <form action="{{route('image.resize')}}" method="POST">
+
                     @csrf
                 <div class="row">
 
@@ -65,7 +67,7 @@
                         <div class="card-body">
                             <div class="d-md-flex">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="paypalMethod" value="paypal">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" value="PAYPAL">
                                     <label class="form-check-label ms-2 w-100" for="nextDelivery"></label>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center w-100">
@@ -82,7 +84,7 @@
                         <div class="card-body">
                             <div class="d-md-flex">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="paypalMethod" value="card">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" value="ORANGE CI">
                                     <label class="form-check-label ms-2 w-100" for="nextDelivery"></label>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center w-100">
@@ -100,7 +102,7 @@
                         <div class="card-body">
                             <div class="d-md-flex">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="nextDelivery">
+                                    <input class="form-check-input" type="radio" name="moov" value="">
                                     <label class="form-check-label ms-2 w-100" for="nextDelivery"></label>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center w-100">
@@ -130,11 +132,9 @@
                         </div>
                     </div>
                 </div>
-            </form>
 
             </div>
             <div class="col-md-4">
-
 
                 <div class="card mt-4 mt-lg-0">
                     <div class="card-body">
@@ -187,122 +187,17 @@
                                 <span class="fw-semibold text-dark">{{$total + 50}} € </span>
                             </li>
 
-                                <div class="row">
-                                    <div class="col-xl-4 col-lg-6 col-12">
-                                        <div class="card-body">
-                                            <div class="d-md-flex">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="paypalMethod" value="card">
-                                                    <label class="form-check-label ms-2 w-100" for="nextDelivery"></label>
-                                                </div>
-                                                <div class="d-flex justify-content-between align-items-center w-100">
-                                                    <div class="d-flex align-items-start">
-                                                        <img src="{{asset('master_card.png')}}" alt="" style="height:40px;">
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-lg-6 col-12">
-                                        <div class="card-body">
-                                            <div class="d-md-flex">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="paypalMethod" value="card">
-                                                    <label class="form-check-label ms-2 w-100" for="nextDelivery"></label>
-                                                </div>
-                                                <div class="d-flex justify-content-between align-items-center w-100">
-                                                    <div class="d-flex align-items-start">
-                                                        <img src="{{asset('master_card.png')}}" alt="" style="height:40px;">
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <li class="d-flex justify-content-between list-group-item px-0 pb-0">
+                           <button type="submit" class="btn btn-outline-dark">Proceder au paiement</button>
+                            </li>
 
 
-
-                                    <div class="col-xl-4 col-lg-6 col-12">
-                                        <div class="card-body">
-                                            <div class="d-md-flex">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="paypalMethod" value="card">
-                                                    <label class="form-check-label ms-2 w-100" for="nextDelivery"></label>
-                                                </div>
-                                                <div class="d-flex justify-content-between align-items-center w-100">
-                                                    <div class="d-flex align-items-start">
-                                                        <img src="{{asset('master_card.png')}}" alt="" style="height:40px;">
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-xl-4 col-lg-6 col-12">
-                                        <div class="card-body">
-                                            <div class="d-md-flex">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="paypalMethod" value="card">
-                                                    <label class="form-check-label ms-2 w-100" for="nextDelivery"></label>
-                                                </div>
-                                                <div class="d-flex justify-content-between align-items-center w-100">
-                                                    <div class="d-flex align-items-start">
-                                                        <img src="{{asset('master_card.png')}}" alt="" style="height:40px;">
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-lg-6 col-12">
-                                        <div class="card-body">
-                                            <div class="d-md-flex">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="paypalMethod" value="card">
-                                                    <label class="form-check-label ms-2 w-100" for="nextDelivery"></label>
-                                                </div>
-                                                <div class="d-flex justify-content-between align-items-center w-100">
-                                                    <div class="d-flex align-items-start">
-                                                        <img src="{{asset('master_card.png')}}" alt="" style="height:40px;">
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-4 col-lg-6 col-12">
-                                        <div class="card-body">
-                                            <div class="d-md-flex">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="paypalMethod" value="card">
-                                                    <label class="form-check-label ms-2 w-100" for="nextDelivery"></label>
-                                                </div>
-                                                <div class="d-flex justify-content-between align-items-center w-100">
-                                                    <div class="d-flex align-items-start">
-                                                        <img src="{{asset('master_card.png')}}" alt="" style="height:40px;">
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
 
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </div>
+     </form>
 </div>
