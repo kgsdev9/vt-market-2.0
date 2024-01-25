@@ -17,7 +17,7 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next): Response
     {
 
-        if (!Auth::user()->role->nom =="admin") {
+        if (Auth::user()->role->nom != "admin") {
             // If user is not an admin, redirect to home page
             return redirect()->route('home');
         }
