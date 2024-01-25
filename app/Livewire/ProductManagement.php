@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Auth;
 class ProductManagement extends Component
 {
     use WithFileUploads;
+    protected $paginationTheme = 'bootstrap';
+    
     public $libelle_boutique, $nom_vendeur, $prenom_vendeur, $description, $telephone, $contact, $piece,  $logo_boutique, $city_id, $country_id, $adresse, $countryAll, $allCities;
 
     protected $rules = [

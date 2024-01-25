@@ -11,7 +11,7 @@ class CityManagement extends Component
 
     use WithPagination;
 
-    protected $theme = "bootstrap";
+    protected $paginationTheme = 'bootstrap';
 
     public $cityId, $nom, $search ="", $mode= true;
 

@@ -11,7 +11,7 @@ class RoleManagement extends Component
 
     use WithPagination;
 
-    protected $theme = "bootstrap";
+    protected $paginationTheme = 'bootstrap';
 
     public $roleId, $nom , $search ="", $mode= true;
 

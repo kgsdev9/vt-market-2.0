@@ -25,7 +25,6 @@ class PaymentController extends Controller
 
     public function initialisePayment(PaymentRequest $request)  {
         $customerData =   PaymentAdresse::where('id', $request->adresse_id)->first();
-
         $carts = session()->get('cart');
        $commande =  Commande::create([
             'reference'=>rand(1300, 4000),

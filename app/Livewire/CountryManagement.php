@@ -11,7 +11,7 @@ class CountryManagement extends Component
 
     use WithPagination;
 
-    protected $theme = "bootstrap";
+    protected $paginationTheme = 'bootstrap';
 
     public $countryId, $nom , $search ="", $mode= true;
 

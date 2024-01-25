@@ -14,7 +14,7 @@ class UserManagement extends Component
 
     use WithPagination;
 
-    protected $theme = "bootstrap";
+    protected $paginationTheme = 'bootstrap';
 
     public $userId, $name, $email, $mode = true, $search ="", $password, $role_id;
 
