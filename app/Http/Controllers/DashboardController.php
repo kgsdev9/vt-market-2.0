@@ -16,8 +16,11 @@ class DashboardController extends Controller
             return view('clients.dashboards.index', [
                 'countOrders'=> Commande::where('user_id', Auth::user()->id)->count()
             ]);
-         } elseif(Auth::user()->role->nom == "vendeur" && Auth::user()->role->nom=="admin") {
+         } elseif(Auth::user()->role->nom == "admin") {
              return view('dashboards.index');
+         } else {
+            return view('dashboards.index');
          }
+         dd('ss');
     }
 }

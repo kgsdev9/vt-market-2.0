@@ -29,6 +29,7 @@
                                     <th>Pays</th>
                                     <th>Ville</th>
                                     <th>Télephone</th>
+                                    <th>Status de la commande</th>
                                     <th>Action</th>
 
                                 </tr>
@@ -45,6 +46,15 @@
                                     <td>{{$commande->owneradresse->country->nom}}</td>
                                     <td>{{$commande->owneradresse->city->nom}}</td>
                                     <td>{{$commande->owneradresse->contact}}</td>
+                                    <td>
+                                        @if($commande->status == "validee")
+                                        <span class="badge bg-success me-4">Validée</span>
+                                        @elseif($commande->status == "refuse")
+                                        <span class="badge bg-danger me-4">Echec</span>
+                                        @elseif($commande->status == "encours")
+                                        <span class="badge bg-warning me-4">Encours</span>
+                                        @endif
+                                    </td>
                                     <td><a href="{{route('show.orders', $commande->id)}}">Voir</a></td>
                                 </tr>
                                 @endforeach

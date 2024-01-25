@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CityManagementController;
+use App\Http\Controllers\Admin\CountryManagementController;
+use App\Http\Controllers\Admin\ManagementBoutiqueController;
+use App\Http\Controllers\Admin\RoleManagementController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AdresseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -70,3 +76,21 @@ Route::get('/echec-payment', [PaymentNotificationController::class, 'echecPaymen
 
 //PaymentControllers
 Route::post('/initialise-payment-gateway', [PaymentController::class, 'initialisePayment'])->name('initialise.payment');
+
+
+//notifications payement url
+
+Route::get('/success-payment', [PaymentNotificationController::class, 'successFullPayment'])->name('payment.sucess');
+Route::get('/failled-payment', [PaymentNotificationController::class, 'failedPayment'])->name('failled.payment');
+Route::get('/cancel-payment', [PaymentNotificationController::class, 'cancelPayment'])->name('cancel.payment');
+
+
+//administration gestion routes
+
+Route::get('/all/commandes', [AdminController::class, 'allCommandes'])->name('all.commandes');
+Route::get('/detail/order/{id}', [AdminController::class, 'singleViewInvoice'])->name('view.order');
+Route::get('/gestion-users', UserController::class)->name('geston.users');
+Route::get('/all-boutique', ManagementBoutiqueController::class)->name('management.store');
+Route::get('/role-management', RoleManagementController::class)->name('role.management');
+Route::get('/city-management', CityManagementController::class)->name('city.management');
+Route::get('/country-management', CountryManagementController::class)->name('country.management');

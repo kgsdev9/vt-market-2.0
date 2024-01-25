@@ -13,16 +13,15 @@
 <!-- Favicon icon-->
 <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico" />
 
-<!-- darkmode js -->
-<script src="/assets/js/vendors/darkMode.js"></script>
 
 <!-- Libs CSS -->
-<link href="assets/fonts/feather/feather.css" rel="stylesheet" />
-<link href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
-<link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+<link href="{{asset('assets/fonts/feather/feather.css')}}" rel="stylesheet" />
+<link href="{{asset('assets/libs/bootstrap-icons/font/bootstrap-icons.min.css')}}" rel="stylesheet" />
+<link href="{{asset('assets/libs/simplebar/dist/simplebar.min.css')}}" rel="stylesheet" />
 
 <!-- Theme CSS -->
-<link rel="stylesheet" href="assets/css/theme.min.css">
+<link rel="stylesheet" href="{{asset('assets/css/theme.min.css')}}">
+
  <title>Panel d'administration vtp market</title>
  @livewireStyles
     </head>
@@ -35,7 +34,7 @@
 <nav class="navbar-vertical navbar">
     <div class="vh-100" data-simplebar>
         <!-- Brand logo -->
-        <a class="navbar-brand text-dark" href="#">
+        <a class="navbar-brand text-dark" href="{{route('home')}}" target="_blank">
           VTP MARKET
         </a>
         <!-- Navbar nav -->
@@ -43,7 +42,7 @@
             <li class="nav-item">
                 <a
                     class="nav-link "
-                    href="#"
+                    href="{{route('dashboard')}}"
 
                    >
                     <i class="nav-icon fe fe-home me-2"></i>
@@ -55,7 +54,7 @@
             <li class="nav-item">
                 <a
                     class="nav-link"
-                    href="#"
+                    href="{{route('management.store')}}"
                     >
                     <i class="nav-icon fe fe-book me-2"></i>
                     Gestion vendeurs
@@ -70,24 +69,34 @@
                 </a>
 
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link  collapsed " href="{{route('role.management')}}">
+                    <i class="nav-icon fe fe-book-open me-2"></i>
+                  Gestion des roles
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  collapsed " href="{{route('geston.users')}}">
+                    <i class="nav-icon fe fe-book-open me-2"></i>
+                   Gestion des utilisateurs
+                </a>
+            </li>
             @endcan
             <!-- Nav item -->
+            @can('is_seller')
             <li class="nav-item">
                 <a class="nav-link  collapsed " href="{{route('product.management')}}">
                     <i class="nav-icon fe fe-book-open me-2"></i>
                    Profil vendeur
                 </a>
-
             </li>
-
             <li class="nav-item">
                 <a class="nav-link  collapsed " href="{{route('gestion.boutique')}}">
                     <i class="nav-icon fe fe-book-open me-2"></i>
                    Ma boutique
                 </a>
-
             </li>
+            @endcan
 
             @can('is_administrateur')
             <li class="nav-item">
@@ -99,9 +108,23 @@
             </li>
             <!-- Nav item -->
             <li class="nav-item">
-                <a class="nav-link " href="chat-app.html">
+                <a class="nav-link " href="{{route('all.commandes')}}">
                     <i class="nav-icon fe fe-message-square me-2"></i>
                    Gestion commannde
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link " href="{{route('country.management')}}">
+                    <i class="nav-icon fe fe-message-square me-2"></i>
+                  Gestion pays
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link " href="{{route('city.management')}}">
+                    <i class="nav-icon fe fe-message-square me-2"></i>
+                  Gestion ville
                 </a>
             </li>
             @endcan

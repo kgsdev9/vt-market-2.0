@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Commande;
+use App\Mail\SendOrderEmail;
 use App\Models\PaymentAdresse;
+use App\Jobs\AdminiNotificationJob;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\PaymentRequest;
 
 class PaymentController extends Controller
@@ -21,6 +25,24 @@ class PaymentController extends Controller
 
     public function initialisePayment(PaymentRequest $request)  {
         $customerData =   PaymentAdresse::where('id', $request->adresse_id)->first();
+
+        $carts = session()->get('cart');
+       $commande =  Commande::create([
+            'reference'=>rand(1300, 4000),
+            'price_delivry'=> 50,
+            'user_id'=>Auth::user()->id,
+            'paymentadresse_id'=>$customerData->id,
+        ]);
+        foreach($carts as $cart){
+            $commande->products()->attach( $cart['product_id'],
+               [
+                'quantity'=>$cart['quantity'],
+                'total'=>$cart['prix']*$cart['quantity']
+               ]);
+         };
+
+        Mail::to(Auth::user()->email)->queue(new SendOrderEmail($commande));
+        AdminiNotificationJob::dispatch($commande)->delay(now()->addSecond(10));
             $data = array(
                 'merchantId' => "PP-F2197",
                 'amount' => $this->convertionAmount($request->amount),
@@ -32,9 +54,9 @@ class PaymentController extends Controller
                 'customerFirstName' => $customerData->fullname,
                 'customerLastname' => $customerData->fullname,
                 'customerPhoneNumber' => $customerData->contact,
-                'notificationURL' => "localhost",
-                'returnURL' => "localhost",
-                'returnContext' => '{"data":"data 1","data2":"data 2"}',
+                'notificationURL' => route('payment.sucess'),
+                'returnURL' => route('failled.payment'),
+                'returnContext' => '',
             );
             $data = json_encode($data);
             $ch = curl_init();

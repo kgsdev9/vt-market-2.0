@@ -1,4 +1,4 @@
 @extends('dashboards.master')
 @section('master')
-@livewire('seller-management-store')
+@livewire('city-management')
 @endsection
