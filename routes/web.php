@@ -18,6 +18,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PaymentNotificationController;
 use App\Http\Controllers\ProductManagementController;
 use App\Http\Controllers\SocialiteConnecteControlller;
+use App\Http\Controllers\SuiviController;
 use App\Http\Controllers\VendeurRegisterController;
 use App\Livewire\SingleBoutiqueSellerComponent;
 
@@ -85,3 +86,7 @@ Route::get('/comment-ca-marche', function () {
     return view('pages.comment-ca-marche');
 });
 
+
+//Suivis livraisons
+
+Route::get('/suivi-commande', SuiviController::class)->name('suivi.delivry');
