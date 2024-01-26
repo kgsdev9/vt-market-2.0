@@ -79,5 +79,9 @@ Route::middleware(['is_admin', 'auth'])->group(function () {
     Route::get('/country-management', CountryManagementController::class)->name('country.management');
 });
 
+//pages statiques
 
+Route::get('/comment-ca-marche', function () {
+    return view('pages.comment-ca-marche');
+});
 
