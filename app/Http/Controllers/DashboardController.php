@@ -6,10 +6,11 @@
 namespace App\Http\Controllers;
 
 
-use App\Repositories\ProductService;
+
+use App\Services\UserService;
+use App\Services\ProductService;
 use App\Services\BoutiqueService;
 use App\Services\CommandeService;
-use App\Services\UserService;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller

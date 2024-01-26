@@ -1,5 +1,6 @@
 <?php
-namespace App\Repositories ;
+
+namespace App\Services ;
 
 use App\Repositories\ProductRepository;
 
