@@ -14,6 +14,8 @@ class Category extends Component
 
     use WithPagination;
     use WithFileUploads;
+
+    
     protected $paginationTheme = 'bootstrap';
 
     public $dynamique_paginate =10 ;

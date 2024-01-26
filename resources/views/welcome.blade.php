@@ -189,6 +189,93 @@
         </div>
     </section>
 
+
+    <section class="py-8 bg-white">
+        <div class="container my-lg-4">
+            <div class="row">
+                <div class="offset-lg-2 col-lg-8 col-md-12 col-12 mb-8">
+                    <!-- caption-->
+                    <h1 class="display-2 fw-bold mb-3">
+                        Hi there, we’re
+                        <span class="text-primary">Geeks</span>
+                    </h1>
+                    <!-- para -->
+                    <p class="h2 mb-3">
+                        We’re building the best next-generation interactive bootstrap based UI Kit design tool for developers, engineers, Full-Stack developer, and digital agency.
+                    </p>
+                    <p class="mb-0 h4 text-body lh-lg">
+                        Geeks provide clean and consistent page designs to help you to create beautiful looking contents. Geek is feature-rich components and beautifully designed pages that
+                        help you create the best possible website and web application projects.
+                    </p>
+                </div>
+            </div>
+            <!-- gallery -->
+            <div class="gallery mb-8">
+                <!-- gallery-item -->
+                <figure class="gallery__item gallery__item--1 mb-0">
+                    <img src="../assets/images/about/geeksui-img-1.jpg" alt="Gallery image 1" class="gallery__img rounded-3">
+                </figure>
+                <!-- gallery-item -->
+                <figure class="gallery__item gallery__item--2 mb-0">
+                    <img src="../assets/images/about/geeksui-img-2.jpg" alt="Gallery image 2" class="gallery__img rounded-3">
+                </figure>
+                <!-- gallery-item -->
+                <figure class="gallery__item gallery__item--3 mb-0">
+                    <img src="../assets/images/about/geeksui-img-3.jpg" alt="Gallery image 3" class="gallery__img rounded-3">
+                </figure>
+                <!-- gallery-item -->
+                <figure class="gallery__item gallery__item--4 mb-0">
+                    <img src="../assets/images/about/geeksui-img-4.jpg" alt="Gallery image 4" class="gallery__img rounded-3">
+                </figure>
+                <!-- gallery-item -->
+                <figure class="gallery__item gallery__item--5 mb-0">
+                    <img src="../assets/images/about/geeksui-img-5.jpg" alt="Gallery image 5" class="gallery__img rounded-3">
+                </figure>
+                <!-- gallery-item -->
+                <figure class="gallery__item gallery__item--6 mb-0">
+                    <img src="../assets/images/about/geeksui-img-6.jpg" alt="Gallery image 6" class="gallery__img rounded-3">
+                </figure>
+            </div>
+            <div class="row">
+                <!-- row -->
+                <div class="col-md-6 offset-right-md-6">
+                    <!-- heading -->
+                    <h1 class="display-4 fw-bold mb-3">Our global reach</h1>
+                    <!-- para -->
+                    <p class="lead">Geeks is the leading global marketplace for teaching and learning, connecting millions of students to the skills they need to succeed.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <!-- counter -->
+                    <div class="border-top pt-4 mt-6 mb-5">
+                        <h1 class="display-3 fw-bold mb-0">20M</h1>
+                        <p class="text-uppercase">Learners</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <!-- counter -->
+                    <div class="border-top pt-4 mt-6 mb-5">
+                        <h1 class="display-3 fw-bold mb-0">57K</h1>
+                        <p class="text-uppercase">Instructors</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <!-- counter -->
+                    <div class="border-top pt-4 mt-6 mb-5">
+                        <h1 class="display-3 fw-bold mb-0">21K</h1>
+                        <p class="text-uppercase">Courses</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <!-- counter -->
+                    <div class="border-top pt-4 mt-6 mb-5">
+                        <h1 class="display-3 fw-bold mb-0">380M</h1>
+                        <p class="text-uppercase">Course enrollments</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
             <section class="py-5 bg-light-subtle" data-cue="fadeIn" data-show="true" style="animation-name: fadeIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
                 <div class="container my-lg-7" data-cues="zoomIn" data-disabled="true">
                    <div class="row justify-content-center text-center" data-cue="zoomIn" data-show="true" style="animation-name: zoomIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">

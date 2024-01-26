@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Boutique;
-use App\Models\Category;
 use App\Models\PaymentAdresse;
+use App\Services\BoutiqueService;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -17,28 +17,24 @@ class HomeController extends Controller
 
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+     protected $boutiqueService;
+
+     public function __construct(BoutiqueService $boutiqueService)
+     {
+        $this->boutiqueService = $boutiqueService;
+     }
+
     public function index()
     {
         return view('welcome', [
-            'allProducts'=> Product::all(),
-            'allCategories'=> Category::all()
+
         ]);
     }
 
     public function allBoutique() {
         return view('home.boutique', [
-            'allSellers'=> Boutique::all()
         ]);
-    }
-
-    public function boutiqueSeller($id) {
-        $boutique = Boutique::where('id', $id)->first();
-     $product  =  Product::where('boutique_id',$boutique->id)->get();
-        return view('home.singleBoutique', [
-            'boutique'=>  $boutique,
-            'productStore'=>  $product
-        ]);
-
     }
 
     public function singleProduct($slug) {

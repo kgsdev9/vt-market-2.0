@@ -12,7 +12,7 @@ class PaymentRepository
         $this->paymentAdresse = $paymentAdresse;
     }
 
-    public function singless($id) {
+    public function single($id) {
         return $this->paymentAdresse
                     ->where('id', $id)
                     ->first();

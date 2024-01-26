@@ -36,9 +36,9 @@
                     <div class="d-flex align-items-center">
 
                         @guest
-                        <a href="{{route('login')}}" class="btn btn-outline-secondary ms-2">Se Connecter</a>
+                        <a href="{{route('login')}}" class="btn btn-outline-secondary ms-2"> <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 21C4 17.4735 6.60771 14.5561 10 14.0709M19.8726 15.2038C19.8044 15.2079 19.7357 15.21 19.6667 15.21C18.6422 15.21 17.7077 14.7524 17 14C16.2923 14.7524 15.3578 15.2099 14.3333 15.2099C14.2643 15.2099 14.1956 15.2078 14.1274 15.2037C14.0442 15.5853 14 15.9855 14 16.3979C14 18.6121 15.2748 20.4725 17 21C18.7252 20.4725 20 18.6121 20 16.3979C20 15.9855 19.9558 15.5853 19.8726 15.2038ZM15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg> Se Connecter</a>
                             @else
-                            <a href="{{route('dashboard')}}" class="btn btn-outline-secondary ms-2">Mon Espace</a>
+                            <a href="{{route('dashboard')}}" class="btn btn-outline-secondary ms-2"> <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 21C4 17.4735 6.60771 14.5561 10 14.0709M19.8726 15.2038C19.8044 15.2079 19.7357 15.21 19.6667 15.21C18.6422 15.21 17.7077 14.7524 17 14C16.2923 14.7524 15.3578 15.2099 14.3333 15.2099C14.2643 15.2099 14.1956 15.2078 14.1274 15.2037C14.0442 15.5853 14 15.9855 14 16.3979C14 18.6121 15.2748 20.4725 17 21C18.7252 20.4725 20 18.6121 20 16.3979C20 15.9855 19.9558 15.5853 19.8726 15.2038ZM15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg> Mon Espace</a>
                         @endguest
 
 
@@ -61,23 +61,23 @@
                     <ul class="navbar-nav mx-auto">
 
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarLanding" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Les Professionelles</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="navbarLanding"> <svg width="20px" height="2Opx" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#000000" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M43.21,54.62H12a2.93,2.93,0,0,1-3-2.84V26.19"></path><line x1="49.01" y1="26.36" x2="49.01" y2="37.37"></line><polyline points="23.26 54.55 23.26 37.48 34.84 37.48 34.84 54.55"></polyline><path d="M5.45,18.2s-1.1,7.76,6.45,9a7.15,7.15,0,0,0,6.1-2A7.43,7.43,0,0,0,29,25a7.37,7.37,0,0,0,5,2.49,11.77,11.77,0,0,0,5.89-2.15,6.67,6.67,0,0,0,4.68,2.15,8,8,0,0,0,7.92-9.3L47.79,8.08a1,1,0,0,0-.94-.66H11a1,1,0,0,0-.94.66Z"></path><line x1="5.45" y1="18.2" x2="52.54" y2="18.2"></line><line x1="18.05" y1="18.2" x2="18.05" y2="7.42"></line><line x1="29.05" y1="18.2" x2="29.05" y2="7.42"></line><line x1="40.02" y1="18.2" x2="40.02" y2="7.42"></line><circle cx="49.01" cy="46.97" r="9.6"></circle><polyline points="49.01 40.86 49.01 47.27 52.58 50.01"></polyline></g></svg>  Les Professionelles</a>
 
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarPages" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalogue produit </a>
-
-                        </li>
-
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarPages" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rubriques formations</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="navbarPages" > <svg width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <style>.cls-1{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style> </defs> <g id="ic-ecommerce-basket"> <path class="cls-1" d="M17.89,20.85H6.11a1.42,1.42,0,0,1-1.38-1.08L2.08,9.16a.7.7,0,0,1,.68-.87H21.24a.7.7,0,0,1,.68.87L19.27,19.77A1.42,1.42,0,0,1,17.89,20.85Z"></path> <line class="cls-1" x1="9.8" y1="3.15" x2="6.9" y2="8.29"></line> <line class="cls-1" x1="13.88" y1="3.15" x2="16.79" y2="8.29"></line> </g> </g></svg> Catalogue produit </a>
 
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarPages" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comment ca marche</a>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" > <svg width="20px" height="20px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}</style></defs><circle class="a" cx="24" cy="24" r="21.5"></circle><path class="a" d="M9.3874,11.974V27.847c7.6216,1.255,14.384,2.87,19.378,5.2271V18.2211a47.8844,47.8844,0,0,0-19.378-6.247Z"></path><path class="a" d="M40.113,15.926V31.544a99.4176,99.4176,0,0,0-19.57,5.4821V22.1731c5.7077-3.8293,12.444-5.4926,19.57-6.247Z"></path></g></svg> Rubriques formations</a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" >Comment ca marche</a>
 
                         </li>
 

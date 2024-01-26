@@ -22,6 +22,15 @@ public function single($id) {
                 ->first();
 }
 
+public function collecteOders()  {
+    if(Auth::user()->role->nom == "user") {
+        return $this->commande->where('user_id', Auth::user()->id)
+                             ->get();
+    } else  {
+        return $this->commande->count();
+    }
+}
+
 
 public function allOrdersUser() {
     return $this->commande

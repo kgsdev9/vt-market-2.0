@@ -19,6 +19,4 @@ public function allSellers() {
 }
 
 
-
-
 }

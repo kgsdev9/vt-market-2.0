@@ -37,4 +37,8 @@ class CommandeService  {
         return $this->commandeRepository->getSommeTotalOrders();
     }
 
+    public function collecteOders() {
+        return $this->commandeRepository->collecteOders();
+    }
+
 }

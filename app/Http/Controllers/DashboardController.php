@@ -5,8 +5,6 @@
      */
 namespace App\Http\Controllers;
 
-
-
 use App\Services\UserService;
 use App\Services\ProductService;
 use App\Services\BoutiqueService;
@@ -26,15 +24,14 @@ class DashboardController extends Controller
         $this->userService = $userService;
         $this->boutiqueService = $boutiqueService;
         $this->productService = $productService;
-
     }
 
     public function index() {
-        if(Auth::user()->role->nom == "user")  {
+        if(Auth::user()->role->nom== "user")  {
             return view('clients.dashboards.index', [
                 'countOrders'=> $this->commandeService->countOrders()
             ]);
-         } elseif(Auth::user()->role->nom == "admin") {
+         } elseif(Auth::user()->role->nom== "admin") {
              return view('dashboards.index', [
                 'countCommande' => $this->commandeService->countOrders(),
                 'countProducts'  =>   $this->productService->count(),
