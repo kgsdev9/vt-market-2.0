@@ -37,7 +37,7 @@ class BoutiqueComponent extends Component
          ]);
             foreach($this->images as $photo) {
                 $path =   $photo->hashName('public/product/images');
-                $image = Image::make($photo)->fit(825, 600);
+                $image = Image::make($photo)->fit(600, 600);
                 Storage::put($path, (string)$image->encode());
                     ModelsImage::create([
                         'image' =>$path,

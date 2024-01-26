@@ -12,7 +12,6 @@ class PaymentRepository
         $this->paymentAdresse = $paymentAdresse;
     }
 
-
     public function singless($id) {
         return $this->paymentAdresse
                     ->where('id', $id)

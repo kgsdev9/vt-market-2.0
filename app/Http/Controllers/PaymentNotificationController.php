@@ -8,8 +8,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
+
 class PaymentNotificationController extends Controller
 {
+
+    protected $orderStatusService ;
+
+
+    public function __construct()
+    {
+
+    }
+
+
     public function successFullPayment() {
         $commande =  Commande::where('user_id', Auth::user()->id)
         ->orderByDesc('created_at')->first();
@@ -17,7 +28,7 @@ class PaymentNotificationController extends Controller
         'status' =>'refuse'
         ]);
 
-     Mail::to(Auth::user()->email)->queue(new SendOrderEmail($commande));
+   
         return view('notifications.Payments.sucess');
     }
     public function failedPayment() {

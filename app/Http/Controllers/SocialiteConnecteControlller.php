@@ -9,7 +9,6 @@ class SocialiteConnecteControlller extends Controller
 {
     protected $providers = [ "google", "github", "facebook" ];
 
-
    public function redirect(Request $request) {
     $provider = $request->provider;
 

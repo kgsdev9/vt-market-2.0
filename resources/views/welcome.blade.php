@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('content')
     <!-- Page Content -->
-    <section class="bg-white py-8 bg-cover">
+    <section class="bg-white shadow-sm py-8 bg-cover">
         <!-- container -->
         <div class="container">
             <!-- row -->
