@@ -137,8 +137,8 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4>Learn from Industry Experts</h4>
-                                    <p>Lorem ipsum dolor sit amet, conse ctetur adipisc amus ac iaculis arcu.</p>
+                                    <h4>Livraison garantie et sécurisée </h4>
+                                    <p>Nous vous livrons vos colis en Afrique avec nos partenaires de transports fiables.</p>
                                 </div>
                             </div>
                         </div>
@@ -150,8 +150,8 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4>Free Resources</h4>
-                                    <p>Pellentesque sagittis placerat mollii purus onvallis venenatis asapien.</p>
+                                    <h4>Paiment Flexible</h4>
+                                    <p>Nous avons pensé à vous avec des moyens des paiement locaux telsque mobile money.</p>
                                 </div>
                             </div>
                         </div>
@@ -164,8 +164,8 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4>Learn Anytime, Anywhere</h4>
-                                    <p>Integer ultricies lorem nec erat fau euismod ipsum nislnec leo iaculis</p>
+                                    <h4>Suivie  de la livraison</h4>
+                                    <p>Suivez en temps réel l'evolution de votre colis jusqu'à vos portes</p>
                                 </div>
                             </div>
                         </div>
@@ -178,8 +178,8 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4>Skill-based Learning</h4>
-                                    <p>Duis sed sollicitudin narcu mi, faucibus in sapien non, auctor placerat arcu.</p>
+                                    <h4>Remboursement garantie</h4>
+                                    <p>Remboursement garantie en cas de probleme de la totalité de vos commandes.</p>
                                 </div>
                             </div>
                         </div>
@@ -196,16 +196,15 @@
                 <div class="offset-lg-2 col-lg-8 col-md-12 col-12 mb-8">
                     <!-- caption-->
                     <h1 class="display-2 fw-bold mb-3">
-                        Hi there, we’re
-                        <span class="text-primary">Geeks</span>
+                        Nos Collections
+                        <span class="text-danger">VTP</span>
                     </h1>
                     <!-- para -->
                     <p class="h2 mb-3">
-                        We’re building the best next-generation interactive bootstrap based UI Kit design tool for developers, engineers, Full-Stack developer, and digital agency.
+                        Une plateforme unique pour tous vos besoins professionnels
                     </p>
                     <p class="mb-0 h4 text-body lh-lg">
-                        Geeks provide clean and consistent page designs to help you to create beautiful looking contents. Geek is feature-rich components and beautifully designed pages that
-                        help you create the best possible website and web application projects.
+                        Vendez en ligne depuis votre boutique e-commerce ou sur les réseaux sociaux avec VTP.
                     </p>
                 </div>
             </div>
@@ -240,37 +239,9 @@
                 <!-- row -->
                 <div class="col-md-6 offset-right-md-6">
                     <!-- heading -->
-                    <h1 class="display-4 fw-bold mb-3">Our global reach</h1>
+                    <h1 class="display-4 fw-bold mb-3">Expédition simplifiée</h1>
                     <!-- para -->
-                    <p class="lead">Geeks is the leading global marketplace for teaching and learning, connecting millions of students to the skills they need to succeed.</p>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <!-- counter -->
-                    <div class="border-top pt-4 mt-6 mb-5">
-                        <h1 class="display-3 fw-bold mb-0">20M</h1>
-                        <p class="text-uppercase">Learners</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <!-- counter -->
-                    <div class="border-top pt-4 mt-6 mb-5">
-                        <h1 class="display-3 fw-bold mb-0">57K</h1>
-                        <p class="text-uppercase">Instructors</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <!-- counter -->
-                    <div class="border-top pt-4 mt-6 mb-5">
-                        <h1 class="display-3 fw-bold mb-0">21K</h1>
-                        <p class="text-uppercase">Courses</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <!-- counter -->
-                    <div class="border-top pt-4 mt-6 mb-5">
-                        <h1 class="display-3 fw-bold mb-0">380M</h1>
-                        <p class="text-uppercase">Course enrollments</p>
-                    </div>
+                    <p class="lead">Traitez une ou plusieurs commandes en un seul clic et offrez à vos clients des frais d'expédition négociés, grâce à la solution d'expédition de VTP ..</p>
                 </div>
             </div>
         </div>
