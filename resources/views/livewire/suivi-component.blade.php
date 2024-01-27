@@ -8,7 +8,7 @@
                         <h2 class="mb-0">Entrer la réference de votre commande  </h2>
                         <p>Parfois, des problèmes de connexion Internet peuvent entraîner des échecs de transactions en ligne. Assurez-vous d'avoir une connexion stable. </p>
 
-                       
+
 
                         <div class="m d-flex align-items-center">
                             <span class="position-absolute ps-3 search-icon">
@@ -105,7 +105,7 @@
                                     @endphp
                                     @foreach ($commande->products as $detail)
                                         @php
-                                            $total += $detail->pivot->quantity * $detail->pivot->total
+                                              $total += $detail->pivot->quantity * $detail->prix
                                         @endphp
                                     <tr class="text-dark">
                                         <td>

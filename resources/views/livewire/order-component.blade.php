@@ -102,7 +102,7 @@
                         <div class="card-body">
                             <div class="d-md-flex">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="moov" value="">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" value="MOOV CI">
                                     <label class="form-check-label ms-2 w-100" for="nextDelivery"></label>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center w-100">
@@ -119,7 +119,7 @@
                         <div class="card-body">
                             <div class="d-md-flex">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="nextDelivery">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" value="MTN CI">
                                     <label class="form-check-label ms-2 w-100" for="nextDelivery"></label>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center w-100">

@@ -110,8 +110,9 @@
                                     $total = 0;
                                     @endphp
                                     @foreach ($singleOrder->products as $detail)
+                                  
                                         @php
-                                            $total += $detail->pivot->quantity * $detail->pivot->total
+                                            $total += $detail->pivot->quantity * $detail->prix
                                         @endphp
                                     <tr class="text-dark">
                                         <td>
