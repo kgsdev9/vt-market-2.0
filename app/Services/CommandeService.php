@@ -14,7 +14,7 @@ class CommandeService  {
     }
 
     public function updateSuccessStatusPayment() {
-        return $this->commandeRepository->updateFailledStatusPayment();
+        return $this->commandeRepository->updateSuccessStatusPayment();
     }
 
     public function updateFailledStatusPayment() {

@@ -1,46 +1,27 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Commande;
-use App\Mail\SendOrderEmail;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
+use App\Services\CommandeService;
 
 
 class PaymentNotificationController extends Controller
 {
 
-    protected $orderStatusService ;
+    protected $commandeService ;
 
-    public function __construct()
+    public function __construct(CommandeService $commandeService)
     {
-
+        $this->commandeService = $commandeService;
     }
 
-
     public function successFullPayment() {
-        $commande =  Commande::where('user_id', Auth::user()->id)
-        ->orderByDesc('created_at')->first();
-        $update= $commande->update([
-        'status' =>'refuse'
-        ]);
-
-
+        $this->commandeService->updateSuccessStatusPayment();
         return view('notifications.Payments.sucess');
     }
 
-    
     public function failedPayment() {
-        $commande =  Commande::where('user_id', Auth::user()->id)
-                    ->orderByDesc('created_at')->first();
-        $update= $commande->update([
-            'status' =>'refuse'
-        ]);
-
+         $this->commandeService->updateFailledStatusPayment();
         return view('notifications.Payments.failled', [
-            'singleOrderFalied' =>  $commande
         ]);
     }
 

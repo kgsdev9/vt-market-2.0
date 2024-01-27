@@ -4,6 +4,7 @@ namespace App\Repositories ;
 use App\Models\Commande;
 use App\Mail\SendOrderEmail;
 use Illuminate\Support\Facades\DB;
+use App\Jobs\AdminiNotificationJob;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
@@ -47,6 +48,8 @@ public function updateFailledStatusPayment() {
                     'status' =>'refuse'
                     ]);
         }
+
+        return $lastPaymentUser;
 }
 
 public function updateSuccessStatusPayment() {
@@ -59,6 +62,7 @@ public function updateSuccessStatusPayment() {
                     ]);
         }
  Mail::to(Auth::user()->email)->queue(new SendOrderEmail($lastPaymentUser));
+ AdminiNotificationJob::dispatch($lastPaymentUser)->delay(now()->addSecond(10));
  return $lastPaymentUser;
 }
 

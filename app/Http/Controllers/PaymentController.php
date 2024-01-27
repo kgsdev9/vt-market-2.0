@@ -39,9 +39,6 @@ class PaymentController extends Controller
                 'total'=>$cart['prix']*$cart['quantity']
                ]);
          };
-
-        Mail::to(Auth::user()->email)->queue(new SendOrderEmail($commande));
-        AdminiNotificationJob::dispatch($commande)->delay(now()->addSecond(10));
             $data = array(
                 'merchantId' => "PP-F2197",
                 'amount' => $this->convertionAmount($request->amount),
