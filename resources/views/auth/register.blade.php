@@ -64,7 +64,7 @@
                         </span>
                         @enderror
                     </div>
-                    <!-- Password -->
+
                     <div class="mb-3">
                         <label for="password" class="form-label visually-hidden">Mot de passe</label>
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Entrer votre mot de passe ">

@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Notifications\Notification;
 use App\Notifications\WelcomeUserNotification;
+use App\Traits\GiveRole;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -31,6 +32,7 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+    use GiveRole;
 
     /**
      * Where to redirect users after registration.
@@ -66,7 +68,6 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'role_id' => ['required'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -83,7 +84,7 @@ class RegisterController extends Controller
     {
         $user =  User::create([
             'name' => $data['name'],
-            'role_id' => $data['role_id'],
+            'role_id' => $this->giveRoleUser(),
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

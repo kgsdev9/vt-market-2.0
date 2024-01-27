@@ -14,7 +14,6 @@ class PaymentNotificationController extends Controller
 
     protected $orderStatusService ;
 
-
     public function __construct()
     {
 
@@ -28,9 +27,11 @@ class PaymentNotificationController extends Controller
         'status' =>'refuse'
         ]);
 
-   
+
         return view('notifications.Payments.sucess');
     }
+
+    
     public function failedPayment() {
         $commande =  Commande::where('user_id', Auth::user()->id)
                     ->orderByDesc('created_at')->first();

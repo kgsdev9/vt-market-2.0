@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ManagementBoutiqueController;
 use App\Http\Controllers\Admin\RoleManagementController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AdresseController;
+use App\Http\Controllers\Auth\RegisterVendorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
@@ -17,9 +18,11 @@ use App\Http\Controllers\PanierController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PaymentNotificationController;
 use App\Http\Controllers\ProductManagementController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SocialiteConnecteControlller;
 use App\Http\Controllers\SuiviController;
 use App\Http\Controllers\VendeurRegisterController;
+use App\Livewire\DetailProduct;
 use App\Livewire\SingleBoutiqueSellerComponent;
 
 /*
@@ -47,12 +50,12 @@ Route::get('/commande/{id}', [DashboardUserController::class, 'showOrder'])->nam
 Route::get('/adresses-delivry', [DashboardUserController::class, 'adresseCustomer'])->name('adresse.client');
 Route::post('/registerAdresse', [AdresseController::class, 'store'])->name('register.adresse');
 Route::get('/become-seller', [VendeurRegisterController::class, 'registerSeller'])->name('register.seller');
-Route::get('/catalogue-product',[HomeController::class, 'catalogueProduct']);
+Route::get('/catalogue-product',[HomeController::class, 'catalogueProduct'])->name('catalogue.product');
 Route::get('/store/seller/vtp/{id}', [HomeController::class, 'boutiqueSeller'])->name('boutique.seller');
 Route::get('/annuaire-categories', CategoryController::class)->name('categorie.index');
 Route::get('/all/stores/vtp', [HomeController::class, 'allBoutique'])->name('boutique.index');
 Route::get('/category-product/{slug}', [HomeController::class ,'categoryProduct'])->name('product.categories');
-Route::get('/product/detail/{slug}', [HomeController::class, 'singleProduct'])->name('single.product');
+Route::get('/product/detail/{slug}', DetailProduct::class)->name('single.product');
 Route::get('/product-management', ProductManagementController::class)->name('product.management');
 Route::get('/gestion-boutique', BoutiqueController::class)->name('gestion.boutique');
 Route::get('/cart', PanierController::class)->name('cart');
@@ -86,7 +89,14 @@ Route::get('/comment-ca-marche', function () {
     return view('pages.comment-ca-marche');
 });
 
-
 //Suivis livraisons
 
 Route::get('/suivi-commande', SuiviController::class)->name('suivi.delivry');
+
+
+//make functionnalités search
+Route::get('/search-product', SearchController::class)->name('search');
+
+
+Route::get('/vendors/register', [RegisterVendorController::class, 'registerFormVendor'])->name('vendors.registration');
+Route::post('/vendors/registration', [RegisterVendorController::class, 'store'])->name('vendors.store');

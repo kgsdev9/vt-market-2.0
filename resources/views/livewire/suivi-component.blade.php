@@ -7,10 +7,14 @@
                         <!-- heading -->
                         <h2 class="mb-0">Entrer la réference de votre commande  </h2>
                         <p>Parfois, des problèmes de connexion Internet peuvent entraîner des échecs de transactions en ligne. Assurez-vous d'avoir une connexion stable. </p>
+
+                       
+
                         <div class="m d-flex align-items-center">
                             <span class="position-absolute ps-3 search-icon">
                                 <i class="fe fe-search"></i>
                             </span>
+
                             <label for="search" class="visually-hidden"></label>
                             <input type="search" wire:model.live="reference" class="form-control ps-6" placeholder="Rechercher....">
                             <button class="" wire:click="statusOrder">Consulter</button>

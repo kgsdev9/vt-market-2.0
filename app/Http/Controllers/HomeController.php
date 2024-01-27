@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Boutique;
+use App\Models\Category;
 use App\Models\PaymentAdresse;
 use App\Services\BoutiqueService;
 use Illuminate\Support\Facades\Auth;
@@ -25,10 +26,14 @@ class HomeController extends Controller
         $this->boutiqueService = $boutiqueService;
      }
 
+     public function catalogueProduct() {
+        return view('catalogue.products.index');
+     }
+
     public function index()
     {
         return view('welcome', [
-
+            'allCategories'=> Category::all()
         ]);
     }
 

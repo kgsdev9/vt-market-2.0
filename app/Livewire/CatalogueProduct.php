@@ -5,11 +5,13 @@ namespace App\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
-use App\Models\Marque;
+use App\Traits\WithProduct;
 
 class CatalogueProduct extends Component
 {
 
+    use WithProduct;
+    
     public $category = "" ;
     public $products;
 
@@ -18,19 +20,17 @@ class CatalogueProduct extends Component
 
        $product = Product::query();
 
-
         if($this->category != "") {
 
             $product->where('category_id', '=', $this->category);
         }
 
         $categories  = Category::all();
-        $marques = Marque::all();
+
 
         return view('livewire.catalogue-product',  [
             'allProducts'=> $product->get(),
             'allCategories'=> $categories,
-            'allMarques'=>$marques
         ]);
     }
 }

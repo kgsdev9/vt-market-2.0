@@ -14,7 +14,7 @@ class ProductManagement extends Component
 {
     use WithFileUploads;
     protected $paginationTheme = 'bootstrap';
-    
+
     public $libelle_boutique, $nom_vendeur, $prenom_vendeur, $description, $telephone, $contact, $piece,  $logo_boutique, $city_id, $country_id, $adresse, $countryAll, $allCities;
 
     protected $rules = [
@@ -90,9 +90,7 @@ class ProductManagement extends Component
             ->update(['owner_id' => $boutique->id]);
             return redirect()->route('product.management');
         }
-
         }
-
 
     public function render()
     {

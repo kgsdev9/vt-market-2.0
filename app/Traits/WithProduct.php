@@ -72,6 +72,21 @@ trait   WithProduct  {
         }
     }
 
+    public function shareProduct()  {
+        $currentUrl = url()->current();
+        $lienPartage = \Share::page(
+           $currentUrl
+        )
+        ->facebook()
+        ->twitter()
+        ->linkedin()
+        ->telegram()
+        ->whatsapp()
+        ->reddit();
+        return $lienPartage;
+    }
+
+
 
 
 }

@@ -24,7 +24,7 @@
                                         <div class="col-md-6">
                                             <div class="d-grid mb-2 mb-md-0">
                                                 <!-- btn -->
-                                                <a href="#" class="btn btn-danger">
+                                                <a href="{{route('vendors.registration')}}" class="btn btn-danger">
                                                     <i class="fe fe-heart me-2"></i>
                                                     Commencer à vendre
                                                 </a>

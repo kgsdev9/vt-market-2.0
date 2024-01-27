@@ -12,13 +12,17 @@ use App\Models\Image as ModelsImage;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
-;
+use Livewire\WithPagination;
+
 
 class BoutiqueComponent extends Component
 {
     use WithFileUploads;
+    use WithPagination;
 
-    public $images = [], $title, $description, $marque_id, $prix, $boutique_id, $mode = true, $boutique;
+    protected $paginationTheme = 'bootstrap';
+
+    public $images = [], $title, $description, $marque_id, $prix, $boutique_id, $mode = true, $boutique, $search;
 
 
     public function displayForm() {
@@ -48,6 +52,18 @@ class BoutiqueComponent extends Component
 
      }
 
+     public function delete($id) {
+      $images=   ModelsImage::where('product_id', $id)->get();
+      foreach($images as $image) {
+       $image =  Storage::url($image);
+       if($image) {
+        Storage::delete($image);
+       }
+      }
+      Product::find($id)->delete();
+      $this->mode = true;
+     }
+
         public function remove()  {
             $this->images = [];
 
@@ -59,7 +75,7 @@ class BoutiqueComponent extends Component
 
         return view('livewire.boutique-component', [
         'boutique'=> $this->boutique,
-        'allProducts' => Product::where('boutique_id',  $this->boutique?->id)->get()
+        'allProducts' => Product::where('boutique_id',  $this->boutique?->id)->orderByDesc('created_at')->where('title', 'like', '%'.$this->search.'%')->paginate(10)
         ]);
     }
 }
