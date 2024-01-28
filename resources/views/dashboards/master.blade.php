@@ -1,54 +1,37 @@
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="../../assets/libs/flatpickr/dist/flatpickr.min.css">
-        <!-- Required meta tags -->
+<head>
+<link rel="stylesheet" href="../../assets/libs/flatpickr/dist/flatpickr.min.css">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="author" content="VTP MARKET" />
-
-<!-- Favicon icon-->
 <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico" />
-
-
-<!-- Libs CSS -->
 <link href="{{asset('assets/fonts/feather/feather.css')}}" rel="stylesheet" />
 <link href="{{asset('assets/libs/bootstrap-icons/font/bootstrap-icons.min.css')}}" rel="stylesheet" />
 <link href="{{asset('assets/libs/simplebar/dist/simplebar.min.css')}}" rel="stylesheet" />
-
-<!-- Theme CSS -->
 <link rel="stylesheet" href="{{asset('assets/css/theme.min.css')}}">
-
  <title>@yield('title')</title>
  @livewireStyles
-    </head>
-
+ </head>
     <body>
-        <!-- Wrapper -->
-        <div id="db-wrapper">
-            <!-- navbar vertical -->
-            <!-- Sidebar -->
-<nav class="navbar-vertical navbar">
+    <div id="db-wrapper">
+    <nav class="navbar-vertical navbar">
     <div class="vh-100" data-simplebar>
-        <!-- Brand logo -->
         <a class="navbar-brand text-dark" href="{{route('home')}}" target="_blank">
           VTP MARKET
         </a>
-        <!-- Navbar nav -->
         <ul class="navbar-nav flex-column" id="sideNavbar">
             <li class="nav-item">
                 <a
                     class="nav-link "
                     href="{{route('dashboard')}}"
-
                    >
                     <i class="nav-icon fe fe-home me-2"></i>
                     Mon Espace
                 </a>
-
             </li>
             @can('is_administrateur')
             <li class="nav-item">
@@ -136,16 +119,12 @@
             <!-- Page Content -->
             <main id="page-content">
                 <div class="header">
-            <!-- navbar -->
             <nav class="navbar-default navbar navbar-expand-lg">
             <a id="nav-toggle" href="#">
             <i class="fe fe-menu"></i>
             </a>
-
             <div class="ms-auto d-flex">
-
             <ul class="navbar-nav navbar-right-wrap ms-2 d-flex nav-top-wrap">
-
                 <li class="dropdown ms-2">
                     <a class="rounded-circle" href="#" role="button" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
                         <div class="avatar avatar-md avatar-indicators avatar-online">
@@ -181,24 +160,14 @@
             </div>
             </nav>
             </div>
-
-                <!-- Page Header -->
-                <!-- Container fluid -->
                 @yield('master')
             </main>
         </div>
-
-        <!-- Script -->
-
-        <!-- Libs JS -->
-<script src="../../assets/libs/%40popperjs/core/dist/umd/popper.min.js"></script>
-<script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="../../assets/libs/simplebar/dist/simplebar.min.js"></script>
-
-<!-- Theme JS -->
-<script src="../../assets/js/theme.min.js"></script>
-
-        <script src="../../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+        <script src="../../assets/libs/%40popperjs/core/dist/umd/popper.min.js"></script>
+        <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../../assets/libs/simplebar/dist/simplebar.min.js"></script>
+        <script src="../../assets/js/theme.min.js"></script>
+         <script src="../../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
         <script src="../../assets/js/vendors/chart.js"></script>
         <script src="../../assets/libs/flatpickr/dist/flatpickr.min.js"></script>
         <script src="../../assets/js/vendors/flatpickr.js"></script>
