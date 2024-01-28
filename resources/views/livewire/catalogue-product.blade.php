@@ -19,7 +19,7 @@
                     <a href="{{route('single.product', $product->slug)}}">
                         @foreach ($product->images  as $article)
                          @if($article->id > 1)
-                         <img src="{{Storage::url($article->image)}}" alt="Article" class="card-img-top"></a>
+                         <img src="{{asset('s3/product/'.$article->image)}}" alt="Article" class="card-img-top"></a>
                             @break
                          @endif
                         @endforeach

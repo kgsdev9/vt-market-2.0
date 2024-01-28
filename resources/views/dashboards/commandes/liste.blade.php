@@ -15,7 +15,6 @@
         <div class="col-lg-12 col-md-12 col-12">
             <!-- Card -->
             <div class="card rounded-3">
-
                 <div class="p-4 row">
                     <!-- Form -->
                     <form class="d-flex align-items-center col-12 col-md-8 col-lg-3">

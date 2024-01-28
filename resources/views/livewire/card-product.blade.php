@@ -10,7 +10,7 @@
                                 <a href="{{route('single.product', $product->slug)}}">
                                     @foreach ($product->images  as $article)
                                      @if($article->id > 1)
-                                     <img src="{{Storage::url($article->image)}}" alt="Article" class="card-img-top"></a>
+                                     <img src="{{asset('s3/product/'.$article->image)}}" alt="Article" class="card-img-top"></a>
                                         @break
                                      @endif
                                     @endforeach
@@ -18,7 +18,7 @@
                                 <div class="card-body">
                                     <h4 class="mb-2 text-truncate-line-2"><a href="{{route('single.product', $product->slug)}}" class="text-inherit">{{$product->title}}</a></h4>
                                     <small>Boutique: {{$product->boutique->libelle_boutique}}</small>
-                                        <p>{{Str::limit($product->description, 100)}}..</p>
+                                        <p>{{Str::limit($product->description, 20)}}..</p>
                                 </div>
                                 <!-- Card Footer -->
                                 <div class="card-footer">

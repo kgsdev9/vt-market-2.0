@@ -59,11 +59,11 @@ class BoutiqueComponent extends Component
              'boutique_id'=> $this->boutique->id
          ]);
             foreach($this->images as $photo) {
-                $path =   $photo->hashName('public/product/images');
-                $image = Image::make($photo)->fit(600, 600);
-                Storage::put($path, (string)$image->encode());
+                $filename = $photo->getClientOriginalName();
+                $img = Image::make($photo);
+                $img->resize(600, 600)->save(public_path('s3/product/'.$filename));
                     ModelsImage::create([
-                        'image' =>$path,
+                        'image' =>$filename,
                         'product_id' => $product->id
                     ]);
                 }

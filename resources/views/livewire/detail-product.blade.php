@@ -17,9 +17,11 @@
         }
     </style>
 
+@section('title',  $singleProduct->title)
+
 <section class="container p-4">
 
-    
+
 <div class="row">
     <div class="col-lg-12 col-md-12 col-12">
         <!-- Page header -->
@@ -52,8 +54,8 @@
                     <div class="col-lg-6 col-12">
                         <div class="mb-4">
                             <!-- Gallery -->
-                            <a href="{{Storage::url($product->image)}}" class="glightbox" data-gallery="gallery2">
-                                <img src="{{Storage::url($product->image)}}" alt="image" class="img-fluid rounded-3 w-100">
+                            <a href="{{asset('s3/product/'.$product->image)}}" class="glightbox" data-gallery="gallery2">
+                                <img src="{{asset('s3/product/'.$product->image)}}" alt="image" class="img-fluid rounded-3 w-100">
                             </a>
                         </div>
                     </div>

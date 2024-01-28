@@ -45,7 +45,7 @@
                                             <td>
                                                 <div class="d-flex">
                                                     <div>
-                                                        <img src="{{Storage::url($details['image'])}}" alt="" class="img-4by3-md rounded">
+                                                        <img src="{{asset('s3/product/'.$details['image'])}}" alt="" class="img-4by3-md rounded">
                                                     </div>
                                                     <div class="ms-4 mt-2 mt-lg-0">
                                                         <h4 class="mb-1 text-primary-hover">{{ Str::limit($details['title'], 30)}}</h4>

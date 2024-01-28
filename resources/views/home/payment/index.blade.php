@@ -151,7 +151,7 @@
                         @endphp
                         <div class="d-md-flex my-3">
                             <div>
-                                <img src="{{Storage::url($details['image'])}}" alt="" class="img-4by3-xl rounded">
+                                <img src="{{asset('s3/product/'.$details['image'])}}" alt="" class="img-4by3-xl rounded">
                             </div>
                             <div class="ms-md-4 mt-2">
                                 <h4 class="mb-1 text-primary-hover">{{ $details['title']}}</h4>
@@ -164,9 +164,7 @@
                                 </h5>
                             </div>
                         </div>
-
                          @endforeach
-
 
                     </div>
                     <div class="card-body border-top pt-2">
