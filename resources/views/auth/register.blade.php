@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@section('title', 'Inscription')
 @section('content')
 <div class="row align-items-center justify-content-center g-0 h-lg-100 py-8">
     <div class="offset-xxl-1 col-xxl-5 col-lg-6 col-md-12">
@@ -47,7 +48,7 @@
                     <!-- Username -->
                     <div class="mb-3">
                         <label for="name" class="form-label visually-hidden">Nom d'utilisateur </label>
-                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Entrer votre nom d'utilisateur" required autocomplete="email" autofocus>
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Entrer votre nom d'utilisateur" required autocomplete="name" autofocus>
                         @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

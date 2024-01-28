@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@section('title', 'Connexion')
 @section('content')
 <div class="row align-items-center justify-content-center g-0 h-lg-100 py-8">
     <div class="offset-xxl-1 col-xxl-5 col-lg-6 col-md-12">

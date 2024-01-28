@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@section('title', 'Liste de mes commandes')
 @section('content')
 <section class="pt-5 pb-5">
     <div class="container">

@@ -1,32 +1,23 @@
 @extends('layouts.layout')
-
+@section('title', 'Bienvenue sur VTP-MARKET')
 @section('content')
-<!-- Page Content -->
 <section class="bg-white shadow-sm py-8 bg-cover">
-	<!-- container -->
 	<div class="container">
-		<!-- row -->
 		<div class="row align-items-center">
 			<div class="col-lg-6 col-12">
 				<div>
 					<div class="text-center text-md-start">
-						<!-- heading -->
 						<h1 class="display-2 fw-bold mb-3">Le grand marché de la vente internationale </h1>
-						<!-- lead -->
 						<p class="lead">
                             Commercialiser vos produits depuis n'importe qu'elle continent et commencer à produire des bénefices depuis chez vous, nous nous chargeons de trouver des acheteurs  pour vos produits
 						</p>
 					</div>
 					<div class="mt-8">
-						<!-- card -->
 						<div class="bg-white rounded-md-pill">
-							<!-- card body -->
 							<div class="p-md-2 p-4">
 								<div class="row">
-									<!-- col -->
 									<div class="col-md-6">
 										<div class="d-grid mb-2 mb-md-0">
-											<!-- btn -->
 											<a href="{{route('vendors.registration')}}" class="btn btn-danger">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12 15c3.186 0 6.045.571 8 3.063V20H4v-1.937C5.955 15.57 8.814 15 12 15m0-3a4 4 0 1 1 0-8a4 4 0 0 1 0 8m8 2a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2h-1z"/></svg>
                                                 Commencer à vendre</a>
@@ -54,7 +45,6 @@
 <section class="bg-white py-4 shadow-sm">
 	<div class="container">
 		<div class="row align-items-center g-0">
-			<!-- Features -->
 			<div class="col-xl-4 col-lg-4 col-md-6 mb-lg-0 mb-4">
 				<div class="d-flex align-items-center">
 					<span class="icon-shape icon-lg  rounded-circle text-center text-dark-warning fs-4"><i class="fe fe-video"></i></span>
@@ -66,7 +56,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- Features -->
 			<div class="col-xl-4 col-lg-4 col-md-6 mb-lg-0 mb-4">
 				<div class="d-flex align-items-center">
 					<span class="icon-shape icon-lg  rounded-circle text-center text-dark-warning fs-4"><i class="fe fe-shopping-bag"></i></span>
