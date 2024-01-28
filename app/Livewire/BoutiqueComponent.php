@@ -33,7 +33,7 @@ class BoutiqueComponent extends Component
         $product =  Product::create([
              'title'=> $this->title,
              'slug'=> Str::slug($this->title),
-             'description'=> $this->title,
+             'description'=> $this->description,
              'marque_id' => 1,
              'prix' =>  $this->prix,
              'view' =>1,

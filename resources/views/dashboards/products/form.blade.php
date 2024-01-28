@@ -10,7 +10,7 @@
                     <h4 class="mb-0">Nouveau produit </h4>
                     <span>En cas d'erreur vous supprimer le produit et récommencer le processus </span>
                 </div>
-                <form class="needs-validation" novalidate="">
+                <div class="needs-validation">
                     <div class="card-body">
                         <div class="row mt-4">
                             <div class="col-xl-3 col-lg-6 col-12">
@@ -25,7 +25,7 @@
 
                                         </div>
                                         <div class="mt-4 lh-1 d-flex align-items-center">
-                                            <input type="file" wire:model="images" class="btn-check mb-1 mb-md-0" name="options" id="option1" autocomplete="off">
+                                            <input type="file" wire:model="images"  class="btn-check mb-1 mb-md-0" name="options" id="option1" autocomplete="off" multiple>
                                             <label class="btn btn-outline-secondary" for="option1">
                                                 <i class="fe fe-image me-1"></i>
                                                 Téleverser vos images
@@ -107,7 +107,7 @@
 
                         <button type="button"  wire:click="store" class="btn btn-outline-secondary">Enregistrer le produit </button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
 

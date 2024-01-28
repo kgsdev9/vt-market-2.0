@@ -100,3 +100,9 @@ Route::get('/search-product', SearchController::class)->name('search');
 
 Route::get('/vendors/register', [RegisterVendorController::class, 'registerFormVendor'])->name('vendors.registration');
 Route::post('/vendors/registration', [RegisterVendorController::class, 'store'])->name('vendors.store');
+
+//testingpage
+
+Route::get('/detail/page', function() {
+    return view('detail');
+});
