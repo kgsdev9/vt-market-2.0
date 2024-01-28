@@ -61,9 +61,10 @@ public function updateSuccessStatusPayment() {
                     'status' =>'validee'
                     ]);
         }
- Mail::to(Auth::user()->email)->queue(new SendOrderEmail($lastPaymentUser));
- AdminiNotificationJob::dispatch($lastPaymentUser)->delay(now()->addSecond(10));
- return $lastPaymentUser;
+//  Mail::to(Auth::user()->email)->queue(new SendOrderEmail($lastPaymentUser));
+//  AdminiNotificationJob::dispatch($lastPaymentUser)->delay(now()->addSecond(10));
+
+return $lastPaymentUser;
 }
 
 public function all() {

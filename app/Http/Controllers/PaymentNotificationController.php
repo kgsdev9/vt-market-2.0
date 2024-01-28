@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Mail\SendOrderEmail;
 use App\Services\CommandeService;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 
 class PaymentNotificationController extends Controller
@@ -20,7 +23,9 @@ class PaymentNotificationController extends Controller
     }
 
     public function failedPayment() {
-         $this->commandeService->updateFailledStatusPayment();
+        //  $this->commandeService->updateFailledStatusPayment();
+        $commande =  $this->commandeService->updateSuccessStatusPayment();
+         Mail::to(Auth::user()->email)->queue(new SendOrderEmail($commande));
         return view('notifications.Payments.failled', [
         ]);
     }
