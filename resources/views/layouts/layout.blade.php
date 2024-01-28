@@ -22,7 +22,7 @@
             <div class="container-fluid px-0">
                 <div class="d-flex">
                     <a class="navbar-brand text-dark" href="/">
-                     <strong> VTP MARKET</strong>
+                     <strong> VTP</strong>
                     </a>
                 </div>
                 <div class="order-lg-3">
