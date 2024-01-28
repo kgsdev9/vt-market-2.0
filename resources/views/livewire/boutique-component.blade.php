@@ -38,7 +38,7 @@
                     <div class="card-body">
                         <h4 class="mb-2 text-truncate-line-2"><a href="{{route('single.product', $product->slug)}}" class="text-inherit">{{$product->title}}</a></h4>
                         <small>Boutique: {{$product->boutique->libelle_boutique}}</small>
-                            <p>{{$product->description}}..</p>
+                            <p>{{Str::limit($product->description,100)}}..</p>
                     </div>
                     <div class="card-footer">
                         <div class="row align-items-center g-0">

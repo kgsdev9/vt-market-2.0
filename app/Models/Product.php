@@ -16,6 +16,7 @@ class Product extends Model
         'category_id',
         'marque_id',
         'publish_at',
+        'popular',
         'view',
         'slug',
         'boutique_id'
@@ -31,10 +32,6 @@ class Product extends Model
 
     public function images() {
         return $this->hasMany(Image::class);
-    }
-
-    public function maruqe() {
-        return $this-> belongsTo(Marque::class, 'marque_id');
     }
 
     public function orders() {

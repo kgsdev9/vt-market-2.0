@@ -46,7 +46,7 @@
                             </p>
                             <button type="button" class="btn btn-secondary btn-sm px-2 py-0">+ Consulter</button>
                         </div>
-                        <a href="{{route('store.seller', $seller->id)}}" class="stretched-link"></a>
+                        <a href="{{route('store.seller', $seller->slug)}}" class="stretched-link"></a>
                     </div>
                 </div>
                 @endforeach

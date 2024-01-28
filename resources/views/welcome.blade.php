@@ -11,10 +11,10 @@
 				<div>
 					<div class="text-center text-md-start">
 						<!-- heading -->
-						<h1 class="display-2 fw-bold mb-3">Commercialiser vos produits avec le monde </h1>
+						<h1 class="display-2 fw-bold mb-3">Le grand marché de la vente internationale </h1>
 						<!-- lead -->
 						<p class="lead">
-							Echanger c'est créer un lien reciproque, Alors n'attendez plus pour construire une relation solide ...
+                            Commercialiser vos produits depuis n'importe qu'elle continent et commencer à produire des bénefices depuis chez vous, nous nous chargeons de trouver des acheteurs  pour vos produits
 						</p>
 					</div>
 					<div class="mt-8">
@@ -27,7 +27,9 @@
 									<div class="col-md-6">
 										<div class="d-grid mb-2 mb-md-0">
 											<!-- btn -->
-											<a href="{{route('vendors.registration')}}" class="btn btn-danger"><i class="fe fe-heart me-2"></i>Commencer à vendre</a>
+											<a href="{{route('vendors.registration')}}" class="btn btn-danger">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12 15c3.186 0 6.045.571 8 3.063V20H4v-1.937C5.955 15.57 8.814 15 12 15m0-3a4 4 0 1 1 0-8a4 4 0 0 1 0 8m8 2a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2h-1z"/></svg>
+                                                Commencer à vendre</a>
 										</div>
 									</div>
 									<div class="col-md-6">

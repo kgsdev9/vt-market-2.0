@@ -35,7 +35,7 @@
                                 </div>
 
 
-                                <button class="btn btn-primary" type="submit">Je debute ma procedure</button>
+                                <button class="btn btn-danger" type="submit">Je debute ma procedure</button>
                             </form>
                         </div>
                     </div>

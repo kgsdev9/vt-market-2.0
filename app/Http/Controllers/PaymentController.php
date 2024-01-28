@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Commande;
-use App\Mail\SendOrderEmail;
 use App\Models\PaymentAdresse;
-use App\Jobs\AdminiNotificationJob;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\PaymentRequest;
 
 class PaymentController extends Controller

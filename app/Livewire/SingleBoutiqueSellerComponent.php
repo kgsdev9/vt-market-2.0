@@ -11,9 +11,9 @@ class SingleBoutiqueSellerComponent extends Component
 {
     use WithProduct;
 
-    public $id , $boutique, $productStore;
-    public function mount($id) {
-        $this->boutique = Boutique::where('id', $id)->first();
+    public $slug , $boutique, $productStore;
+    public function mount($slug) {
+        $this->boutique = Boutique::where('slug', $slug)->first();
         $this->productStore = Product::where('boutique_id', $this->boutique->id)->get() ?? [];
     }
 

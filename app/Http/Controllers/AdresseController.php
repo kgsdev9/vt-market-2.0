@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PaymentAdresseRequest;
 use Illuminate\Http\Request;
 use App\Models\PaymentAdresse;
 use Illuminate\Support\Facades\Auth;
@@ -11,9 +12,9 @@ class AdresseController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PaymentAdresseRequest $request)
     {
-        PaymentAdresse::create([
+      $payement =   PaymentAdresse::create([
             'fullname'=> $request->fullname,
             'country_id'=>$request->country_id,
             'city_id' => $request->city_id,

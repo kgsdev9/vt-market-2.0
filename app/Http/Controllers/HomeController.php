@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Boutique;
 use App\Models\Category;
+use App\Models\City;
+use App\Models\Country;
 use App\Models\PaymentAdresse;
 use App\Services\BoutiqueService;
 use Illuminate\Support\Facades\Auth;
@@ -65,6 +67,8 @@ class HomeController extends Controller
 
         return view('home.payment.index', [
             'allAdresseUser' => PaymentAdresse::where('user_id', Auth::user()->id)->get(),
+            'country'=> Country::all(),
+            'allCities' =>City::all()
         ]);
     }
 }

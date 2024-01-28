@@ -32,7 +32,7 @@
                             @else
                             <a href="{{route('dashboard')}}" class="btn btn-outline-secondary ms-2"> <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 21C4 17.4735 6.60771 14.5561 10 14.0709M19.8726 15.2038C19.8044 15.2079 19.7357 15.21 19.6667 15.21C18.6422 15.21 17.7077 14.7524 17 14C16.2923 14.7524 15.3578 15.2099 14.3333 15.2099C14.2643 15.2099 14.1956 15.2078 14.1274 15.2037C14.0442 15.5853 14 15.9855 14 16.3979C14 18.6121 15.2748 20.4725 17 21C18.7252 20.4725 20 18.6121 20 16.3979C20 15.9855 19.9558 15.5853 19.8726 15.2038ZM15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg> Mon Espace</a>
                         @endguest
-                        <a  href="{{route('cart')}}" class="btn btn-icon btn rounded-circle d-none d-md-inline-flex ms-2">
+                        <a  href="{{route('cart')}}" class="btn btn-icon btn rounded-circle  d-md-inline-flex ms-2">
                             <i class="fe fe-shopping-cart align-middle"></i> </a>
                         <button class="navbar-toggler collapsed ms-2 ms-lg-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="icon-bar top-bar mt-0"></span>
@@ -211,9 +211,9 @@
 				<div class="col-lg-2 col-md-3 col-sm-4">
 					<h3 class="fs-base text-light text-uppercase">Informations</h3>
 					<ul class="list-unstyled fs-sm">
-						<li><a href="/about" class="nav-link">A propos de nous</a></li>
-						<li><a href="/terms" class="nav-link">Conditions d'utilisation</a></li>
-						<li><a href="/privacy" class="nav-link">Politique de confidentialité</a></li>
+						<li><a href="/" class="nav-link" >Dévenir vendeur </a></li>
+						<li><a href="/" class="nav-link">Conditions d'utilisation</a></li>
+						<li><a href="/" class="nav-link">Politique de confidentialité</a></li>
 						<li><a href="#" class="nav-link">Nous contacter</a></li>
 					</ul>
 				</div>
@@ -222,7 +222,7 @@
 					<ul class="list-unstyled fs-sm">
 						<li><a href="" target="_blank" class="nav-link">Blog</a></li>
 						<li><a href="#" target="_blank" class="nav-link">Questions-réponses</a></li>
-						<li><a href="#" target="_blank" class="nav-link">Comment déposer une annonce ?</a></li>
+						<li><a href="#" target="_blank" class="nav-link">Comment ameliorer sa boutique ?</a></li>
 						<li><a href="#" target="_blank" class="nav-link">Comment contacter un vendeur ?</a></li>
 						<li><a href="#" target="_blank" class="nav-link">Centre d'aide</a></li>
 					</ul>
@@ -233,11 +233,11 @@
 						Restez informer des actualités et des meilleures annonces en Afrique en vous inscrivant à la newsletter !
 					</p>
 					<form class="form-group form-group">
-						<div class="input-group input-group-sm">
+						<div class="input-group">
 							<input type="email" placeholder="Votre email" class="form-control">
 						</div>
                         <br>
-						<button type="button" class="btn btn-danger btn-sm">S'abonner</button>
+						<button type="button" class="btn btn-danger">S'abonner</button>
 					</form>
 				</div>
 			</div>
@@ -246,22 +246,25 @@
 		<div class="py-4 ">
 			<div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between py-2">
 				<p class="order-lg-1 order-2 fs-sm mb-2 mb-lg-0">
-					<span class="text opacity-60">Copyright © 2024</span>
+					<span class="text opacity-60">Copyright © 2024 VTP GROUP</span>
 					&nbsp;
-					<a href="/" target="_blank" rel="noopener" class="nav-link fw-bold nuxt-link-active">VTP MARKET</a>
+					<a href="/kgsinformatique.tech" target="_blank" rel="noopener" class="nav-link fw-bold nuxt-link-active">Développé de KGS INFORMATIQUE</a>
 				</p>
 				<div class="d-flex flex-lg-row flex-column align-items-center order-lg-2 order-1 ms-lg-4 mb-lg-0 mb-4">
 					<div class="d-flex align-items-center">
-						<div class="dropdown">
-							<a id="dropdownMenuLangSwitcherTrigger1" data-bs-toggle="dropdown" data-bs-auto-close="true" data-bs-display="dynamic" aria-expanded="false" aria-label="dropdown" href="#" role="button" class="nav-link nav-link fs-sm align-items-center p-0 fw-normal dropdown-toggle">FR  </a>
-							<ul aria-labelledby="dropdownMenuLangSwitcherTrigger1" class="dropdown-menu dropdown-menu-dark my-1">
-								<li><button class="dropdown-item text-nowrap py-1">English</button></li>
-								<li><button class="dropdown-item text-nowrap py-1">Français</button></li>
-							</ul>
-						</div>
+
 						<div class="text-nowrap socials-links ms-4 ps-lg-2">
-							<a href="#" target="_blank" rel="noopener nofollow noreferrer" aria-label="Facebook" class="btn btn-icon rounded-circle me-2 btn-translucent btn-xs"><i class="ba-icon-facebook"></i></a>
-							<a href="#" target="_blank" rel="noopener nofollow noreferrer" aria-label="Instagram" class="btn btn-icon rounded-circle me-2 btn-translucent btn-xs"><i class="ba-icon-instagram"></i></a>
+							<a href="#" target="_blank" rel="noopener nofollow noreferrer" aria-label="Facebook" class="btn btn-icon rounded-circle me-2 btn-translucent btn-xs">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                                  </svg>
+
+                            </a>
+							<a href="#" target="_blank" rel="noopener nofollow noreferrer" aria-label="Instagram" class="btn btn-icon rounded-circle me-2 btn-translucent btn-xs">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+                                  </svg>
+                            </a>
 							<a href="#" target="_blank" rel="noopener nofollow noreferrer" aria-label="Twitter" class="btn btn-icon rounded-circle me-2 btn-translucent btn-xs"><i class="ba-icon-twitter"></i></a>
 						</div>
 					</div>

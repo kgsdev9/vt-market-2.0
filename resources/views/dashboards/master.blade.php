@@ -22,7 +22,7 @@
 <!-- Theme CSS -->
 <link rel="stylesheet" href="{{asset('assets/css/theme.min.css')}}">
 
- <title>Panel d'administration vtp market</title>
+ <title>@yield('title')</title>
  @livewireStyles
     </head>
 
@@ -203,5 +203,7 @@
         <script src="../../assets/libs/flatpickr/dist/flatpickr.min.js"></script>
         <script src="../../assets/js/vendors/flatpickr.js"></script>
         @livewireScripts
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <x-livewire-alert::scripts />
     </body>
 </html>

@@ -51,7 +51,6 @@ Route::get('/adresses-delivry', [DashboardUserController::class, 'adresseCustome
 Route::post('/registerAdresse', [AdresseController::class, 'store'])->name('register.adresse');
 Route::get('/become-seller', [VendeurRegisterController::class, 'registerSeller'])->name('register.seller');
 Route::get('/catalogue-product',[HomeController::class, 'catalogueProduct'])->name('catalogue.product');
-Route::get('/store/seller/vtp/{id}', [HomeController::class, 'boutiqueSeller'])->name('boutique.seller');
 Route::get('/annuaire-categories', CategoryController::class)->name('categorie.index');
 Route::get('/all/stores/vtp', [HomeController::class, 'allBoutique'])->name('boutique.index');
 Route::get('/category-product/{slug}', [HomeController::class ,'categoryProduct'])->name('product.categories');
@@ -60,7 +59,7 @@ Route::get('/product-management', ProductManagementController::class)->name('pro
 Route::get('/gestion-boutique', BoutiqueController::class)->name('gestion.boutique');
 Route::get('/cart', PanierController::class)->name('cart');
 Route::get('/sommary-oders', [HomeController::class, 'sommaryOrders'])->name('sommary.orders')->middleware('auth');
-Route::get('/store/seller/{id}', SingleBoutiqueSellerComponent::class)->name('store.seller');
+Route::get('/boutique/officielle/{slug}', SingleBoutiqueSellerComponent::class)->name('store.seller');
 
 //mes routes  pour la connexion des des services de connexions par socialies
 Route::get("redirect/{provider}", [SocialiteConnecteControlller::class, 'redirect'])->name('socialite.redirect');
@@ -93,16 +92,12 @@ Route::get('/comment-ca-marche', function () {
 
 Route::get('/suivi-commande', SuiviController::class)->name('suivi.delivry');
 
-
 //make functionnalités search
 Route::get('/search-product', SearchController::class)->name('search');
-
-
 Route::get('/vendors/register', [RegisterVendorController::class, 'registerFormVendor'])->name('vendors.registration');
 Route::post('/vendors/registration', [RegisterVendorController::class, 'store'])->name('vendors.store');
 
 //testingpage
-
 Route::get('/detail/page', function() {
     return view('detail');
 });

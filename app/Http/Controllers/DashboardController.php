@@ -40,7 +40,9 @@ class DashboardController extends Controller
                 'countUsers' => $this->userService->count()
              ]);
          } else {
-            return view('dashboards.index');
+            return view('dashboards.index', [
+                'countProducts' =>   $this->productService->count(),
+            ]);
          }
     }
 }
