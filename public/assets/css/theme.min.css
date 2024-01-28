@@ -21983,7 +21983,7 @@ textarea.form-control-lg {
 }
 
 .navbar .navbar-toggler {
-    border: 1px solid var(--gk-primary);
+    border: 1px solid #0b1324;
     padding: .75rem .563rem
 }
 
@@ -21993,7 +21993,7 @@ textarea.form-control-lg {
 }
 
 .navbar .navbar-toggler .icon-bar {
-    background-color: var(--gk-primary);
+    background-color: #334155;
     display: block;
     height: 2px;
     margin-top: .25rem;
@@ -22002,7 +22002,7 @@ textarea.form-control-lg {
 }
 
 .navbar .navbar-toggler .top-bar {
-    background-color: var(--gk-primary);
+    background-color: #0f172a;
     transform: rotate(45deg);
     transform-origin: 16% 190%
 }
@@ -22012,7 +22012,7 @@ textarea.form-control-lg {
 }
 
 .navbar .navbar-toggler .bottom-bar {
-    background-color: var(--gk-primary);
+    background-color: #0b1324;
     transform: rotate(-45deg);
     transform-origin: 10% -80%
 }
@@ -22025,7 +22025,7 @@ textarea.form-control-lg {
 }
 
 .navbar .navbar-toggler.collapsed .top-bar {
-    background-color: var(--gk-primary);
+    background-color: #334155;
     transform: rotate(0)
 }
 
@@ -22034,7 +22034,7 @@ textarea.form-control-lg {
 }
 
 .navbar .navbar-toggler.collapsed .bottom-bar {
-    background-color: var(--gk-primary);
+    background-color: #334155;
     transform: rotate(0)
 }
 
