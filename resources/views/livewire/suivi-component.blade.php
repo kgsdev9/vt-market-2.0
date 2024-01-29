@@ -1,30 +1,31 @@
 <div>
-        <div class="container row-justify-content-center text-center">
-            <div class="card mt-4">
-                <!-- card body -->
-                <div class="card-body">
-                    <div class="mb-4">
-                        <!-- heading -->
-                        <h2 class="mb-0">Entrer la réference de votre commande  </h2>
-                        <p>Parfois, des problèmes de connexion Internet peuvent entraîner des échecs de transactions en ligne. Assurez-vous d'avoir une connexion stable. </p>
 
-
-
-                        <div class="m d-flex align-items-center">
-                            <span class="position-absolute ps-3 search-icon">
-                                <i class="fe fe-search"></i>
-                            </span>
-
-                            <label for="search" class="visually-hidden"></label>
-                            <input type="search" wire:model.live="reference" class="form-control ps-6" placeholder="Rechercher....">
-                            <button class="" wire:click="statusOrder">Consulter</button>
+    <section>
+        <div class="container">
+           <div class="row justify-content-center mt-4">
+              <div class="col-xl-6 col-lg-8 col-md-8 col-12">
+                 <div class="card shadow-sm mb-6">
+                    <div class="card-body">
+                       <div class="needs-validation mb-6" novalidate="">
+                          <div class="mb-3">
+                             <label for="signinEmailInput" class="form-label">
+                               Entrer la réference de la commande
+                                <span class="text-danger">*</span>
+                             </label>
+                             <input type="search" wire:model.live="reference" class="form-control ps-6" placeholder="Rechercher....">
+                          </div>
+                          <div class="d-grid">
+                             <button class="btn btn-outline-dark" wire:click="statusOrder">Verifier le statut</button>
+                          </div>
                         </div>
-
                     </div>
+                 </div>
+              </div>
+           </div>
 
-                </div>
-            </div>
         </div>
+     </section>
+
 @if($commande)
 <section class="pt-5 pb-5">
     <div class="container">

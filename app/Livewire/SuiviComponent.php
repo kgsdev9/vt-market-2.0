@@ -15,7 +15,7 @@ class SuiviComponent extends Component
     if($this->commande) {
         return $this->commande;
     }
-    session()->flash('message', 'Post successfully updated.');
+    session()->flash('message', 'Aucune référence correspond à cette réference.');
 
    }
 
