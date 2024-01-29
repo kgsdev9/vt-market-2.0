@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'owner_id',
+        'google_id',
         'password',
         'role_id'
     ];
@@ -47,5 +48,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+    ];
+
+    protected $appends = [
+        'profile_photo_url',
     ];
 }

@@ -68,6 +68,9 @@
                 </form>
             </div>
             <!-- Card Footer -->
+            <a href="{{ url('/login/google') }}">ssssss</a>
+
+
             <div class="card-footer px-6 py-4">
                 <p class="mb-0">
                    Vous n'avez pas de compte alors

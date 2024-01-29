@@ -7,7 +7,7 @@
                         @foreach ($allProducts as $product)
                         <div class="col">
                             <div class="card card-hover">
-                                <a href="{{route('single.product', $product->slug)}}">
+                                <a href="{{route('single.product', $product->slug)}}" wire:navigate>
                                     @foreach ($product->images  as $article)
                                      @if($article->id > 1)
                                      <img src="{{asset('s3/product/'.$article->image)}}" alt="Article" class="card-img-top"></a>

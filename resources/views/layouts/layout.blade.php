@@ -14,6 +14,7 @@
     <link rel="canonical" href="vtp-market.com" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700">
     <title>@yield('title')</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
   <body style="font-family: 'Roboto', sans-serif;">
     <main class="bg-white">

@@ -1,29 +1,30 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\CityManagementController;
-use App\Http\Controllers\Admin\CountryManagementController;
-use App\Http\Controllers\Admin\ManagementBoutiqueController;
-use App\Http\Controllers\Admin\RoleManagementController;
-use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\AdresseController;
-use App\Http\Controllers\Auth\RegisterVendorController;
+use App\Livewire\DetailProduct;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SuiviController;
+use App\Http\Controllers\PanierController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\AdresseController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\BoutiqueController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\BoutiqueController;
-use App\Http\Controllers\DashboardUserController;
-use App\Http\Controllers\PanierController;
-use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\PaymentNotificationController;
-use App\Http\Controllers\ProductManagementController;
-use App\Http\Controllers\SearchController;
-use App\Http\Controllers\SocialiteConnecteControlller;
-use App\Http\Controllers\SuiviController;
-use App\Http\Controllers\VendeurRegisterController;
-use App\Livewire\DetailProduct;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\GoogleLoginController;
 use App\Livewire\SingleBoutiqueSellerComponent;
+use App\Http\Controllers\DashboardUserController;
+use App\Http\Controllers\VendeurRegisterController;
+use App\Http\Controllers\ProductManagementController;
+use App\Http\Controllers\SocialiteConnecteControlller;
+use App\Http\Controllers\Auth\RegisterVendorController;
+use App\Http\Controllers\PaymentNotificationController;
+use App\Http\Controllers\Admin\CityManagementController;
+use App\Http\Controllers\Admin\RoleManagementController;
+use App\Http\Controllers\Admin\CountryManagementController;
+use App\Http\Controllers\Admin\ManagementBoutiqueController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,9 +90,7 @@ Route::get('/comment-ca-marche', function () {
 });
 
 //Suivis livraisons
-
 Route::get('/suivi-commande', SuiviController::class)->name('suivi.delivry');
-
 //make functionnalités search
 Route::get('/search-product', SearchController::class)->name('search');
 Route::get('/vendors/register', [RegisterVendorController::class, 'registerFormVendor'])->name('vendors.registration');
@@ -101,3 +100,7 @@ Route::post('/vendors/registration', [RegisterVendorController::class, 'store'])
 Route::get('/detail/page', function() {
     return view('detail');
 });
+
+// GoogleLoginController redirect and callback urls
+Route::get('/login/{google}', [GoogleLoginController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('/login/{google}/callback', [GoogleLoginController::class, 'handleGoogleCallback']);
