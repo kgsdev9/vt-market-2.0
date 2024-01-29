@@ -249,7 +249,7 @@
 				<p class="order-lg-1 order-2 fs-sm mb-2 mb-lg-0">
 					<span class="text opacity-60">Copyright © 2024 VTP GROUP</span>
 					&nbsp;
-					<a href="/kgsinformatique.tech" target="_blank" rel="noopener" class="nav-link fw-bold nuxt-link-active">Développé de KGS INFORMATIQUE</a>
+					<a href="http://kgsinformatique.tech/" target="_blank" rel="noopener" class="nav-link fw-bold nuxt-link-active">Développé de KGS INFORMATIQUE</a>
 				</p>
 				<div class="d-flex flex-lg-row flex-column align-items-center order-lg-2 order-1 ms-lg-4 mb-lg-0 mb-4">
 					<div class="d-flex align-items-center">
@@ -281,5 +281,6 @@
     @livewireScripts
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <x-livewire-alert::scripts />
+  @include('sweetalert::alert')
   </body>
 </html>
