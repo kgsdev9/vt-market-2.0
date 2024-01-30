@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@section('title', 'Proceder au peiement ')
 @section('content')
     <div class="container mt-4">
         <form action="{{route('initialise.payment')}}" method="POST">

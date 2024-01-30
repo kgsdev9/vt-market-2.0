@@ -62,7 +62,7 @@
                                               <div class="row">
                                                 <button class="btn btn-outline-secondary" wire:click="increment({{$details['product_id']}})"><i class="fe fe-plus"></i></button>
                                                 <span>{{$details['quantity']}}</span>
-                                                <button class="btn btn-outline-secondary" wire:click="decrement({{$details['product_id']}})" ><i class="fe fe-plus"></i>retirer</button>
+                                                <button class="btn btn-outline-secondary" wire:click="decrement({{$details['product_id']}})">  <span style="height:40px;">-</span> </button>
                                               </div>
                                             </td>
                                             <td>
