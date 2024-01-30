@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RegisterVendorController extends Controller
 {
@@ -21,7 +22,7 @@ class RegisterVendorController extends Controller
         $this->middleware('guest');
     }
 
-    
+
 
     public  function registerFormVendor() {
         return view('auth.sellers.register', [
@@ -42,6 +43,7 @@ class RegisterVendorController extends Controller
         ]);
 
         Auth::login($user);
+        Alert::success('Bienvenue', 'Votre compte a été crée avec succes RDV sur votre espace pour renseigner vos informations et gerer votre boutique');
         return redirect()->route('home');
     }
 

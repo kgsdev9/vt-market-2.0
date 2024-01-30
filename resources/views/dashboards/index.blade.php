@@ -1,4 +1,5 @@
 @extends('dashboards.master')
+@section('title', 'Espace de gestion')
 @section('master')
 <section class="container-fluid p-4">
     <div class="row">

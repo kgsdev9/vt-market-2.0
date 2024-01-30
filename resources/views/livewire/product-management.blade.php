@@ -82,12 +82,7 @@
 
                                 </div>
 
-                                <div class="mb-3 col-md-4">
-                                    <label for="selectDate" class="form-label">Adresse de la boutique </label>
-                                    <input type="text" class="form-control" placeholder="RUE GABON BINGERVILLE">
-
-                                </div>
-
+                              
                                 <div class="mb-3 col-md-4">
                                     <label for="selectDate" class="form-label">Selectionner un pays    </label>
                                     <select wire:model="city_id"  class="form-control">

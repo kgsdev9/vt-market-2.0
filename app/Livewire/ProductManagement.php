@@ -9,10 +9,13 @@ use App\Models\Boutique;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class ProductManagement extends Component
 {
     use WithFileUploads;
+    use LivewireAlert;
+
     protected $paginationTheme = 'bootstrap';
 
     public $libelle_boutique, $nom_vendeur, $prenom_vendeur, $description, $telephone, $contact, $piece,  $logo_boutique, $city_id, $country_id, $adresse, $countryAll, $allCities;
@@ -63,7 +66,8 @@ class ProductManagement extends Component
                 'adresse' => $this->adresse,
                 'user_id' => Auth::user()->id,
             ]);
-            return redirect()->route('product.management');
+            $this->alert('success', 'vos informations mise à jour avec succes');
+            return redirect()->route('gestion.boutique');
 
         } else {
             $this->validate();
@@ -80,15 +84,16 @@ class ProductManagement extends Component
                 'contact'=> $this->contact,
                 'logo_boutique'=> $logo,
                 'piece'=> $piece,
-                'city_id' => $this->city_id,
-                'country_id' => $this->country_id,
+                'city_id' => $this->city_id ?? 1,
+                'country_id' => $this->country_id ?? 1,
                 'adresse' => $this->adresse,
                 'user_id' => Auth::user()->id,
             ]);
             DB::table('users')
             ->where('id', '=', Auth::user()->id)
             ->update(['owner_id' => $boutique->id]);
-            return redirect()->route('product.management');
+            $this->alert('success', 'vos informations ont été ajoutés avec succes, Vous pourrez gérer votre boutique nous vous notifierons en cas de probleme');
+            return redirect()->route('gestion.boutique');
         }
         }
 
