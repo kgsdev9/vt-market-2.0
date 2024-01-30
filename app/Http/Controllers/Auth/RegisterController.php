@@ -4,16 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\Role;
 use App\Models\User;
-use Illuminate\Http\Request;
-use App\Models\Administrateur;
-use Illuminate\Http\JsonResponse;
+use App\Traits\GiveRole;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Hash;
+use App\Notifications\WelcomeUserApp;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Notifications\Notification;
-use App\Notifications\WelcomeUserNotification;
-use App\Traits\GiveRole;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -88,9 +84,8 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
         $delay = now()->addMinutes(10);
-        $user->notify((new WelcomeUserNotification())->delay($delay));
+        $user->notify((new WelcomeUserApp())->delay($delay));
         return $user;
     }
 }

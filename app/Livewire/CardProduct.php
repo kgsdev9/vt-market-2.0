@@ -11,7 +11,7 @@ class CardProduct extends Component
 
     use WithProduct;
 
-    
+
     public $readyToLoad = false;
 
     public function loadPosts()
@@ -24,7 +24,7 @@ class CardProduct extends Component
     {
         return view('livewire.card-product', [
             'allProducts' => $this->readyToLoad
-                ? Product::all()
+                ? Product::orderByDesc('created_at')->get()
                 : [],
         ]);
 

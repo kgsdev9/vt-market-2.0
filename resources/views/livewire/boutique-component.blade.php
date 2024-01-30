@@ -83,6 +83,7 @@
                     <div class="mb-6">
                         <h2 class="mb-0">Pour avoir la possiblité d'etre vendeur sur cette plateforme vous devez renseigner vos informations</h2>
                         <p class="mb-0">Nous allons vérifier toutes les informations au cas ou c'est bon nous vous tiendrons informer!</p>
+                        <a href="{{route('product.management')}}" class="btn btn-outline-secondary">Je m'enregistre avant de créer ma boutique</a>
                     </div>
 
                 </div>

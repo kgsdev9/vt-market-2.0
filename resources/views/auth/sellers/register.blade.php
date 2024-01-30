@@ -22,8 +22,17 @@
                             <form class="needs-validation"  action="{{route('vendors.store')}}"  method="Post">
                                 @csrf
                                 <div class="mb-3">
-                                    <label class="form-label" for="company">Email</label>
+                                    <label class="form-label" for="company">Email @error('email')
+                                        <small class="text-danger">{{$message}}</small>
+                                    @enderror</label>
                                     <input class="form-control" type="email" name="email" placeholder="es@gmail.com"  required="">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label" for="company">Mot de passe  @error('password')
+                                        <small class="text-danger">{{$message}}</small>
+                                    @enderror</label>
+                                    <input class="form-control" type="password" name="password"   required="">
                                 </div>
                                 <button class="btn btn-danger" type="submit">Je debute ma procedure</button>
                             </form>

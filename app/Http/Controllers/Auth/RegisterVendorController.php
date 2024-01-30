@@ -8,6 +8,7 @@ use App\Models\Country;
 use App\Traits\GiveRole;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterVendorRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -31,20 +32,18 @@ class RegisterVendorController extends Controller
         ]);
     }
 
-    public function store(Request $request) {
+    public function store(RegisterVendorRequest $request) {
         $data = $request->all();
-        $password = "password";
         $name = "VTP-VENDEUR". rand(1000, 45000);
-       $user =  User::create([
+        $user =  User::create([
             'name' => $name,
             'role_id' => $this->giveRoleVendors(),
             'email' => $data['email'],
-            'password' => Hash::make($password),
+            'password' => Hash::make($data['password']),
         ]);
-
         Auth::login($user);
         Alert::success('Bienvenue', 'Votre compte a été crée avec succes RDV sur votre espace pour renseigner vos informations et gerer votre boutique');
-        return redirect()->route('home');
+        return redirect()->route('dashboard');
     }
 
 

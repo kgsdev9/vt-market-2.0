@@ -18,6 +18,8 @@
                                 <span>Google</span>
                             </a>
                         </div>
+
+                       <span class="text-center">Cliquer ici pour vous inscrire en tant que vendeur <a href="{{route('vendors.registration')}}">Devenir vendeur</a></span>
                     </div>
                 </div>
                 <div class="mb-4">
