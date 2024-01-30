@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Hash;
 use App\Notifications\WelcomeUserApp;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -86,6 +87,7 @@ class RegisterController extends Controller
         ]);
         $delay = now()->addMinutes(10);
         $user->notify((new WelcomeUserApp())->delay($delay));
+        Alert::success('Bienvenue', 'Authentification reussie');
         return $user;
     }
 }
