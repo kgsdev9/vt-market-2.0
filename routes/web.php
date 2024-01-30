@@ -50,6 +50,7 @@ Route::get('/mes-commandes', [DashboardUserController::class, 'orderCustomer'])-
 Route::get('/commande/{id}', [DashboardUserController::class, 'showOrder'])->name('show.orders');
 Route::get('/adresses-delivry', [DashboardUserController::class, 'adresseCustomer'])->name('adresse.client');
 Route::post('/registerAdresse', [AdresseController::class, 'store'])->name('register.adresse');
+Route::delete('/registerAdresse/{id}', [AdresseController::class, 'destroy'])->name('delete.adresse');
 Route::get('/become-seller', [VendeurRegisterController::class, 'registerSeller'])->name('register.seller');
 Route::get('/catalogue-product',[HomeController::class, 'catalogueProduct'])->name('catalogue.product');
 Route::get('/annuaire-categories', CategoryController::class)->name('categorie.index');

@@ -7,13 +7,13 @@
                     <div class="row">
                         <!-- input -->
                         <div class="mb-3 col-md-12">
-                            <label class="form-label" for="firstNameForAddress">Nom et prénom</label>
-                            <input type="text"  name="fullname" class="form-control" placeholder="Enter first name" id="firstNameForAddress">
+                            <label class="form-label">Nom et prénom</label>
+                            <input type="text"  name="fullname" class="form-control" placeholder="Entrer votre nom et prénom" >
                         </div>
 
                         <div class="mb-3 col-md-12">
-                            <label class="form-label" for="firstNameForAddress">Contact</label>
-                            <input type="text"  name="contact" class="form-control" placeholder="+22449998" id="firstNameForAddress">
+                            <label class="form-label" for="firstNameForAddress">Télephone</label>
+                            <input type="text"  name="contact" class="form-control" placeholder="+22449998989" >
                         </div>
 
                         <div class="mb-3 col-12">
@@ -38,7 +38,7 @@
 
                         <div class="mb-3 col-12">
                             <label class="form-label" for="addressForAddress">Addresse</label>
-                          <textarea name="adresse" class="form-control" id="" cols="30" rows="3"></textarea>
+                          <textarea name="adresse" class="form-control" id="" cols="30" rows="3" placeholder="Préciser l'adresse de livraison du colis"></textarea>
                         </div>
 
                         <div class="modal-footer">

@@ -41,7 +41,11 @@
                                         </div>
                                     </div>
                                     <div class="col-auto">
-                                        <a href="#" class="btn btn-outline-secondary btn-sm">Suprimer</a>
+                                        <form action="{{route('delete.adresse',$adresse->id)}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-outline-secondary btn-sm" type="submit">Supprimer</button>
+                                        </form>
                                     </div>
                                 </div>
                             </li>

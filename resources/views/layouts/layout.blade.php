@@ -14,7 +14,7 @@
     <link rel="canonical" href="vtp-market.com" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700">
     <title>@yield('title')</title>
-  
+
   </head>
   <body style="font-family: 'Roboto', sans-serif;">
     <main class="bg-white">
@@ -249,7 +249,7 @@
 				<p class="order-lg-1 order-2 fs-sm mb-2 mb-lg-0">
 					<span class="text opacity-60">Copyright © 2024 VTP GROUP</span>
 					&nbsp;
-					<a href="http://kgsinformatique.tech/" target="_blank" rel="noopener" class="nav-link fw-bold nuxt-link-active">Développé de KGS INFORMATIQUE</a>
+					<a href="http://kgsinformatique.tech/" target="_blank" rel="noopener" class="nav-link fw-bold nuxt-link-active">Développée  par  KGS INFORMATIQUE</a>
 				</p>
 				<div class="d-flex flex-lg-row flex-column align-items-center order-lg-2 order-1 ms-lg-4 mb-lg-0 mb-4">
 					<div class="d-flex align-items-center">

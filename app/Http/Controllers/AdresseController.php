@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PaymentAdresseRequest;
 use Illuminate\Http\Request;
 use App\Models\PaymentAdresse;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Requests\PaymentAdresseRequest;
 
 class AdresseController extends Controller
 {
@@ -22,6 +23,7 @@ class AdresseController extends Controller
             'contact' => $request->contact,
             'user_id' =>Auth::user()->id,
         ]);
+        Alert::success('Super', 'Adresse ajoutée avec sucess');
         return redirect()->back();
     }
 
@@ -54,6 +56,10 @@ class AdresseController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+
+        $payment = PaymentAdresse::find($id);
+        $payment->delete();
+        Alert::success('Oups', 'Adresse suprimée avec succes');
+        return redirect()->back();
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Notifications\WelcomeUserApp;
 use App\Traits\GiveRole;
 use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
@@ -35,8 +36,8 @@ class GoogleLoginController extends Controller
             )]);
         }
         Auth::login($user);
-        $delay = now()->addMinutes(10);
-        $user->notify((new WelcomeUserNotification())->delay($delay));
+        $delay = now()->addMinutes(1);
+        $user->notify((new WelcomeUserApp())->delay($delay));
         Alert::success('Bienvenue', 'Authentification reussie');
         return redirect(RouteServiceProvider::HOME);
 
