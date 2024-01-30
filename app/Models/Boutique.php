@@ -13,17 +13,14 @@ class Boutique extends Model
         'libelle_boutique',
         'slug',
         'adresse',
-        'logo_boutique',
         'nom_vendeur',
         'prenom_vendeur',
         'description',
         'telephone',
         'contact',
-        'piece',
         'status',
         'city_id',
         'country_id',
-        'user_id'
     ];
 
     public function products() {
@@ -34,7 +31,4 @@ class Boutique extends Model
         return $this->belongsTo(City::class, 'city_id');
     }
 
-    public function country() {
-        return $this->belongsTo(Country::class, 'country_id');
-    }
 }
