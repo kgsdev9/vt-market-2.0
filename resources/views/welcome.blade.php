@@ -118,7 +118,7 @@
                     <div class="card-body">
                         <img src="{{asset('jexport-logo.svg')}}" alt="hubspot" class="icon-lg mb-3">
                         <h3>Jexport</h3>
-                        <p class="mb-0">Jexport livraison interntionale.</p>
+                        <p class="mb-0">Jexport livraison</p>
                     </div>
                 </div>
             </div>
@@ -127,9 +127,9 @@
                 <div class="card h-100">
                     <!-- card body  -->
                     <div class="card-body">
-                        <img src="../../assets/images/brand/google-drive.svg" alt="drive" class="icon-lg mb-3">
-                        <h3>Drive</h3>
-                        <p class="mb-0">Integrates seamlessly with Docs, Sheets...</p>
+                        <img src="{{asset('LOGO_CHRONO.jpg')}}" alt="drive" class="icon-lg mb-3">
+                        <h3>Chronopost </h3>
+                        <p class="mb-0">Chronopost Livraison</p>
                     </div>
                 </div>
             </div>
@@ -138,9 +138,9 @@
                 <div class="card h-100">
                     <!-- card body  -->
                     <div class="card-body">
-                        <img src="../../assets/images/brand/slack-logo.svg" alt="slack" class="icon-lg mb-3">
-                        <h3>Slack</h3>
-                        <p class="mb-0">New way to communicate with your team</p>
+                        <img src="{{asset('colis.jpg')}}" alt="slack" class="icon-lg mb-3">
+                        <h3>colis Simon</h3>
+                        <p class="mb-0">Colis Simon expresss</p>
                     </div>
                 </div>
             </div>
@@ -149,9 +149,9 @@
                 <div class="card h-100">
                     <!-- card body  -->
                     <div class="card-body">
-                        <img src="../../assets/images/brand/zapier.svg" alt="zapier" class="icon-lg mb-3">
-                        <h3>Zapier</h3>
-                        <p class="mb-0">Streamline work with automation today.</p>
+                        <img src="{{asset('fedex.png')}}" alt="zapier" class="icon-lg mb-3">
+                        <h3>FEDEX</h3>
+                        <p class="mb-0">Fedex livraison.</p>
                     </div>
                 </div>
             </div>
@@ -160,19 +160,14 @@
                 <div class="card h-100">
                     <!-- card body  -->
                     <div class="card-body">
-                        <img src="../../assets/images/brand/dropbox-logo.svg" alt="dropbox" class="icon-lg mb-3">
-                        <h3>HubSpot</h3>
-                        <p class="mb-0">Full platform of marketing,sales, other service.</p>
+                        <img src="{{asset('a.png')}}" alt="dropbox" class="icon-lg mb-3">
+                        <h3>AMAZON</h3>
+                        <p class="mb-0">Amazon express.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <!-- button  -->
-            <div class="col-12 text-center mt-8">
-                <a href="#" class="btn btn-primary">View All Apps</a>
-            </div>
-        </div>
+
     </div>
 </section>
 
@@ -185,7 +180,7 @@
                 <div class="mb-6 mb-lg-8">
                     <h2 class="h1 fw-bold">
                        NOS
-                        <u class="text-warning"><span class="text-primary">COLLECTIONS</span></u>
+                        <u class="text-warning"><span class="text-danger">COLLECTIONS</span></u>
                     </h2>
                     <p class="mb-0 lead">Consulter nos differentes collections.</p>
                 </div>
