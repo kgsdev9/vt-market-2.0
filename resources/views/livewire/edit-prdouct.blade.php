@@ -1,11 +1,12 @@
+<div>
 
 <section class="container-fluid p-4">
     <div class="row">
         <div class="col-xl-12 col-lg-8 col-md-12 col-12">
             <div class="card border-0 mb-4">
                 <div class="card-header">
-                    <h4 class="mb-0">Nouveau produit </h4>
-                    <span>En cas d'erreur vous supprimer le produit et récommencer le processus </span>
+                    <h4 class="mb-0">Modifiication du  produit  produit </h4>
+
                 </div>
                 <div class="needs-validation">
                     <div class="card-body">
@@ -31,32 +32,50 @@
 
                                         </div>
 
-                                        <div class="mt-4 lh-1 d-flex align-items-center">
-                                        <button class="btn btn-outline-secondary" type="button" wire:click="remove"> Retirer tout </button>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
-                            @php
-                                $nombre = 0;
-                            @endphp
-                            @foreach ($images as $image)
-                            @php
-                            $nombre +=1;
-                            @endphp
+
+                            @foreach ($vproductImage as $product)
+
                             <div class="col-xl-3 col-lg-6 col-12">
                                 <div class="card mb-4">
                                     <div class="card-body">
-                                        <p>photo {{$nombre}}</p>
+
                                         <div class="d-flex align-items-center">
                                             <div class="">
-                                                <img src="{{ $image->temporaryUrl() }}" alt="image" class="img-fluid rounded-3 w-100" style="height:150px;">
+                                                <button wire:click="removeImage({{$product->id}})" class="btn btn-outline-danger"><i class="fe fe-trash"></i></button>
+                                                <img src="{{asset('s3/product/'.$product->image)}}" alt="image" class="img-fluid rounded-3 w-100" style="height:150px;">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             @endforeach
+
+                            @php
+                            $nombre = 0;
+                        @endphp
+                        @foreach ($images as $image)
+                        @php
+                        $nombre +=1;
+                        @endphp
+                        <div class="col-xl-3 col-lg-6 col-12">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <p>photo {{$nombre}}</p>
+                                    <div class="d-flex align-items-center">
+                                        <div class="">
+                                            <img src="{{ $image->temporaryUrl() }}" alt="image" class="img-fluid rounded-3 w-100" style="height:150px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+
+
                         </div>
                         <div class="mt-4">
                             <div class="row">
@@ -92,7 +111,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="button"  wire:click="store" class="btn btn-outline-secondary">Enregistrer le produit </button>
+                        <button type="button"  wire:click="update" class="btn btn-outline-secondary">Enregistrer le produit </button>
                     </div>
                 </div>
             </div>
@@ -103,3 +122,5 @@
 
 
 
+
+</div>

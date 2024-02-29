@@ -27,9 +27,9 @@ return new class extends Migration
             $table->unsignedBigInteger('city_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('country_id')->nullable();
-            $table->foreign('city_id')->references('id')->on('cities')->onDelete('CASCADE')->onUpdate('CASCADE');
-            $table->foreign('country_id')->references('id')->on('countries')->onDelete('CASCADE')->onUpdate('CASCADE');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('CASCADE');
+            $table->foreign('country_id')->references('id')->on('countries')->onDelete('CASCADE');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

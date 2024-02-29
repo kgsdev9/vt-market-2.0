@@ -37,7 +37,7 @@
                         @endforeach
                     <div class="card-body">
                         <h4 class="mb-2 text-truncate-line-2"><a href="{{route('single.product', $product->slug)}}" class="text-inherit">{{$product->title}}</a></h4>
-                        <small>Boutique: {{$product->boutique->libelle_boutique}}</small>
+                        <small>Boutique: {{$product->boutique?->libelle_boutique}}</small>
                             <p>{{Str::limit($product->description,100)}}..</p>
                     </div>
                     <div class="card-footer">
@@ -48,8 +48,14 @@
                             <div class="col-auto">
                                 <button  type="button"  class="btn btn-outline-secondary">
                                     <i class="fe fe-eye text-dark align-middle me-2"></i>
-                                   Detail du produit
+
                                 </button>
+
+
+                                <a  href="{{route('edit.product', $product->slug)}}"  class="btn btn-outline-secondary">
+                                    <i class="fe fe-edit text-dark align-middle me-2"></i>
+
+                                </a>
                                 <button class="btn btn-danger" wire:click="delete({{$product->id}})"><i class="fe fe-trash"></i></button>
                             </div>
                         </div>

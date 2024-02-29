@@ -14,10 +14,26 @@ class DetailProduct extends Component
 
     public function mount($slug) {
         $this->singleProduct = Product::where('slug', $slug)->first();
+
+
+
     }
 
     public function render()
     {
-        return view('livewire.detail-product')->extends('layouts.layout')->section('content');
+        $url = url()->current();
+        
+        $partage = \Share::page(
+            $url
+         )
+         ->facebook()
+         ->twitter()
+         ->linkedin()
+         ->telegram()
+         ->whatsapp()
+         ->reddit();
+        return view('livewire.detail-product', [
+            'partage'=> $partage
+        ])->extends('layouts.layout')->section('content');
     }
 }

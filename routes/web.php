@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\CityManagementController;
 use App\Http\Controllers\Admin\RoleManagementController;
 use App\Http\Controllers\Admin\CountryManagementController;
 use App\Http\Controllers\Admin\ManagementBoutiqueController;
+use App\Livewire\EditPrdouct;
 
 /*
 |--------------------------------------------------------------------------
@@ -105,3 +106,8 @@ Route::get('/detail/page', function() {
 // GoogleLoginController redirect and callback urls
 Route::get('/login/{google}', [GoogleLoginController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('/login/{google}/callback', [GoogleLoginController::class, 'handleGoogleCallback']);
+
+
+//nouvelles routes
+
+Route::get('/edit/product/{slug}', EditPrdouct::class)->name('edit.product');

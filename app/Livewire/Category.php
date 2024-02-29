@@ -5,9 +5,10 @@ namespace App\Livewire;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use Livewire\WithPagination;
-use App\Models\Category as ModelCategory;
-use Illuminate\Support\Facades\Storage;
 use Livewire\WithFileUploads;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Category as ModelCategory;
 
 class Category extends Component
 {
@@ -15,7 +16,7 @@ class Category extends Component
     use WithPagination;
     use WithFileUploads;
 
-    
+
     protected $paginationTheme = 'bootstrap';
 
     public $dynamique_paginate =10 ;
@@ -58,11 +59,23 @@ class Category extends Component
 
     {
        $this->validate() ;
-       $image=$this->image->store('public/categories');
+
+
+     $filename = date('Y-m-d-H:i:s')."-".$this->image->getClientOriginalName();
+
+     $path =  Image::make($this->image->getRealPath())->resize(923,498)->save('s3/product/'.$filename);
+
+     if (!file_exists($path)) {
+        mkdir($path, 666, true);
+    }
+
+
+
+
         ModelCategory::create([
             'nom' => $this->nom,
             'slug' => $this->prepareBeforeValidation($this->nom),
-            'image' => $image,
+            'image' => $filename,
         ]);
 
         $this->reset();

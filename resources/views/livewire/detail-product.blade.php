@@ -13,14 +13,14 @@
             margin: 1px;
             font-size: 30px;
             color: #222;
-            background-color: #ccc;
+
+            background-color: white;
         }
     </style>
 
 @section('title',  $singleProduct->title)
 
 <section class="container p-4">
-
 
 <div class="row">
     <div class="col-lg-12 col-md-12 col-12">
@@ -104,6 +104,8 @@
                                             {{$singleProduct->description}}
                                         </p>
                                     </div>
+
+                                    {!! $partage !!}
                                 </div>
                             </li>
 

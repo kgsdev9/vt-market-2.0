@@ -84,8 +84,8 @@ class ProductManagement extends Component
                 'contact'=> $this->contact,
                 'logo_boutique'=> $logo,
                 'piece'=> $piece,
-                'city_id' => $this->city_id ?? 1,
-                'country_id' => $this->country_id ?? 1,
+                'city_id' => 1,
+                'country_id' => 1,
                 'adresse' => $this->adresse,
                 'user_id' => Auth::user()->id,
             ]);

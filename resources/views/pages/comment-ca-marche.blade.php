@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('title', 'Comment  ca marche ?')
 @section('content')
-<section class="py-8 bg-warning">
+{{-- <section class="py-8 bg-warning">
     <div class="container my-lg-8">
         <div class="row align-items-center justify-content-center">
             <div class="col-md-6 col-12">
@@ -138,5 +138,147 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
+
+<main>
+    <!-- pageheader -->
+    <section class="py-8">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-12 col-12">
+            <!-- text center -->
+            <div class="text-center">
+              <h1 class="display-3 fw-bold">Comment ça marche</h1>
+              <p class="lead px-8">Prenez connaissance du fonctionnement de vtp à travers ces informations essentielles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- content -->
+    <section class="pb-8">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-12 col-12">
+
+            <h1 class="fw-bold mb-3">Comment effectuer un achat ?.</h1>
+            <!-- para -->
+            <p>Pour effectuer un achat c’est simple, </p>
+            <ul class="fs-4">
+              <li>1.	Vous devez créer un compte acheteur sur VTP-MARKET en « se connecter ».</li>
+              <li>2.	Remplir le questionnaire d’inscription.</li>
+              <li>3.	Vous reconnectez pour effectuer vos achats</li>
+
+            </ul>
+            <h1>A savoir : </h1>
+            <p class="fs-4 mb-4">
+              •	Pour les achats d’articles qui nécessitent un transport aérien ou maritime les frais de livraison sont inclus dans le prix de l’article.
+            </p>
+            <!-- para -->
+
+
+            <div class="d-flex mt-5">
+
+              <div class="ms-3">
+                <h1>Comment vendre ces articles sur VTP-MARKET ? : </h1>
+                <h5>Pour vendre rien de compliquer, </h5>
+                <p class="fs-4">
+                  1.	Vous devez créer un compte acheteur sur VTP-MARKET en « Commencer à vendre ».
+                </p>
+                <p class="fs-4">
+                  2.	Remplir le questionnaire d’inscription et valider.
+                </p>
+
+                <p class="fs-4">
+                  3.	Vous reconnectez pour mettre vos articles en ligne.
+                </p>
+
+              </div>
+            </div>
+            <!-- para -->
+
+
+            <div class="d-flex mt-5">
+
+              <div class="ms-3">
+                <h1>Politique de remise et de vendeur  ? : </h1>
+
+                <p class="fs-4">
+                  1.	Les prix des articles sont définis par le vendeur et sont modifiable à tous moment..
+                </p>
+                <p class="fs-4">
+                  2.	Si une vente est réalisée par un vendeur, il reçoit le paiement une fois l’article reçu par l’acheteur.
+                </p>
+
+                <p class="fs-4">
+                  3.	Si une vente est réalisée par un vendeur, il reçoit le paiement une fois l’article reçu par l’acheteur.
+                </p>
+
+              </div>
+            </div>
+            <!-- para -->
+            <div class="mt-5">
+              <h2 class="fw-bold">Les Moyens de paiements ?.</h2>
+              <p class="fs-4">
+                Sur la plateforme VTP-MARKET vos achats peuvent être effectuer avec plusieurs systèmes de paiement sécurisée selon votre situation géographique (Mastercard, PayPal, Orange Money, Moov Money, MTN Mobile Money).
+              </p>
+
+
+            </div>
+            <!-- para -->
+            <div class="mt-5">
+              <h2 class="fw-bold">Politique de remboursement ?.</h2>
+              <p class="fs-4">
+                En cas de litige concernant la livraison d’un article, VTP-MARKET se laisse le droit d’arbitré les différentes options de remboursement, si la cause est liée au système de transport de la plate-forme.
+                A savoir :
+              </p>
+              <ul class="fs-4">
+                <li>•	Si la cause de non remise est dû à un manquement du vendeur, l’acheteur sera remboursé intégrale (frais de remboursement à la charge du client).</li>
+                <li>•	Le VTP-MARKET décline toutes responsabilités sur la qualité des produits mise en vente par les vendeurs, cela inclus la période de transit de l’article.</li>
+
+              </ul>
+
+              <h2 class="fw-bold">Suivi de votre colis ?</h2>
+              <p class="fs-4">Vous avez la possibilité de suivre le statut de transit de votre colis avec un numéro de référence directement sur notre plate-forme..</p>
+
+              <ul class="fs-4">
+                <li>•	1.	Cliquez sur le menu « Suivi de commande ».</li>
+                <li>•	2.	Renseignez votre numéro de Référence fourni lors de votre achat et visible sur votre espace.</li>
+                <li>•	3.	Cliquez sur « Vérifier le statut ».</li>
+              </ul>
+
+              <h2 class="fw-bold">Les rotations de livraison </h2>
+              <p class="fs-4">Les rotations de livraison
+                VTP-MARKET c’est doté d’un outil logiciel qui facilite la gestion des articles vendus quotidiennement sur la plateforme. Cet outil nous permet de faire des planifications en fonction d’un quotas d’article à transporter par pays desservie.
+                ..</p>
+
+              <ul class="fs-4">
+                <li>•	Durée moyens transite par avion est d’une à deux semaine selon les destinations ciblées. ».</li>
+                <li>•	Durée moyens d’un transite par voie maritime est d’un à deux mois selon les destinations ciblées.</li>
+
+              </ul>
+
+
+              <h2 class="fw-bold">Commission de la plateforme VTP-MARKET   </h2>
+              <p class="fs-4">La commission est de 15% sur chaque transaction effectuée afin de maintenir le service de la plateforme.
+                ..</p>
+
+
+                <h2 class="fw-bold">Informations importantes à retenir  </h2>
+
+
+                <ul class="fs-4">
+                  <li>Si une vente est réalisée par un vendeur, il reçoit le paiement une fois l’article reçu par l’acheteur..</li>
+                  <li>Le VTP-MARKET décline toutes responsabilités sur la qualité et l’état des produits mise en vente par les vendeurs, cela inclus la période de transit de l’article. .</li>
+                  <li>Si la cause de non remise est dû à un manquement du vendeur, l’acheteur sera remboursé intégrale (frais de remboursement à la charge du client)..</li>
+                  <li>Si la cause de non remise est dû à un manquement du vendeur, l’acheteur sera remboursé intégrale (frais de remboursement à la charge du client)..</li>
+                </ul>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 @endsection

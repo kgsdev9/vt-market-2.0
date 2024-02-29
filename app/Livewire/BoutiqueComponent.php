@@ -88,7 +88,11 @@ class BoutiqueComponent extends Component
             $this->images = [];
         }
 
-    public function render()
+
+
+
+
+        public function render()
     {
         $this->boutique =  Boutique::where('user_id', Auth::user()->id)->first();
         return view('livewire.boutique-component', [

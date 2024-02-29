@@ -83,6 +83,267 @@
 	</div>
 </section>
 @livewire('card-product')
+
+
+
+<section class="py-8 bg-gray-200">
+    <div class="container my-lg-8">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-12 col-12">
+                <!-- heading -->
+                <div class="text-center mb-8">
+                    <span class="text-warning ls-md text-uppercase fw-semibold">Nos Partenaires</span>
+                    <h2 class="display-3 mt-4 mb-3 fw-bold">Nos partenaires sont à votre service</h2>
+                    <p class="lead px-lg-8">Nous transportons vos colis partout dans le monde dans nos differents points rélais.</p>
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+        <div class="row gx-3">
+            <div class="col-xl-2 col-md-4 col-6 mb-3 mb-xl-0">
+                <!-- card card-borderd  -->
+                <div class="card h-100">
+                    <!-- card body  -->
+                    <div class="card-body">
+                        <img src="{{asset('LOGO-sr.png')}}" alt="dropbox" class="icon-lg mb-3">
+                        <h3>DHL</h3>
+                        <p class="mb-0">Dhl transport .</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-4 col-6 mb-3 mb-xl-0">
+                <!-- card card-borderd  -->
+                <div class="card h-100">
+                    <!-- card body  -->
+                    <div class="card-body">
+                        <img src="{{asset('jexport-logo.svg')}}" alt="hubspot" class="icon-lg mb-3">
+                        <h3>Jexport</h3>
+                        <p class="mb-0">Jexport livraison interntionale.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-4 col-6 mb-3 mb-xl-0">
+                <!-- card card-borderd  -->
+                <div class="card h-100">
+                    <!-- card body  -->
+                    <div class="card-body">
+                        <img src="../../assets/images/brand/google-drive.svg" alt="drive" class="icon-lg mb-3">
+                        <h3>Drive</h3>
+                        <p class="mb-0">Integrates seamlessly with Docs, Sheets...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-4 col-6 mb-3 mb-xl-0">
+                <!-- card card-borderd  -->
+                <div class="card h-100">
+                    <!-- card body  -->
+                    <div class="card-body">
+                        <img src="../../assets/images/brand/slack-logo.svg" alt="slack" class="icon-lg mb-3">
+                        <h3>Slack</h3>
+                        <p class="mb-0">New way to communicate with your team</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-4 col-6 mb-3 mb-xl-0">
+                <!-- card card-borderd  -->
+                <div class="card h-100">
+                    <!-- card body  -->
+                    <div class="card-body">
+                        <img src="../../assets/images/brand/zapier.svg" alt="zapier" class="icon-lg mb-3">
+                        <h3>Zapier</h3>
+                        <p class="mb-0">Streamline work with automation today.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-4 col-6 mb-3 mb-xl-0">
+                <!-- card card-borderd  -->
+                <div class="card h-100">
+                    <!-- card body  -->
+                    <div class="card-body">
+                        <img src="../../assets/images/brand/dropbox-logo.svg" alt="dropbox" class="icon-lg mb-3">
+                        <h3>HubSpot</h3>
+                        <p class="mb-0">Full platform of marketing,sales, other service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- button  -->
+            <div class="col-12 text-center mt-8">
+                <a href="#" class="btn btn-primary">View All Apps</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="py-lg-8 py-6">
+    <div class="container my-lg-8">
+        <div class="row text-center">
+            <div class="col-xl-12 col-md-12 col-12">
+                <div class="mb-6 mb-lg-8">
+                    <h2 class="h1 fw-bold">
+                       NOS
+                        <u class="text-warning"><span class="text-primary">COLLECTIONS</span></u>
+                    </h2>
+                    <p class="mb-0 lead">Consulter nos differentes collections.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="pb-8">
+            <div class="container">
+              <div class="row">
+
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                  <!-- Card -->
+                  <div class="card mb-4 shadow-lg card-lift">
+                    <a href="#">
+                      <!-- Img  -->
+                      <img src="{{asset('jumia.gif')}}" class="card-img-top" alt="blogpost ">
+                    </a>
+                    <!-- Card body -->
+                    <div class="card-body">
+                      <h3><a href="#" class="text-inherit">Télevision 3D</a></h3>
+                      <p>Lorem ipsum dolor sit amet, accu msan in, tempor dictum nequrem ipsum...</p>
+                      <!-- Media content -->
+                      <div class="row align-items-center g-0 mt-4">
+
+                        <button class="btn btn-danger">Consulter</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                    <!-- Card -->
+                    <div class="card mb-4 shadow-lg card-lift">
+                      <a href="#">
+                        <!-- Img  -->
+                        <img src="{{asset('CI_W08_TB_ACD_FASHION_WEEK_copie_215.png')}}" class="card-img-top" alt="blogpost ">
+                      </a>
+                      <!-- Card body -->
+                      <div class="card-body">
+                        <h3><a href="#" class="text-inherit">Télevision 3D</a></h3>
+                        <p>Lorem ipsum dolor sit amet, accu msan in, tempor dictum nequrem ipsum...</p>
+                        <!-- Media content -->
+                        <div class="row align-items-center g-0 mt-4">
+
+                          <button class="btn btn-danger">Consulter</button>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                    <!-- Card -->
+                    <div class="card mb-4 shadow-lg card-lift">
+                      <a href="#">
+                        <!-- Img  -->
+                        <img src="{{asset('tes.gif')}}" class="card-img-top" alt="blogpost ">
+                      </a>
+                      <!-- Card body -->
+                      <div class="card-body">
+                        <h3><a href="#" class="text-inherit">Télevision 3D</a></h3>
+                        <p>Lorem ipsum dolor sit amet, accu msan in, tempor dictum nequrem ipsum...</p>
+                        <!-- Media content -->
+                        <div class="row align-items-center g-0 mt-4">
+
+                          <button class="btn btn-danger">Consulter</button>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                    <!-- Card -->
+                    <div class="card mb-4 shadow-lg card-lift">
+                      <a href="#">
+                        <!-- Img  -->
+                        <img src="{{asset('eletroes.gif')}}" class="card-img-top" alt="blogpost ">
+                      </a>
+                      <!-- Card body -->
+                      <div class="card-body">
+                        <h3><a href="#" class="text-inherit">Télevision 3D</a></h3>
+                        <p>Lorem ipsum dolor sit amet, accu msan in, tempor dictum nequrem ipsum...</p>
+                        <!-- Media content -->
+                        <div class="row align-items-center g-0 mt-4">
+
+                          <button class="btn btn-danger">Consulter</button>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                    <!-- Card -->
+                    <div class="card mb-4 shadow-lg card-lift">
+                      <a href="#">
+                        <!-- Img  -->
+                        <img src="{{asset('tes.gif')}}" class="card-img-top" alt="blogpost ">
+                      </a>
+                      <!-- Card body -->
+                      <div class="card-body">
+                        <h3><a href="#" class="text-inherit">Télevision 3D</a></h3>
+                        <p>Lorem ipsum dolor sit amet, accu msan in, tempor dictum nequrem ipsum...</p>
+                        <!-- Media content -->
+                        <div class="row align-items-center g-0 mt-4">
+
+                          <button class="btn btn-danger">Consulter</button>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                    <!-- Card -->
+                    <div class="card mb-4 shadow-lg card-lift">
+                      <a href="#">
+                        <!-- Img  -->
+                        <img src="{{asset('tel.png')}}" class="card-img-top" alt="blogpost ">
+                      </a>
+                      <!-- Card body -->
+                      <div class="card-body">
+                        <h3><a href="#" class="text-inherit">Télevision 3D</a></h3>
+                        <p>Lorem ipsum dolor sit amet, accu msan in, tempor dictum nequrem ipsum...</p>
+                        <!-- Media content -->
+                        <div class="row align-items-center g-0 mt-4">
+
+                          <button class="btn btn-danger">Consulter</button>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                <!-- Buttom -->
+                {{-- <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center mt-4">
+                  <a href="#" class="btn btn-primary">
+                    <div class="spinner-border spinner-border-sm me-2" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                    Load More
+                  </a>
+                </div> --}}
+              </div>
+            </div>
+          </section>
+
+    </div>
+</section>
+
 <section class="pb-lg-8 pb-6">
 	<div class="container mb-lg-8">
 		<div class="row">
