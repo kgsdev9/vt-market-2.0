@@ -4,15 +4,31 @@ namespace App\Livewire;
 
 use App\Models\Product;
 use Livewire\Component;
+use App\Models\Category;
+use App\Traits\WithProduct;
 
 class SearchComponent extends Component
 {
-    public $search = "";
+    use WithProduct;
+
+
+    public $search = '';
+
+
+
+
+
 
     public function render()
     {
-        return view('livewire.search-component', [
-            'product'=> Product::where('title','like','%'. $this->search. '%')->get()
+        $allPrdouct =  Product::where('title','like','%'. $this->search. '%')->get();
+        $allCategories =  Category::all();
+        return view('livewire.search-component',[
+            'allPrdouct' => $allPrdouct,
+            'allCategories' =>$allCategories
         ]);
     }
+
+
+
 }

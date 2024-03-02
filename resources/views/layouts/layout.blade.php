@@ -14,6 +14,7 @@
     <link rel="canonical" href="vtp-market.com" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700">
     <title>@yield('title')</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
 
   </head>
   <body style="font-family: 'Roboto', sans-serif;">
@@ -60,6 +61,8 @@
                             <a class="nav-link" href="/comment-ca-marche" >  Comment ca marche</a>
                         </li>
                       @livewire('search-component')
+                      &nbsp;&nbsp;
+                      <a class="btn btn-outline-danger"  href="{{route('livraison.index')}}"> <i class="fe fe-plus"></i> Transport interntional  </a>
                     </ul>
                 </div>
             </div>
@@ -282,5 +285,13 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <x-livewire-alert::scripts />
   @include('sweetalert::alert')
+  <!-- JavaScript pour ouvrir le modal lorsque la recherche commence -->
+<script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+      $('#exampleModal').modal('show');
+
+      // Ajoutez ici la logique de recherche et l'affichage des résultats dans le div #searchResults
+    });
+  </script>
   </body>
 </html>

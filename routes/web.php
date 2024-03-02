@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\CityManagementController;
 use App\Http\Controllers\Admin\RoleManagementController;
 use App\Http\Controllers\Admin\CountryManagementController;
 use App\Http\Controllers\Admin\ManagementBoutiqueController;
+use App\Http\Controllers\Livraison\LivraisonController;
 use App\Livewire\EditPrdouct;
 
 /*
@@ -111,3 +112,7 @@ Route::get('/login/{google}/callback', [GoogleLoginController::class, 'handleGoo
 //nouvelles routes
 
 Route::get('/edit/product/{slug}', EditPrdouct::class)->name('edit.product');
+
+//routes pour les livraisons
+
+Route::get('/livraison-colis', [LivraisonController::class, 'index'])->name('livraison.index');
