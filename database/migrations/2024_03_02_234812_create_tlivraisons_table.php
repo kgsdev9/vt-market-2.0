@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('tlivraisons', function (Blueprint $table) {
             $table->id();
+            $table->string('designation');
+            $table->integer('poids');
             $table->timestamps();
         });
     }

@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Tlivraison extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'designation',
+        'poids',
+
+    ];
+
+
 }

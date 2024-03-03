@@ -19,7 +19,8 @@ class Product extends Model
         'popular',
         'view',
         'slug',
-        'boutique_id'
+        'boutique_id',
+        'estimation'
     ];
 
     public function category() {

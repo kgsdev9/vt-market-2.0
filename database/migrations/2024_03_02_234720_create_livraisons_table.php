@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('livraisons', function (Blueprint $table) {
             $table->id();
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('email');
+            $table->string('telephone');
+            $table->string('contact');
+            $table->string('adresse');
+            $table->unsignedBigInteger('country_id');
+            $table->foreign('country_id')->references('id')->on('countries')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->enum('status', ['livre', 'encours', 'echec']);
+            $table->string('reference');
             $table->timestamps();
         });
     }

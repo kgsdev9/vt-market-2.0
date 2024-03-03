@@ -14,7 +14,8 @@
     <link rel="canonical" href="vtp-market.com" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700">
     <title>@yield('title')</title>
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
 
   </head>
   <body style="font-family: 'Roboto', sans-serif;">
@@ -279,19 +280,12 @@
 
     <script src="{{asset('assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/libs/simplebar/dist/simplebar.min.js')}}"></script>
-    <script src="{{asset('assets/js/theme.min.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    @livewireScripts
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <x-livewire-alert::scripts />
+  @livewireScripts
   @include('sweetalert::alert')
-  <!-- JavaScript pour ouvrir le modal lorsque la recherche commence -->
-<script>
-    document.getElementById('searchInput').addEventListener('input', function() {
-      $('#exampleModal').modal('show');
-
-      // Ajoutez ici la logique de recherche et l'affichage des résultats dans le div #searchResults
-    });
-  </script>
+  @stack('script')
   </body>
 </html>

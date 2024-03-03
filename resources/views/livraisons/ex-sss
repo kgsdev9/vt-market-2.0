@@ -14,7 +14,7 @@
                        <div class="card-body p-5">
                            <h2 class="mb-4 fw-semibold">Renseigner les informations du destinataire </h2>
                            <!-- form  -->
-
+                           <form id="myForm">
                                <!-- input  -->
                                <div class="mb-3">
                                    <label class="form-label" for="name">Nom du destinataire </label>
@@ -89,14 +89,14 @@
 
 
                                <button class="btn btn-outline-primary" onclick="saveLivraison()">Enregistrer la livraison</button>
-                          
+                           </form>
                        </div>
                    </div>
                </div>
            </div>
            <div class="col-md-4">
 
-               {{-- <div id="preview"></div> --}}
+               <div id="preview"></div>
            </div>
        </div>
    </div>
