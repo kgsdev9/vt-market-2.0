@@ -62,7 +62,7 @@
                         </li>
                       @livewire('search-component')
                       &nbsp;&nbsp;
-                      <a class="btn btn-outline-danger"  href="{{route('livraison.index')}}"> <i class="fe fe-plus"></i> Transport interntional  </a>
+                      <a class="btn btn-outline-danger"  href="{{route('livraison.index')}}"> <i class="fe fe-mail-forward"></i> Transport interntional  </a>
                     </ul>
                 </div>
             </div>
