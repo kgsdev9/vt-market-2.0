@@ -18,6 +18,8 @@ class Livraison extends Model
         'adresse',
         'country_id',
         'status',
-        'date_livraison'
+        'reference',
+        'user_id',
+        'slug'
     ];
 }

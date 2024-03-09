@@ -45,10 +45,12 @@ function addRow() {
     `;
     designationRows.appendChild(newRow);
 
+    // updatePreview();
+
 }
 
 
-function saveLivraison()  {
+function saveLivraison(event)  {
     var vdesignation = document.getElementsByName("designation[]");
     var vpoids = document.getElementsByName("poids[]");
     const nom = document.getElementById("nom").value;
@@ -56,8 +58,9 @@ function saveLivraison()  {
     const email = document.getElementById("email").value;
     const telephone = document.getElementById("telephone").value;
     const contact = document.getElementById("contact").value;
-    const city = document.getElementById("city").value;
+    const city_id = document.getElementById("city_id").value;
     const adresse = document.getElementById("adresse").value;
+
 
     const designation = [];
     const poids = [];
@@ -69,7 +72,6 @@ function saveLivraison()  {
     for (let i = 0; i < vpoids.length; i++) {
         poids.push(vpoids[i].value);
     }
-
 
       $.ajax({
         headers: {
@@ -85,7 +87,7 @@ function saveLivraison()  {
             "email": email,
             "telephone": telephone,
             "contact": contact,
-            "city": city,
+            "city_id": city_id,
             "adresse": adresse,
             },
         success: function(response) {
@@ -111,22 +113,25 @@ function removeRow() {
 }
 
 
+document.getElementById('images').addEventListener('change', function(event) {
+    var files = event.target.files;
+    var previewContainer = document.getElementById('previewContainer');
 
-function updatePreview() {
-    var previewHTML = '<h3>Prévisualisation</h3>';
-    previewHTML += '<ul>';
+    previewContainer.innerHTML = '';
 
-    var rows = itemRows.querySelectorAll('tr');
-    rows.forEach(function(row) {
-        var cells = row.querySelectorAll('td');
-        var designation = cells[0].querySelector('input').value;
-        var quantity = cells[1].querySelector('input').value;
-        var price = cells[2].querySelector('input').value;
+    for (var i = 0; i < files.length; i++) {
+        var file = files[i];
+        var reader = new FileReader();
 
-        previewHTML += '<li>' + designation + ' - ' + quantity + ' - ' + price + '</li>' + price * quantity ;
-    });
+        reader.onload = function(e) {
+            var img = document.createElement('img');
+            img.src = e.target.result;
+            img.style.maxWidth = '100px';
+            previewContainer.appendChild(img);
+        };
 
-    previewHTML += '</ul>';
+        reader.readAsDataURL(file);
+    }
+});
 
-    previewDiv.innerHTML = previewHTML;
-}
+

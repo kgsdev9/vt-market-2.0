@@ -11,3 +11,6 @@ MAIL_PASSWORD=fU5*np9BqfVfkvy
 MAIL_ENCRYPTION=null
 MAIL_FROM_ADDRESS="info@vtp-market.com"
 MAIL_FROM_NAME="${APP_NAME}"
+
+
+https://www.sqlshack.com/learn-sql-join-multiple-tables/
