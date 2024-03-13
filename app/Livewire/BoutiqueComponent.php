@@ -46,7 +46,8 @@ class BoutiqueComponent extends Component
         return $this->mode = false;
     }
 
-    public function store() {
+    public function store()
+    {
         $this->validate();
         $product =  Product::create([
              'title'=> $this->title,

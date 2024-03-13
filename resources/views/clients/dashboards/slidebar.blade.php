@@ -12,14 +12,14 @@
             <ul class="list-unstyled ms-n2 mb-4">
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('espace.orders')}}">
-                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="5" y="4" width="14" height="17" rx="2" stroke="#33363F" stroke-width="2"></rect> <path d="M9 9H15" stroke="#33363F" stroke-width="2" stroke-linecap="round"></path> <path d="M9 13H15" stroke="#33363F" stroke-width="2" stroke-linecap="round"></path> <path d="M9 17H13" stroke="#33363F" stroke-width="2" stroke-linecap="round"></path> </g></svg>
+                       <i class="fe fe-shopping-bag nav-icon"></i>
                         Mes commandes
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('delivry.index')}}">
-                        <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="layer1"> <path d="M 5 3 L 5 4 L 0 4 L 0 18 L 20 18 L 20 4 L 15 4 L 15 3 L 14 3 L 14 4 L 6 4 L 6 3 L 5 3 z M 1 5 L 5 5 L 5 6 L 6 6 L 6 5 L 14 5 L 14 6 L 15 6 L 15 5 L 19 5 L 19 17 L 1 17 L 1 5 z M 2 8 L 2 15 L 8 15 L 8 8 L 2 8 z M 3 9 L 7 9 L 7 14 L 3 14 L 3 9 z M 10 9 L 10 10 L 17 10 L 17 9 L 10 9 z M 10 11 L 10 12 L 17 12 L 17 11 L 10 11 z M 10 13 L 10 14 L 17 14 L 17 13 L 10 13 z " style="fill:#222222; fill-opacity:1; stroke:none; stroke-width:0px;"></path> </g> </g></svg>
+                        <i class="fe fe-calendar nav-icon"></i>
                          Mes Livraisons
                     </a>
                 </li>
@@ -28,7 +28,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('adresse.client')}}">
-                        <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="layer1"> <path d="M 5 3 L 5 4 L 0 4 L 0 18 L 20 18 L 20 4 L 15 4 L 15 3 L 14 3 L 14 4 L 6 4 L 6 3 L 5 3 z M 1 5 L 5 5 L 5 6 L 6 6 L 6 5 L 14 5 L 14 6 L 15 6 L 15 5 L 19 5 L 19 17 L 1 17 L 1 5 z M 2 8 L 2 15 L 8 15 L 8 8 L 2 8 z M 3 9 L 7 9 L 7 14 L 3 14 L 3 9 z M 10 9 L 10 10 L 17 10 L 17 9 L 10 9 z M 10 11 L 10 12 L 17 12 L 17 11 L 10 11 z M 10 13 L 10 14 L 17 14 L 17 13 L 10 13 z " style="fill:#222222; fill-opacity:1; stroke:none; stroke-width:0px;"></path> </g> </g></svg>
+                        <i class="fe fe-clipboard nav-icon"></i>
                           Adresse Paiement
                     </a>
                 </li>

@@ -11,7 +11,7 @@
                     </div>
                     <div>
 
-                        <a href="#" class="btn btn-primary" wire:click="displayForm()">Nouveau produit</a>
+                        <a href="{{route('add.product')}}" class="btn btn-primary" >Nouveau produit</a>
                     </div>
                 </div>
             </div>

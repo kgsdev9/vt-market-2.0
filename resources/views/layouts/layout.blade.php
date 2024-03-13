@@ -14,9 +14,8 @@
     <link rel="canonical" href="vtp-market.com" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700">
     <title>@yield('title')</title>
+   
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-
-
   </head>
   <body style="font-family: 'Roboto', sans-serif;">
     <main class="bg-white">

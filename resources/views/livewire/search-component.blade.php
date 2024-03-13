@@ -4,11 +4,11 @@
             <i class="fe fe-search"></i>
         </span>
         <label for="search" class="visually-hidden"></label>
-        <input type="search"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"  class="form-control ps-6" placeholder="Rechercher....">
+        <input type="search"  data-bs-toggle="modal" data-bs-target="#searchmodal"  class="form-control ps-6" placeholder="Rechercher....">
     </div>
     <i class="fa fa-search"></i>
 
-      <div class="modal fade" wire:ignore.self  id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal fade" wire:ignore.self  id="searchmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
@@ -19,17 +19,10 @@
                 <section class="bg-white mt-4">
                     <div class="container mb-lg-8">
                         <div class="row">
-                            <div class="col-lg-8">
+                            <div class="col-lg-12">
                                 <input type="text" wire:model.live="search" class="form-control"  placeholder="Rechercher un produit">
                             </div>
-                            <div class="col-lg-4">
-                                <select name="" id="" class="form-control">
-                                    <option value="">Selectionner une catégorie</option>
-                                    @foreach ($allCategories as $category)
-                                    <option value="{{$category->id}}">{{$category->nom}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
+
                         </div>
 
 

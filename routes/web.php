@@ -27,6 +27,7 @@ use App\Http\Controllers\Admin\CountryManagementController;
 use App\Http\Controllers\Admin\ManagementBoutiqueController;
 use App\Http\Controllers\DelivryController;
 use App\Http\Controllers\Livraison\LivraisonController;
+use App\Livewire\AddProduct;
 use App\Livewire\EditPrdouct;
 
 /*
@@ -117,3 +118,4 @@ Route::get('/edit/product/{slug}', EditPrdouct::class)->name('edit.product');
 Route::get('/livraison-colis', [LivraisonController::class, 'index'])->name('livraison.index');
 
 Route::resource('delivry', DelivryController::class);
+Route::get('/add-product', AddProduct::class)->name('add.product');

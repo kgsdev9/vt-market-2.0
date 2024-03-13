@@ -13,6 +13,7 @@
 <link href="{{asset('assets/libs/bootstrap-icons/font/bootstrap-icons.min.css')}}" rel="stylesheet" />
 <link href="{{asset('assets/libs/simplebar/dist/simplebar.min.css')}}" rel="stylesheet" />
 <link rel="stylesheet" href="{{asset('assets/css/theme.min.css')}}">
+<script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
  <title>@yield('title')</title>
  @livewireStyles
  </head>
@@ -177,5 +178,6 @@
         @livewireScripts
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <x-livewire-alert::scripts />
+        @stack('script')
     </body>
 </html>

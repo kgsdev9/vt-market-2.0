@@ -135,3 +135,15 @@ document.getElementById('images').addEventListener('change', function(event) {
 });
 
 
+function calculerPrixLivraison(poids) {
+    // Prix de base
+    let prixBase = 5; // Prix de base de livraison
+    let prixParKilo = 2; // Prix par kilogramme
+
+    // Calcul du prix total en fonction du poids
+    let prixTotal = prixBase + (poids * prixParKilo);
+
+    return prixTotal;
+}
+
+

@@ -30,12 +30,12 @@
                                     <th>Télephone</th>
                                     <th>Ville</th>
                                     <th>Adresse</th>
+                                     <th>Status</th>
                                     <th>Action</th>
-
+                                    <th>Réglement</th>
                                 </tr>
                             </thead>
                             <tbody>
-
                                 @foreach ($livraison as $delivry)
                                 <tr>
                                     <td>{{$delivry->reference}}</td>
@@ -43,10 +43,14 @@
                                     <td>{{$delivry->telephone}}</td>
                                     <td>{{$delivry->country_id}}</td>
                                     <td>{{$delivry->adresse}}</td>
+                                     <td>{{$delivry->statut}}</td>
                                     <td>
-                                        <a href="{{route('delivry.show', $delivry->slug)}}">Voir</a>
-                                        <a href="{{route('delivry.edit', $delivry->slug)}}">Edition</a>
+                                        <a href="{{route('delivry.show', $delivry->slug)}}" class="text-dark"><i class="fe fe-eye"></i></a>
+
                                     </td>
+                                  <td>
+                                    <a href="" class="btn btn-outline-warning">Confirmer la commande</a>
+                                  </td>
 
                                 @endforeach
 
