@@ -191,137 +191,28 @@
             <div class="container">
               <div class="row">
 
-
-                <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-                  <!-- Card -->
-                  <div class="card mb-4 shadow-lg card-lift">
-                    <a href="#">
-                      <!-- Img  -->
-                      <img src="{{asset('jumia.gif')}}" class="card-img-top" alt="blogpost ">
-                    </a>
-                    <!-- Card body -->
-                    <div class="card-body">
-                      <h3><a href="#" class="text-inherit">Télevision 3D</a></h3>
-                      <p>Lorem ipsum dolor sit amet, accu msan in, tempor dictum nequrem ipsum...</p>
-                      <!-- Media content -->
-                      <div class="row align-items-center g-0 mt-4">
-
-                        <button class="btn btn-danger">Consulter</button>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-
+                @foreach ($allCategories as $category)
                 <div class="col-xl-4 col-lg-4 col-md-6 col-12">
                     <!-- Card -->
                     <div class="card mb-4 shadow-lg card-lift">
                       <a href="#">
                         <!-- Img  -->
-                        <img src="{{asset('CI_W08_TB_ACD_FASHION_WEEK_copie_215.png')}}" class="card-img-top" alt="blogpost ">
+                        <img src="{{asset('jumia.gif')}}" class="card-img-top" alt="blogpost ">
                       </a>
                       <!-- Card body -->
                       <div class="card-body">
-                        <h3><a href="#" class="text-inherit">Télevision 3D</a></h3>
-                        <p>Lorem ipsum dolor sit amet, accu msan in, tempor dictum nequrem ipsum...</p>
-                        <!-- Media content -->
+                        <h3><a href="#" class="text-inherit">{{$category->nom}}</a></h3>
+
                         <div class="row align-items-center g-0 mt-4">
 
-                          <button class="btn btn-danger">Consulter</button>
+                          <a class="btn btn-danger" href="{{route('category.product', $category->slug)}}">Consulter</a>
 
                         </div>
                       </div>
                     </div>
                   </div>
+                @endforeach
 
-
-                  <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-                    <!-- Card -->
-                    <div class="card mb-4 shadow-lg card-lift">
-                      <a href="#">
-                        <!-- Img  -->
-                        <img src="{{asset('tes.gif')}}" class="card-img-top" alt="blogpost ">
-                      </a>
-                      <!-- Card body -->
-                      <div class="card-body">
-                        <h3><a href="#" class="text-inherit">Télevision 3D</a></h3>
-                        <p>Lorem ipsum dolor sit amet, accu msan in, tempor dictum nequrem ipsum...</p>
-                        <!-- Media content -->
-                        <div class="row align-items-center g-0 mt-4">
-
-                          <button class="btn btn-danger">Consulter</button>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-                    <!-- Card -->
-                    <div class="card mb-4 shadow-lg card-lift">
-                      <a href="#">
-                        <!-- Img  -->
-                        <img src="{{asset('eletroes.gif')}}" class="card-img-top" alt="blogpost ">
-                      </a>
-                      <!-- Card body -->
-                      <div class="card-body">
-                        <h3><a href="#" class="text-inherit">Télevision 3D</a></h3>
-                        <p>Lorem ipsum dolor sit amet, accu msan in, tempor dictum nequrem ipsum...</p>
-                        <!-- Media content -->
-                        <div class="row align-items-center g-0 mt-4">
-
-                          <button class="btn btn-danger">Consulter</button>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-                    <!-- Card -->
-                    <div class="card mb-4 shadow-lg card-lift">
-                      <a href="#">
-                        <!-- Img  -->
-                        <img src="{{asset('tes.gif')}}" class="card-img-top" alt="blogpost ">
-                      </a>
-                      <!-- Card body -->
-                      <div class="card-body">
-                        <h3><a href="#" class="text-inherit">Télevision 3D</a></h3>
-                        <p>Lorem ipsum dolor sit amet, accu msan in, tempor dictum nequrem ipsum...</p>
-                        <!-- Media content -->
-                        <div class="row align-items-center g-0 mt-4">
-
-                          <button class="btn btn-danger">Consulter</button>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-                    <!-- Card -->
-                    <div class="card mb-4 shadow-lg card-lift">
-                      <a href="#">
-                        <!-- Img  -->
-                        <img src="{{asset('tel.png')}}" class="card-img-top" alt="blogpost ">
-                      </a>
-                      <!-- Card body -->
-                      <div class="card-body">
-                        <h3><a href="#" class="text-inherit">Télevision 3D</a></h3>
-                        <p>Lorem ipsum dolor sit amet, accu msan in, tempor dictum nequrem ipsum...</p>
-                        <!-- Media content -->
-                        <div class="row align-items-center g-0 mt-4">
-
-                          <button class="btn btn-danger">Consulter</button>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
                 <!-- Buttom -->
                 {{-- <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center mt-4">

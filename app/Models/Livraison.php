@@ -20,6 +20,7 @@ class Livraison extends Model
         'status',
         'reference',
         'user_id',
-        'slug'
+        'slug',
+        'etat'
     ];
 }

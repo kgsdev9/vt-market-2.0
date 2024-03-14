@@ -29,8 +29,7 @@
                                     <th>Destinataire </th>
                                     <th>Télephone</th>
                                     <th>Ville</th>
-                                    <th>Adresse</th>
-                                     <th>Status</th>
+
                                     <th>Action</th>
                                     <th>Réglement</th>
                                 </tr>
@@ -42,15 +41,16 @@
                                     <td>{{$delivry->client}}</td>
                                     <td>{{$delivry->telephone}}</td>
                                     <td>{{$delivry->country_id}}</td>
-                                    <td>{{$delivry->adresse}}</td>
-                                     <td>{{$delivry->statut}}</td>
                                     <td>
                                         <a href="{{route('delivry.show', $delivry->slug)}}" class="text-dark"><i class="fe fe-eye"></i></a>
-
                                     </td>
                                   <td>
-                                    <a href="" class="btn btn-outline-warning">Confirmer la commande</a>
-                                  </td>
+                                    @if($delivry->etat == 0)
+                                    <a href="" class="btn btn-outline-warning">En attente de confirmation</a>
+                                    @else
+                                    <a href="" class="btn btn-outline-warning">Confirmation procéder au paiement </a>
+                                    @endif
+                                </td>
 
                                 @endforeach
 

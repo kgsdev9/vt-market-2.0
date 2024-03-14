@@ -17,7 +17,7 @@ class DelivryController extends Controller
     public function index()
     {
 
-       $livraison =  DB::select("SELECT slug,  CONCAT(nom, '', prenom) as client, country_id, reference, status as statut, telephone, adresse  from livraisons  as query inner join tlivraisons where query.id = tlivraisons.livraison_id  AND user_id like ".Auth::user()->id." ");
+       $livraison =  DB::select("SELECT slug, etat,  CONCAT(nom, '', prenom) as client, country_id, reference, status as statut, telephone, adresse  from livraisons  as query inner join tlivraisons where query.id = tlivraisons.livraison_id  AND user_id like ".Auth::user()->id." ");
     //    dd($livraison);
 
         return view('clients.livraisons.maliste', compact('livraison'));
@@ -40,7 +40,7 @@ class DelivryController extends Controller
     public function store(Request $request)
     {
 
-        dd($request->all());
+        // dd($request->all());
 
 
         $designations = $request->input('designation');
@@ -70,9 +70,12 @@ class DelivryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($slug)
     {
-        //
+        $livraison = Livraison::where('slug', $slug)->first();
+        $articledelevery = Tlivraison::where('livraison_id', $livraison->id)->get();
+
+        return view('clients.livraisons.detail', compact('livraison', 'articledelevery'));
     }
 
     /**
