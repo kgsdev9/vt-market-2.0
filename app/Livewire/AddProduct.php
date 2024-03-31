@@ -21,6 +21,8 @@ class AddProduct extends Component
     use LivewireAlert;
 
     public $images = [], $title, $description, $marque_id, $prix, $boutique, $search, $category_id;
+
+
     public function store()
     {
 
@@ -47,9 +49,9 @@ class AddProduct extends Component
                         'product_id' => $product->id
                     ]);
                 }
-                 $this->alert('success', 'Produit ajouté au panier');
+                $this->alert('success', 'Produit ajouté au panier');
+                return redirect()->route('gestion.boutique');
 
-                dd('enregistré');
      }
 
 

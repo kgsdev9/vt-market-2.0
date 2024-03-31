@@ -57,14 +57,18 @@ class DelivryController extends Controller
             'user_id'=> Auth::user()->id
         ]);
 
-        foreach ($designations as $key => $designation) {
+        foreach ($designations as $key => $designation)
+        {
             Tlivraison::create([
                 'designation' => $designation,
                 'poids' => $prixes[$key],
                 'livraison_id'=>$livraison->id
             ]);
         }
-        dd('enregistrés');
+
+        
+
+
     }
 
     /**

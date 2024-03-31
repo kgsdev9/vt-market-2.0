@@ -65,7 +65,7 @@ Route::get('/product/detail/{slug}', DetailProduct::class)->name('single.product
 Route::get('/product-management', ProductManagementController::class)->name('product.management');
 Route::get('/gestion-boutique', BoutiqueController::class)->name('gestion.boutique');
 Route::get('/cart', PanierController::class)->name('cart');
-Route::get('/sommary-oders', [HomeController::class, 'sommaryOrders'])->name('sommary.orders')->middleware('auth');
+Route::get('/sommary-oders', [HomeController::class,'sommaryOrders'])->name('sommary.orders')->middleware('auth');
 Route::get('/boutique/officielle/{slug}', SingleBoutiqueSellerComponent::class)->name('store.seller');
 
 //mes routes  pour la connexion des des services de connexions par socialies

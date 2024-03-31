@@ -56,26 +56,15 @@ class Category extends Component
 
 
     public function create()
-
     {
        $this->validate() ;
-
-
-     $filename = date('Y-m-d-H:i:s')."-".$this->image->getClientOriginalName();
-
-     $path =  Image::make($this->image->getRealPath())->resize(923,498)->save('s3/product/'.$filename);
-
-     if (!file_exists($path)) {
-        mkdir($path, 666, true);
-    }
-
-
-
-
+         $image = $this->image->getClientOriginalName();
+        $img = Image::make($this->image);
+        $img->resize(522, 310)->save(public_path('s3/category/'.$image));
         ModelCategory::create([
             'nom' => $this->nom,
             'slug' => $this->prepareBeforeValidation($this->nom),
-            'image' => $filename,
+            'image' => $image,
         ]);
 
         $this->reset();
@@ -86,7 +75,7 @@ class Category extends Component
     public function edit($id) {
         $ressourceMarque = ModelCategory::find($id);
         $this->nom = $ressourceMarque->nom;
-        $this->image = $ressourceMarque->image;
+        $this->new_image = $ressourceMarque->image;
         $this->marqueId = $ressourceMarque->id;
         $this->mode = true;
     }
@@ -96,22 +85,22 @@ class Category extends Component
     {
         $this->validate();
          $marque =ModelCategory::findOrFail($this->marqueId);
+         $photo = $marque->image;
+         if($this->image)
+         {
+            Storage::delete($photo);
+            $photo = $this->image->getClientOriginalName();
+            $img = Image::make($this->image);
+            $img->resize(522, 310)->save(public_path('s3/category/'.$photo));
 
-        if($this->new_image) {
-            $photo = $marque->image;
-            Storage::delete($marque->image);
-            $photo = $this->new_image->store('public/categories');
-        } else {
-
-            $photo = $marque->image;
-
-        }
+         }else{
+             $photo = $marque->image;
+         }
             $marque->update([
                 'nom' => $this->nom,
                 'image' => $photo,
             ]);
             $this->marqueId='';
-
             $this->mode  = false ;
             $this->reset('nom', 'image', 'marqueId');
 

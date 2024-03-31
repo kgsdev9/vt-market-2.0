@@ -197,7 +197,7 @@
                     <div class="card mb-4 shadow-lg card-lift">
                       <a href="#">
                         <!-- Img  -->
-                        <img src="{{asset('jumia.gif')}}" class="card-img-top" alt="blogpost ">
+                        <img src="{{asset('s3/category/'.$category->image)}}" class="card-img-top" alt="blogpost ">
                       </a>
                       <!-- Card body -->
                       <div class="card-body">

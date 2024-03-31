@@ -15,25 +15,14 @@
                                     <input type="text" class="form-control" placeholder="Nom de la catégoie" wire:model="nom">
                                 </div>
 
+                                @if ($image)
+                                <img src="{{ $image->temporaryUrl() }}" id="img-uploaded" class="avatar-xl rounded-circle">
+                                @else
+                                <img src="{{asset('s3/category/'.$new_image) }}" alt=""  class="avatar-xl rounded-circle">
+                                @endif
+                                <br>
                                 <div class="row">
-
-
-                                    @if(!$image)
-                                    <div class="col-md-12">
-                                        <div class="mb-3">
-                                            <label class="form-label" >Image   @error('image') <span class="text-danger">{{ $message }}</span> @enderror</label>
-
-                                            <input type="file" class="form-control" wire:model="image">
-                                        </div>
-                                    </div>
-                                    @else
-                                    <div class="col-md-12">
-                                        <div class="mb-3">
-                                            <label class="form-label" > Uploader une nouvelle image  @error('new_image') <span class="text-danger">{{ $message }}</span> @enderror</label>
-                                            <input type="file" class="form-control" wire:model="new_image">
-                                        </div>
-                                    </div>
-                                    @endif
+                                    <input type="file" class="form-control" wire:model="image">
                                 </div>
                                 <div class="mt-4">
                                     <div class="hstack gap-3">

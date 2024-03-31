@@ -145,10 +145,14 @@
                         </div>
                         @php
                             $total = 0;
+                            $pricedelivery = 0.2;
+                            $totallivraison = 0;
                         @endphp
                         @foreach( (array)session('cart') as $id => $details)
                         @php
-                            $total +=  $details['prix'] * $details['quantity']
+                            $total +=  $details['prix'] * $details['quantity'] ;
+                            $totallivraison+=  $details['prix'] * $pricedelivery;
+
                         @endphp
                         <div class="d-md-flex my-3">
                             <div>
@@ -159,7 +163,7 @@
                                 <h5>
                                     {{ $details['prix']}} €
                                 </h5>
-                                <span>Qty:    {{ $details['quantity']}}</span>
+                                <span>Qty:{{ $details['quantity']}}</span>
                                 <h5>
                                     {{ $details['prix'] * $details['quantity']}}€
                                 </h5>
@@ -176,22 +180,17 @@
                             </li>
                             <li class="d-flex justify-content-between list-group-item px-0">
                                 <span>Prix de livraison</span>
-                                <span class="text-dark fw-semibold">50 €</span>
+                                <span class="text-dark fw-semibold">{{$totallivraison}} €</span>
                             </li>
-
-
                             <li class="d-flex justify-content-between list-group-item px-0 pb-0">
                                 <span class="fs-4 fw-semibold text-dark">Total</span>
-                                <input type="hidden" value="{{$total + 50}}" name="amount">
-                                <span class="fw-semibold text-dark">{{$total + 50}} € </span>
+                                <input type="hidden" value="{{$total + $totallivraison}}" name="amount">
+                                <span class="fw-semibold text-dark">{{$total + $totallivraison}} € </span>
                             </li>
-
                             <li class="d-flex justify-content-between list-group-item px-0 pb-0">
                            <button type="submit" class="btn btn-outline-dark">Proceder au paiement</button>
-                            </li>
-
-
-
+                                {{-- <p>grand order {{$grandeorder}}</p> --}}
+                        </li>
                         </ul>
                     </div>
                 </div>

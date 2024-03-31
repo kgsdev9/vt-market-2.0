@@ -39,7 +39,7 @@
                                 <tr class="accordion-toggle collapsed">
                                     <td>
                                         <div>
-                                            <img src="{{Storage::url($value->image)}}" alt="" class="img-4by3-lg rounded">
+                                            <img src="{{asset('s3/category/'.$value->image)}}" alt="" class="img-4by3-lg rounded">
                                         </div>
                                     </td>
                                     <td> {{$value->nom}}</td>
