@@ -1,4 +1,5 @@
 @extends('dashboards.master')
+@section('title', 'Liste des commandes')
 @section('master')
 <section class="container-fluid p-4">
     <div class="row">
@@ -63,9 +64,8 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fe fe-edit"></i></a>
                                         <a href="{{route('view.order', $commande->id)}}" class="btn btn-success btn-sm"><i class="fe fe-eye"></i> </a>
-                                        <a href="" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i></a>
+                                        {{-- <a href="" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i></a> --}}
                                     </td>
                                 </tr>
                                 @endforeach

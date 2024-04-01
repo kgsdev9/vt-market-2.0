@@ -1,3 +1,4 @@
+ @section('title', 'Liste des boutiques')
 <div>
 
     <section class="container-fluid p-4">
@@ -26,7 +27,7 @@
                                     <!-- Card body -->
                                     <div class="card-body">
                                         <div class="text-center">
-                                            <img src="../../assets/images/avatar/avatar-11.jpg" class="rounded-circle avatar-xl mb-3" alt="">
+
                                             <h4 class="mb-0">{{$seller->nom_vendeur}} {{$seller->prenom_vendeur}}</h4>
                                             <p class="mb-0">Boutique :  {{$seller->libelle_boutique}} </p>
                                             <p class="mb-0">Télephone :  {{$seller->telephone}} </p>

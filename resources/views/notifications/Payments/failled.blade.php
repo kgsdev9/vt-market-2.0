@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@section('title', 'Echec de Paiement ')
 @section('content')
 
     <div class="container row-justify-content-center text-center">

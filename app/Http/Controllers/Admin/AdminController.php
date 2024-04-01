@@ -10,7 +10,7 @@ class AdminController extends Controller
 {
 
     public function allCommandes() {
-        $allCommandes = Commande::paginate(20);
+        $allCommandes = Commande::orderByDesc('created_at')->paginate(20);
         return view('dashboards.commandes.liste', [
             'allCommandes'=> $allCommandes
         ]);

@@ -14,7 +14,7 @@
     <link rel="canonical" href="vtp-market.com" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700">
     <title>@yield('title')</title>
-   
+
     <meta name="csrf-token" content="{{ csrf_token() }}" />
   </head>
   <body style="font-family: 'Roboto', sans-serif;">
@@ -62,7 +62,7 @@
                         </li>
                       @livewire('search-component')
                       &nbsp;&nbsp;
-                      <a class="btn btn-outline-danger"  href="{{route('livraison.index')}}"> <i class="fe fe-mail-forward"></i> Transport interntional  </a>
+                    
                     </ul>
                 </div>
             </div>
@@ -278,6 +278,7 @@
 	</footer>
 
     <script src="{{asset('assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/functionnalites/livraison.js')}}"></script>
     <script src="{{asset('assets/libs/simplebar/dist/simplebar.min.js')}}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>

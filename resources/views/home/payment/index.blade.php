@@ -46,24 +46,6 @@
                 </div>
                     @csrf
                 <div class="row">
-
-                    <div class="col-xl-2 col-lg-6 col-12">
-                        <div class="card-body">
-                            <div class="d-md-flex">
-                                <div >
-                                    <input class="form-check-input" type="radio" name="paypalMethod" value="card">
-                                    <label class="form-check-label ms-2 w-100" ></label>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center w-100">
-                                    <div class="d-flex align-items-start">
-                                        <img src="{{asset('master_card.png')}}" alt="" style="height:40px;">
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="col-xl-2 col-lg-6 col-12">
                         <div class="card-body">
                             <div class="d-md-flex">
@@ -73,7 +55,7 @@
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center w-100">
                                     <div class="d-flex align-items-start">
-                                        <img src="{{asset('paypal.png')}}" alt="" style="height:40px;">
+                                        <img src="{{asset('master_card.png')}}" alt="" style="height:40px;">
                                     </div>
 
                                 </div>
@@ -189,7 +171,7 @@
                             </li>
                             <li class="d-flex justify-content-between list-group-item px-0 pb-0">
                            <button type="submit" class="btn btn-outline-dark">Proceder au paiement</button>
-                                {{-- <p>grand order {{$grandeorder}}</p> --}}
+
                         </li>
                         </ul>
                     </div>

@@ -18,15 +18,6 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('delivry.index')}}">
-                        <i class="fe fe-calendar nav-icon"></i>
-                         Mes Livraisons
-                    </a>
-                </li>
-
-
-
-                <li class="nav-item">
                     <a class="nav-link" href="{{route('adresse.client')}}">
                         <i class="fe fe-clipboard nav-icon"></i>
                           Adresse Paiement

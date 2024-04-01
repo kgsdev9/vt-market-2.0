@@ -9,29 +9,27 @@ use Illuminate\Support\Facades\Mail;
 
 class PaymentNotificationController extends Controller
 {
-
     protected $commandeService ;
-
     public function __construct(CommandeService $commandeService)
     {
         $this->commandeService = $commandeService;
     }
 
     public function successFullPayment() {
-        $this->commandeService->updateSuccessStatusPayment();
+      $commande =   $this->commandeService->updateSuccessStatusPayment();
+      Mail::to(['kgsdev8@gmail.com', 'vtp.sas.france@gmail.com', Auth::user()->email])->send(new SendOrderEmail($commande));
         return view('notifications.Payments.sucess');
     }
 
-    public function failedPayment() {
-        //  $this->commandeService->updateFailledStatusPayment();
-        $commande =  $this->commandeService->updateSuccessStatusPayment();
-         Mail::to(Auth::user()->email)->queue(new SendOrderEmail($commande));
+    public function failedPayment()
+    {
+        $commande =  $this->commandeService->updateFailledStatusPayment();
         return view('notifications.Payments.failled', [
         ]);
     }
 
-    public function cancelPayment()  {
-
+    public function cancelPayment()
+    {
         return view('notifications.Payments.cancel');
     }
 }

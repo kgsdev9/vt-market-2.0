@@ -24,7 +24,7 @@ class CardProduct extends Component
     {
         return view('livewire.card-product', [
             'allProducts' => $this->readyToLoad
-                ? Product::orderByDesc('created_at')->get()
+                ? Product::orderByDesc('created_at')->inRandomOrder()->take(12)->get()
                 : [],
         ]);
 

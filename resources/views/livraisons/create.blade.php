@@ -81,7 +81,7 @@
                                    <br>
                                    <div class="row">
                                        <div class="col-md-6">
-                                           <button type="button" class="btn btn-outline-success" onclick="addRow()">Ajouter Une nouveau article</button>
+                                           <button type="button" class="btn btn-outline-success" onclick="ajouterDesItems()">Ajouter Une nouveau article</button>
                                         </div>
                                         <div class="col-md-6">
                                             <input type="file" name="images[]" id="images" multiple accept="image/*" class="form-control">

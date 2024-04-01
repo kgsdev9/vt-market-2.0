@@ -40,7 +40,7 @@ class PaymentController extends Controller
                 'merchantId' => "PP-F2197",
                 'amount' => $this->convertionAmount($request->amount),
                 'description' => 344,
-                'channel' => $request->paypalMethod,
+                'channel' => $request->paypalMethod ,
                 'countryCurrencyCode' => "952",
                 'referenceNumber' => "REF-".time(),
                 'customerEmail' => Auth::user()->email,

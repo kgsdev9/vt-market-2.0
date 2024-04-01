@@ -1,51 +1,8 @@
 
 
-function addRow() {
-    const designationRows = document.getElementById("designationRows");
-    const newRow = document.createElement("div");
-    newRow.className = "row";
-    newRow.innerHTML = `
-        <div class="col-md-6">
-            <div class="form-group">
-            <label class="form-label" for="designation">
-            Désignation  de l'article
-             <span class="text-danger">*</span>
-         </label>
-                <input type="text" class="form-control designation" id="designation" name="designation[]">
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="form-group">
-            <label class="form-label" for="price">
-            Poids
-             <span class="text-danger">*</span>
-         </label>
-                <input type="number" class="form-control poids" id="poids"  name="poids[]">
-            </div>
-        </div>
+function ajouterDesItems() {
 
-        <div class="col-md-2">
-        <div class="form-group">
-        <label class="form-label" for="price">
-         P U De livraison
-         <span class="text-danger">*</span>
-     </label>
-            <input type="number" class="form-control prixdelivry" id="prixdelivry"  id="prixdelivry" name="prixdelivry[]"  disabled>
-        </div>
-    </div>
-
-
-        <div class="col-md-2">
-        <div class="form-group">
-        <br>
-            <button type="button" class="btn btn-outline-danger" onclick="removeRow(this)"> <i class="fe fe-trash"></i></button>
-        </div>
-    </div>
-
-    `;
-    designationRows.appendChild(newRow);
-
-    // updatePreview();
+    alert('sss');
 
 }
 
@@ -91,6 +48,9 @@ function saveLivraison(event)  {
             "adresse": adresse,
             },
         success: function(response) {
+            // window.location.href = ‘https://exampleURL.com/’;
+            // alert(response.url);
+            // return;
             console.log(response);
             // Traitez la réponse ici si nécessaire
         },

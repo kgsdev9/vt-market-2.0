@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@section('title', $singleOrder->reference)
 @section('content')
 <section class="pt-5 pb-5">
     <div class="container">
@@ -10,15 +11,11 @@
                 <div class="card px-4 pt-2 pb-4 shadow-sm rounded-top-0 rounded-bottom-0 rounded-bottom-md-2">
                     <div class="d-flex align-items-end justify-content-between">
                         <div class="d-flex align-items-center">
-                            <div class="me-2 position-relative d-flex justify-content-end align-items-end mt-n5">
-                                <img src="../assets/images/avatar/avatar-3.jpg" class="avatar-xl rounded-circle border border-4 border-white" alt="avatar">
-                            </div>
+
                             <div class="lh-1">
                                 <h2 class="mb-0">
                                     Bienvenue {{Auth::user()->name}}
-
                                 </h2>
-
                             </div>
                         </div>
 
@@ -41,8 +38,6 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-6">
                             <div>
-                                <!-- Img -->
-
                                 <h4 class="mb-0">FACTURE DE COMMANDE  </h4>
                                 <small>REFERENCE   {{$singleOrder->reference}}</small>
                             </div>
@@ -53,13 +48,7 @@
                             <button class="btn btn-outline-danger">ECHEC DE LA TRANSACTION</button>
                             @elseif($singleOrder->status == "encours")
                             <button class="btn btn-outline-warning">TRANSACTION EN COURS</button>
-
                             @endif
-
-
-                            <div>
-                                <a href="#" class="print-link no-print"><i class="fe fe-printer"></i></a>
-                            </div>
                         </div>
                         <!-- Row -->
                         <div class="row">
@@ -90,7 +79,7 @@
                                 <h6 class="mb-0">{{$singleOrder->owneradresse->contact}}</h6>
                             </div>
                             <div class="col-4">
-                                <span class="fs-6">Date paiement </span>
+                                <span class="fs-6">Date de la transaction  </span>
                                 <h6 class="mb-0">{{$singleOrder->created_at}}</h6>
                             </div>
                         </div>
@@ -99,20 +88,23 @@
                             <table class="table mb-0 text-nowrap table-borderless">
                                 <thead class="table-light">
                                     <tr>
-                                        <th>Item</th>
-                                        <th>Quantity</th>
-                                        <th>Unit Price</th>
-                                        <th>Amount</th>
+                                        <th>Désignation</th>
+                                        <th>Qauntité</th>
+                                        <th>Prix unitaire</th>
+                                        <th>Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @php
                                     $total = 0;
+                                    $pricedelivery = 0.2;
+                                    $totallivraison = 0;
                                     @endphp
                                     @foreach ($singleOrder->products as $detail)
-                                  
+
                                         @php
-                                            $total += $detail->pivot->quantity * $detail->prix
+                                            $total += $detail->pivot->quantity * $detail->prix;
+                                            $totallivraison+=  $detail->prix * $pricedelivery;
                                         @endphp
                                     <tr class="text-dark">
                                         <td>
@@ -130,23 +122,16 @@
                                     <tr class="text-dark">
                                         <td colspan="2"></td>
                                         <td colspan="1" class="pb-0">Prix de livraison</td>
-                                        <td class="pb-0">50 € </td>
+                                        <td class="pb-0">{{$totallivraison}} €</td>
                                     </tr>
-                                    <tr class="text-dark">
-                                        <td colspan="2"></td>
-                                        <td colspan="1" class="py-0">Taxe</td>
-                                        <td class="py-0">0</td>
-                                    </tr>
-
                                     <tr class="text-dark">
                                         <td colspan="2"></td>
                                         <td colspan="1" class="border-top py-1 fw-bold">Total</td>
-                                        <td class="border-top py-1 fw-bold">{{$total + 50}} € </td>
+                                        <td class="border-top py-1 fw-bold">{{$total + $totallivraison}} € </td>
                                     </tr>
                                 </tfoot>
                             </table>
                         </div>
-                        <!-- Short note -->
                         <p class="border-top pt-3 mb-0">Notes: si vous n'etes pas l'auteur de cette commande alors signaler vous à notre equipe.</p>
                     </div>
                 </div>

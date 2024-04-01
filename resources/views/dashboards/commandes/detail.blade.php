@@ -1,4 +1,5 @@
 @extends('dashboards.master')
+@section('title', $singleOrder->reference)
 @section('master')
 <section class="pt-5 pb-5">
     <div class="container">
@@ -67,19 +68,23 @@
                             <table class="table mb-0 text-nowrap table-borderless">
                                 <thead class="table-light">
                                     <tr>
-                                        <th>Item</th>
-                                        <th>Quantity</th>
-                                        <th>Unit Price</th>
-                                        <th>Amount</th>
+                                        <th>Désignation</th>
+                                        <th>Qauntité</th>
+                                        <th>Prix unitaire</th>
+                                        <th>Total</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @php
                                     $total = 0;
+                                    $pricedelivery = 0.2;
+                                    $totallivraison = 0;
                                     @endphp
                                     @foreach ($singleOrder->products as $detail)
                                         @php
-                                            $total += $detail->pivot->quantity * $detail->pivot->total
+                                            $total += $detail->pivot->quantity * $detail->pivot->total;
+                                            $totallivraison+=  $detail->prix * $pricedelivery;
                                         @endphp
                                     <tr class="text-dark">
                                         <td>
@@ -97,18 +102,12 @@
                                     <tr class="text-dark">
                                         <td colspan="2"></td>
                                         <td colspan="1" class="pb-0">Prix de livraison</td>
-                                        <td class="pb-0">50 € </td>
+                                        <td class="pb-0">{{ $totallivraison}} € </td>
                                     </tr>
-                                    <tr class="text-dark">
-                                        <td colspan="2"></td>
-                                        <td colspan="1" class="py-0">Taxe</td>
-                                        <td class="py-0">0</td>
-                                    </tr>
-
                                     <tr class="text-dark">
                                         <td colspan="2"></td>
                                         <td colspan="1" class="border-top py-1 fw-bold">Total</td>
-                                        <td class="border-top py-1 fw-bold">{{$total + 50}} € </td>
+                                        <td class="border-top py-1 fw-bold">{{$total + $totallivraison}} € </td>
                                     </tr>
                                 </tfoot>
                             </table>
