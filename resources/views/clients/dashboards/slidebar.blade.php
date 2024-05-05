@@ -31,7 +31,7 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{route('profile')}}">
                         <i class="fe fe-user nav-icon"></i>
                         Mon profile
                     </a>

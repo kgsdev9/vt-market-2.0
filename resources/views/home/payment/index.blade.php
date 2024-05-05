@@ -133,7 +133,7 @@
                         @foreach( (array)session('cart') as $id => $details)
                         @php
                             $total +=  $details['prix'] * $details['quantity'] ;
-                            $totallivraison+=  $details['prix'] * $pricedelivery;
+                            $totallivraison+=  $details['prix'] * $pricedelivery * $details['quantity'];
 
                         @endphp
                         <div class="d-md-flex my-3">

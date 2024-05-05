@@ -51,7 +51,7 @@
                     <span class="text-success fw-semibold">
                         <i class="fe fe-trending-up me-1"></i>
                        Pour {{$countBoutique}}
-                    </span>
+                    </span> 
                     <span class="ms-1 fw-medium">boutiques</span>
                 </div>
             </div>

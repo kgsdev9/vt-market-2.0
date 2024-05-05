@@ -30,6 +30,7 @@ use App\Http\Controllers\Admin\CityManagementController;
 use App\Http\Controllers\Admin\RoleManagementController;
 use App\Http\Controllers\Admin\CountryManagementController;
 use App\Http\Controllers\Admin\ManagementBoutiqueController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -121,3 +122,6 @@ Route::get('/livraison-colis', [LivraisonController::class, 'index'])->name('liv
 Route::resource('delivry', DelivryController::class);
 Route::get('/add-product', AddProduct::class)->name('add.product');
 Route::get('/category-product/{slug}',  CategoryProduct::class)->name('category.product');
+
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::post('/update.profile', [ProfileController::class, 'update'])->name('update.profile');

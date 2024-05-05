@@ -9,4 +9,6 @@ class ProductManagementController extends Controller
     {
         return view('dashboards.products.liste');
     }
+
+
 }

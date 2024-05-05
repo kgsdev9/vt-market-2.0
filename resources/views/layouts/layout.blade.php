@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset('assets/libs/simplebar/dist/simplebar.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/theme.min.css')}}">
     <link rel="canonical" href="vtp-market.com" />
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700">
     <title>@yield('title')</title>
 
@@ -23,9 +24,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid px-0">
                 <div class="d-flex">
-                    <a class="navbar-brand text-dark" href="/">
-                     <strong> VTP</strong>
-                    </a>
+                    <a class="navbar-brand" href="{{URL('/')}}"><img src="{{asset('vtp-logo.png')}}" alt="VTP MARKET" style="height:40px;"></a>
                 </div>
                 <div class="order-lg-3">
                     <div class="d-flex align-items-center">
@@ -62,7 +61,7 @@
                         </li>
                       @livewire('search-component')
                       &nbsp;&nbsp;
-                    
+
                     </ul>
                 </div>
             </div>
