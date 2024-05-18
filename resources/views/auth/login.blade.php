@@ -64,7 +64,7 @@
                            <label class="form-check-label" for="rememberMeCheckbox">Se souvenir de moi </label>
                         </div>
 
-                        <div><a href="{{route('password.request')}}" class="text-primary">Mot de passe oublié</a></div>
+                        <div><a href="{{route('password.request')}}" class="text-primary" wire:navigate>Mot de passe oublié</a></div>
                      </div>
                     <!-- Button -->
                     <div class="d-grid">
@@ -78,7 +78,7 @@
             <div class="card-footer px-6 py-4 text-center">
                 <p class="mb-0">
                    Vous n'avez pas de compte alors
-                    <a href="{{route('register')}}" class="text-inherit fw-semibold">Inscrivez -vous </a>
+                    <a href="{{route('register')}}" class="text-inherit fw-semibold" wire:navigate>Inscrivez -vous </a>
                 </p>
             </div>
         </div>

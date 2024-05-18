@@ -43,7 +43,9 @@
                                         </div>
 
                                         <div class="mb-3 col-md-3">
-                                            <label for="selectDate" class="form-label">Adresse Vendeur</label>
+                                            <label for="selectDate" class="form-label">Adresse Vendeur @error('email')
+                                                <span class="text-danger">{{$message}}</span>
+                                            @enderror</label>
                                             <input type="text" class="form-control" name="adresse" placeholder="DOKUI CHAINE-AVION" required="" >
 
                                         </div>

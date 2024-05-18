@@ -38,7 +38,10 @@ class VendeurRegisterController extends Controller
      */
     public function store(Request $request) {
 
-        // dd($request->all());
+        $validated = $request->validate([
+            'email' => 'required|unique:users,email',
+        ]);
+
         $data = $request->all();
 
         $logo = $request->file('logo_boutique')->store('public/vendeur/logo');
@@ -121,7 +124,7 @@ class VendeurRegisterController extends Controller
         ]);
 
         // dd($boutiqueUser);
-
+        Alert::success('success', 'Mise à jour effectuée avec succes');
         return redirect()->back();
     }
 

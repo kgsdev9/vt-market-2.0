@@ -18,7 +18,7 @@
                     </div>
                     <div class="card-body">
                         <div>
-                            <form class="row gx-3 needs-validation"  method="POST" action="{{route('update.profile')}}">
+                            <form class="row gx-3 needs-validation"  method="POST" action="{{route('update.profile.users')}}">
                                 @csrf
                                 <div class="mb-3 col-12 col-md-6">
                                     <label class="form-label" for="name">Nom </label>

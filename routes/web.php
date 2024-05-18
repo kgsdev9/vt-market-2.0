@@ -110,17 +110,9 @@ Route::get('/detail/page', function() {
 // GoogleLoginController redirect and callback urls
 Route::get('/login/{google}', [GoogleLoginController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('/login/{google}/callback', [GoogleLoginController::class, 'handleGoogleCallback']);
-
-
-//nouvelles routes
 Route::get('/edit/product/{slug}', EditPrdouct::class)->name('edit.product');
-
-//routes pour les livraisons
-Route::get('/livraison-colis', [LivraisonController::class, 'index'])->name('livraison.index');
-
-Route::resource('delivry', DelivryController::class);
 Route::get('/add-product', AddProduct::class)->name('add.product');
 Route::get('/category-product/{slug}',  CategoryProduct::class)->name('category.product');
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::post('/update.profile', [ProfileController::class, 'update'])->name('update.profile');
+Route::post('/update/profile', [ProfileController::class, 'update'])->name('update.profile.users');

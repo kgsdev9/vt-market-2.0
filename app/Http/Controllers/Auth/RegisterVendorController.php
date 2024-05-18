@@ -34,12 +34,4 @@ class RegisterVendorController extends Controller
 
     
 
-
-    public function confirmatedAcompteSeller() {
-
-    }
-
-
-
-
 }

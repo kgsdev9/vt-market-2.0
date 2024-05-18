@@ -26,6 +26,10 @@ class ProfileController extends Controller
 
     public function update(Request $request)
     {
+            $validated = $request->validate([
+                'email' => 'required|email',
+                'name' => 'required',
+            ]);
 
         $password = "";
         $users  = User::where('id', Auth::user()->id)->first();
@@ -36,6 +40,8 @@ class ProfileController extends Controller
         {
            $password = Hash::make($request->passowrd);
         }
+
+       $emailexiste=  User::where('email', $request->email)->exists() ;
 
         User::where('id', Auth::user()->id)->update([
             'name'=> $request->name,

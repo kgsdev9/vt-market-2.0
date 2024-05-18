@@ -88,7 +88,7 @@
 
                                     <div class="mb-3 col-md-4">
                                         <label for="selectDate" class="form-label">Selectionner un pays  </label>
-                                        <select name="city_id"  class="form-control">
+                                        <select name="country_id"  class="form-control">
                                             <option value="">Choisir </option>
                                             @foreach ($countryAll as $country)
                                                 <option value="{{$country->id}}" {{$country->id == $boutique->country_id ? 'selected' : ''}}>{{$country->nom}}</option>
@@ -98,10 +98,10 @@
 
                                     <div class="mb-3 col-md-4">
                                         <label for="selectDate" class="form-label">Selectionner une ville   </label>
-                                        <select name="country_id" class="form-control">
+                                        <select name="city_id" class="form-control">
                                             <option value="">Choisir </option>
                                             @foreach ($allCities as $city)
-                                                <option value="{{$city->id}}" {{$city->id == $boutique->city_id ? 'selected' : ''}}>{{$city->nom}}</option>
+                                                <option value="{{$city->id}}" {{ $boutique->city_id == $city->id ? 'selected' : ''}} >{{$city->nom}}</option>
 
                                             @endforeach
                                         </select>
