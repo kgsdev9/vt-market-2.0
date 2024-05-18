@@ -21,7 +21,6 @@ use App\Http\Controllers\GoogleLoginController;
 use App\Livewire\SingleBoutiqueSellerComponent;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\VendeurRegisterController;
-use App\Http\Controllers\ProductManagementController;
 use App\Http\Controllers\SocialiteConnecteControlller;
 use App\Http\Controllers\Auth\RegisterVendorController;
 use App\Http\Controllers\Livraison\LivraisonController;
@@ -63,7 +62,7 @@ Route::get('/annuaire-categories', CategoryController::class)->name('categorie.i
 Route::get('/all/stores/vtp', [HomeController::class, 'allBoutique'])->name('boutique.index');
 Route::get('/category-product/{slug}', [HomeController::class ,'categoryProduct'])->name('product.categories');
 Route::get('/product/detail/{slug}', DetailProduct::class)->name('single.product');
-Route::get('/product-management', ProductManagementController::class)->name('product.management');
+Route::resource('vendeur', VendeurRegisterController::class);
 Route::get('/gestion-boutique', BoutiqueController::class)->name('gestion.boutique');
 Route::get('/cart', PanierController::class)->name('cart');
 Route::get('/sommary-oders', [HomeController::class,'sommaryOrders'])->name('sommary.orders')->middleware('auth');

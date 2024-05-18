@@ -32,19 +32,7 @@ class RegisterVendorController extends Controller
         ]);
     }
 
-    public function store(RegisterVendorRequest $request) {
-        $data = $request->all();
-        $name = "VTP-VENDEUR". rand(1000, 45000);
-        $user =  User::create([
-            'name' => $name,
-            'role_id' => $this->giveRoleVendors(),
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-        Auth::login($user);
-        Alert::success('Bienvenue', 'Votre compte a été crée avec succes RDV sur votre espace pour renseigner vos informations et gerer votre boutique');
-        return redirect()->route('dashboard');
-    }
+    
 
 
     public function confirmatedAcompteSeller() {

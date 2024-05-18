@@ -34,7 +34,6 @@ class AddProduct extends Component
              'title'=> $this->title,
              'slug'=> Str::slug($this->title),
              'description'=> $this->description,
-             'marque_id' => 1,
              'category_id' => $this->category_id,
              'prix' =>  $this->prix,
              'view' =>1,

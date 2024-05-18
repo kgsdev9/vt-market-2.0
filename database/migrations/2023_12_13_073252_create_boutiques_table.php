@@ -24,9 +24,9 @@ return new class extends Migration
             $table->string('contact')->nullable();
             $table->string('piece');
             $table->boolean('status')->default('0');
-            $table->unsignedBigInteger('city_id')->nullable();
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('country_id')->nullable();
+            $table->unsignedBigInteger('city_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('country_id');
             $table->foreign('city_id')->references('id')->on('cities')->onDelete('CASCADE');
             $table->foreign('country_id')->references('id')->on('countries')->onDelete('CASCADE');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');

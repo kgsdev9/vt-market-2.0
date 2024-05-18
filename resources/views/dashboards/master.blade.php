@@ -69,7 +69,7 @@
             <!-- Nav item -->
             @can('is_seller')
             <li class="nav-item">
-                <a class="nav-link  collapsed " href="{{route('product.management')}}">
+                <a class="nav-link  collapsed " href="{{route('vendeur.index')}}">
                     <i class="nav-icon fe fe-book-open me-2"></i>
                    Profil vendeur
                 </a>

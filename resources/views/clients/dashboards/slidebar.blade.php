@@ -11,14 +11,14 @@
             <span class="navbar-header">Mon espace</span>
             <ul class="list-unstyled ms-n2 mb-4">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('espace.orders')}}">
+                    <a class="nav-link" href="{{route('espace.orders')}}" wire:navigate>
                        <i class="fe fe-shopping-bag nav-icon"></i>
                         Mes commandes
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('adresse.client')}}">
+                    <a class="nav-link" href="{{route('adresse.client')}}" wire:navigate>
                         <i class="fe fe-clipboard nav-icon"></i>
                           Adresse Paiement
                     </a>
@@ -31,7 +31,7 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('profile')}}">
+                    <a class="nav-link" href="{{route('profile')}}" wire:navigate>
                         <i class="fe fe-user nav-icon"></i>
                         Mon profile
                     </a>
